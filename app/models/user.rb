@@ -1,5 +1,7 @@
 class User < ActiveRecord::Base
 
+  has_secure_password
+  
   validates :name,
     presence: true,
     length: {in: 1..30}
@@ -16,5 +18,5 @@ class User < ActiveRecord::Base
   def self.authenticate(params)
     User.find_by_email(params[:email]).try(:authenticate, params[:password])
   end
-  
+
 end
