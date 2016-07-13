@@ -14,7 +14,7 @@ class UsersController < ApplicationController
     user = User.new(user_params)
     if user.save
       session[:user_id] = user.id
-      redirect_to user_path
+      redirect_to user_path(user.id)
     else
       flash[:danger] = user.errors.messages
       redirect_to new_user_path
@@ -29,7 +29,7 @@ class UsersController < ApplicationController
   # update already existing user
   def update
     User.find(params[:id]).update(user_params)
-    redirect_to user_path
+    redirect_to user_path(params[:id])
   end
 
   private
