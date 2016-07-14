@@ -14,8 +14,8 @@
  *= require_self
  */
 
-@import "bootsrap-sprockets";
 @import "bootstrap";
+@import "bootsrap-sprockets";
 
  /*html body {
   text-align: center;
@@ -23,4 +23,9 @@
 */
  .page-header, h2 {
   text-align: center;
+ }
+
+ .titleImage {
+  width: 10px;
+  height: 12px;
  }
