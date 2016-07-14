@@ -24,7 +24,4 @@ class ApplicationController < ActionController::Base
     @current_user ||= User.find_by_id(session[:user_id])
   end
 
-  def admin_user
-    @admin_user = current_user.admin
-  end
 end
