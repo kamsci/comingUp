@@ -1,9 +1,4 @@
 class UsersController < ApplicationController
-  # show users profile
-  def show  
-    @user = User.find_by_id(params[:id])
-  end
-
   # create a new blank template for user, direct to new user page
   def new
     @user = User.new
@@ -14,7 +9,7 @@ class UsersController < ApplicationController
     user = User.new(user_params)
     if user.save
       session[:user_id] = user.id
-      redirect_to user_path(user.id)
+      redirect_to students_path
     else
       flash[:danger] = user.errors.messages
       redirect_to new_user_path
@@ -29,7 +24,7 @@ class UsersController < ApplicationController
   # update already existing user
   def update
     User.find(params[:id]).update(user_params)
-    redirect_to user_path(params[:id])
+    redirect_to student_path(params[:id])
   end
 
   private
