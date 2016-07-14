@@ -7,12 +7,8 @@ class StudentsController < ApplicationController
   @students = Student.all
 
   def index
-    # if @current_user && @student.users.admin == true
       @students = Student.all
       @users = User.all
-    # else
-    #   redirect_to root_path
-    # end
   end
 
   def show
@@ -21,11 +17,7 @@ class StudentsController < ApplicationController
   end
 
   def edit
-
     @student = Student.find(params[:id])
-
-    # @student = Student.find_by_id(params[:id])
-
   end
 
   def update
