@@ -5,19 +5,19 @@
 </nav>
 <div class="profile-pic">
 </div>
-<h2><%=@user.name%></h2>
+<h2><%=@students.user.name%></h2>
 <p>Cohort WDI08</p>
 <div class="branding">
-  This is a branding statement.
+  <p><%= @students.brand %></p>
 </div>
 <div class="resume">
-  This is a resume url.
+  <a href="<%= @students.resume %>"><%= @students.resume %></a>
 </div>
 <div class="linkedin">
-  This is a linkedin url.
+  <a href="<%= @students.linkedin %>"><%= @students.linkedin %></a>
 </div>
 <div class="portfolio">
-  This is a portfolio url.
+  <a href="<%= @students.portfolio %>"><%= @students.portfolio %></a>
 </div>
 <div class="github">
   This is a github url.
