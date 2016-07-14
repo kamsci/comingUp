@@ -3,21 +3,21 @@
 
 <%= f.label :name %>
 <%= f.text_field :name %>
-
+<br>
 <%= f.label :email %>
 <%= f.text_field :email %>
-
+<br>
 <%= f.label :password %>
 <%= f.text_field :password %>
-
+<br>
 <%= f.label :password_confirmation %>
 <%= f.text_field :password_confirmation %>
-
+<br>
 <%= f.radio_button :admin, 'true', :checked => true %>
 <%= f.label :admin_true, 'admin' %>
 <%= f.radio_button :admin, 'false', :checked => false %>
 <%= f.label :admin_false, 'student' %>
-
+<br>
 <%= f.submit %>
 
 <% end %>

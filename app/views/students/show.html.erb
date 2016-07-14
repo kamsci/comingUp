@@ -1,8 +1,9 @@
 <h1>Profile</h1>
 <nav>
-  <button><%= link_to('Edit User', edit_user_path(params[:id])) %></button>
+  <button><%= link_to('Edit User', edit_student_path(params[:id])) %></button>
   <button><%= link_to('Admin Management', students_path) %></button>
 </nav>
+
 <div class="profile-pic">
 </div>
 <h2><%=@user.name%></h2>
