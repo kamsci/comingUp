@@ -8,9 +8,18 @@
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
 </head>
 <body>
-<%= render '/partials/navBar' %>
-<div class="container">
+  <!-- Nav links -->
+  <% if @current_user %>
+    <%= link_to('New User', new_user_path) %>
+      <%= link_to('Events', root_path) %>
+      <%= link_to('Profile', student_path(@current_user.id)) %>
+      <%= link_to('Logout', logout_path, method: :delete) %>
+    <% else %>
+      <%= link_to('Login', login_path) %>
+    <% end %>
+  <div class="container">
   <%= render '/partials/flash' %>
+
   <%= yield %>
 </div>
 <script   src="https://code.jquery.com/jquery-2.2.4.min.js"   integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44="   crossorigin="anonymous"></script>

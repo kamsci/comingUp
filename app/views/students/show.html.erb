@@ -1,0 +1,46 @@
+  <div class="row flex-row">
+    <h1>Profile</h1>
+    <div class="profile-nav">
+      <nav>
+        <button><%= link_to('Edit User', edit_user_path(params[:id])) %></button>
+        <button><%= link_to('Admin Management', students_path) %></button>
+      </nav>
+    </div>
+  </div>
+
+  <div class="profile">
+  <div class="row">
+    <div class="profile-header">
+    <div class="prof-head-col">
+      <div class="profile-pic">
+      </div>
+    </div>
+    <div class="prof-head-col">
+      <h2><%=@students.user.name%></h2>
+      <span>Cohort WDI08</span>
+    </div>
+    <div class="prof-head-col">
+      <button><%= link_to('Edit', edit_student_path) %></button>
+    </div>
+  </div>
+  </div>
+
+<div class="row">
+  <div class="branding">
+    <p><%= @students.brand %></p>
+  </div>
+</div>
+
+<div class="row">
+    <a href="<%= @students.resume %>" class="url-link"><%= @students.resume %></a>
+</div>
+
+<div class="row">
+    <a href="<%= @students.linkedin %>" class="url-link"><%= @students.linkedin %></a>
+</div>
+
+<div class="row">
+    <a href="<%= @students.portfolio %>" class="url-link"><%= @students.portfolio %></a>
+</div>
+
+</div>
