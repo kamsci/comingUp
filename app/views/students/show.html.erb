@@ -1,0 +1,24 @@
+<h1>Profile</h1>
+<nav>
+  <button><%= link_to('Edit User', edit_user_path(params[:id])) %></button>
+  <button><%= link_to('Admin Management', students_path) %></button>
+</nav>
+<div class="profile-pic">
+</div>
+<h2><%=@user.name%></h2>
+<p>Cohort WDI08</p>
+<div class="branding">
+  This is a branding statement.
+</div>
+<div class="resume">
+  This is a resume url.
+</div>
+<div class="linkedin">
+  This is a linkedin url.
+</div>
+<div class="portfolio">
+  This is a portfolio url.
+</div>
+<div class="github">
+  This is a github url.
+</div>
