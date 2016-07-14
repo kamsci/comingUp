@@ -16,7 +16,7 @@
       </div>
     </div>
     <div class="prof-head-col">
-      <h2><%=@students.user.name%></h2>
+      <h2><%=@user.name%></h2>
       <span>Cohort WDI08</span>
     </div>
     <div class="prof-head-col">
@@ -27,20 +27,20 @@
 
 <div class="row">
   <div class="branding">
-    <p><%= @students.brand %></p>
+    <p><%= @user.student.brand %></p>
   </div>
 </div>
 
 <div class="row">
-    <a href="<%= @students.resume %>" class="url-link"><%= @students.resume %></a>
+    <a href="<%= @user.student.resume %>" class="url-link"><%= @user.student.resume %></a>
 </div>
 
 <div class="row">
-    <a href="<%= @students.linkedin %>" class="url-link"><%= @students.linkedin %></a>
+    <a href="<%= @user.student.linkedin %>" class="url-link"><%= @user.student.linkedin %></a>
 </div>
 
 <div class="row">
-    <a href="<%= @students.portfolio %>" class="url-link"><%= @students.portfolio %></a>
+    <a href="<%= @user.student.portfolio %>" class="url-link"><%= @user.student.portfolio %></a>
 </div>
 
 </div>
