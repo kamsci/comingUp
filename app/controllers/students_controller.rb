@@ -2,6 +2,7 @@ class StudentsController < ApplicationController
 
   before_action :is_authenticated
   before_action :is_admin, only: [:index]
+  before_action :is_student, only: [:edit, :update]
 
   @users = User.all
   @students = Student.all
