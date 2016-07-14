@@ -2,7 +2,7 @@
   <div class="container-fluid">
     <div class="navbar-header">
 
-      <%= image_tag 'gaIcon.jpg' %>
+      <a href="#"><%= image_tag 'gaIcon.jpg' %></a>
 
       <% if @current_user && @current_user.admin %>
         <%= link_to('Events', root_path) %>
