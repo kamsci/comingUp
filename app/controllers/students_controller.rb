@@ -1,7 +1,15 @@
 class StudentsController < ApplicationController
+
+  @users = User.all
+  @students = Student.all
+
   def index
-    @students = Student.all
-    @users = User.all
+    # if @current_user && @student.users.admin == true
+      @students = Student.all
+      @users = User.all
+    # else
+    #   redirect_to root_path
+    # end
   end
 
   def show
