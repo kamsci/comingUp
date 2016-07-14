@@ -1,4 +1,8 @@
 class StudentsController < ApplicationController
+
+  before_action :is_authenticated
+  before_action :is_admin, only: [:index]
+
   def index
     # @students = Student.all
     @users = User.all
@@ -10,7 +14,7 @@ class StudentsController < ApplicationController
   end
 
   def edit
-    # @student = Student.find(params[:id])
+    # @student = Student.find_by_id(params[:id])
   end
 
   def update
