@@ -7,7 +7,6 @@ class StudentsController < ApplicationController
   def show
     @students = Student.find(params[:id])
     @user = User.all
-    # render json: @user
   end
 
   def edit

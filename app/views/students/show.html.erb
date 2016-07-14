@@ -1,24 +1,32 @@
 <h1>Profile</h1>
+
 <nav>
   <button><%= link_to('Edit User', edit_user_path(params[:id])) %></button>
   <button><%= link_to('Admin Management', students_path) %></button>
 </nav>
+
 <div class="profile-pic">
 </div>
+
 <h2><%=@students.user.name%></h2>
 <p>Cohort WDI08</p>
+
 <div class="branding">
   <p><%= @students.brand %></p>
 </div>
+
 <div class="resume">
   <a href="<%= @students.resume %>"><%= @students.resume %></a>
 </div>
+
 <div class="linkedin">
   <a href="<%= @students.linkedin %>"><%= @students.linkedin %></a>
 </div>
+
 <div class="portfolio">
   <a href="<%= @students.portfolio %>"><%= @students.portfolio %></a>
 </div>
+
 <div class="github">
   This is a github url.
 </div>
