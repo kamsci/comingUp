@@ -51,3 +51,7 @@ group :development do
   gem 'spring'
 end
 
+gem 'rest-client'
+
+gem 'bootstrap_form'
+

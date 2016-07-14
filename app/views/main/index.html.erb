@@ -1,2 +1,10 @@
-<h1>Main#index</h1>
-<p>Find me in app/views/main/index.html.erb</p>
+<div class="page-header">
+  <h1>Coming up in the world of Code</h1>
+</div>
+
+<% @data['results'].each do |d| %>
+  <h2><a href="<%= d['event_url'] %>"><%= d['group']['name'] %></a></h1>
+  <div class="well">
+    <p><%= sanitize(d['description']) %></p>
+  </div>
+<% end %>
