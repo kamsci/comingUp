@@ -1,4 +1,8 @@
 class UsersController < ApplicationController
+  
+  before_action :is_authenticated
+  before_action :is_admin
+
   # create a new blank template for user, direct to new user page
   def new
     @user = User.new

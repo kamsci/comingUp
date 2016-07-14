@@ -4,6 +4,7 @@ class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
 
   before_action :current_user
+  # before_action :admin_user
 
   def is_authenticated
     unless current_user
@@ -12,8 +13,18 @@ class ApplicationController < ActionController::Base
     end
   end
 
+  def is_admin 
+    unless current_user && current_user.admin
+      flash[:danger] = 'Permission Denied'
+      redirect_to root_path
+    end
+  end
+
   def current_user
     @current_user ||= User.find_by_id(session[:user_id])
   end
-  
+
+  def admin_user
+    @admin_user = current_user.admin
+  end
 end
