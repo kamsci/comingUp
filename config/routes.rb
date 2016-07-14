@@ -2,8 +2,6 @@ Rails.application.routes.draw do
 
   root 'main#index'
 
-  #get 'main/open_events' => 'main#open_events'
-
   resources :users
 
   resources :students
