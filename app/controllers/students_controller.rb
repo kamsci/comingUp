@@ -8,25 +8,17 @@ class StudentsController < ApplicationController
   @students = Student.all
 
   def index
-    # if @current_user && @student.users.admin == true
       @students = Student.all
       @users = User.all
-    # else
-    #   redirect_to root_path
-    # end
   end
 
   def show
-    @students = Student.find(params[:id])
-    @user = User.all
+    @user = User.find(params[:id])
+    # render json: @user.student
   end
 
   def edit
-
     @student = Student.find(params[:id])
-
-    # @student = Student.find_by_id(params[:id])
-
   end
 
   def update

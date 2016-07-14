@@ -13,6 +13,7 @@ class UsersController < ApplicationController
     user = User.new(user_params)
     if user.save
       session[:user_id] = user.id
+      @student = user.students.create()
       redirect_to students_path
     else
       flash[:danger] = user.errors.messages
@@ -22,7 +23,7 @@ class UsersController < ApplicationController
 
   # pull user info, populate form, pull up form
   def edit
-    @user = User.find(params[:id])
+    @user = User.find_by_id(params[:id])
   end
 
   # update already existing user
