@@ -2,6 +2,7 @@ class StudentsController < ApplicationController
 
   before_action :is_authenticated
   before_action :is_admin, only: [:index]
+  before_action :is_student, only: [:edit, :update]
 
   @users = User.all
   @students = Student.all
@@ -12,8 +13,8 @@ class StudentsController < ApplicationController
   end
 
   def show
-    @students = Student.find(params[:id])
-    @user = User.all
+    @user = User.find(params[:id])
+    # render json: @user.student
   end
 
   def edit
