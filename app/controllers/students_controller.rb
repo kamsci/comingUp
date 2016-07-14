@@ -17,8 +17,8 @@ class StudentsController < ApplicationController
   end
 
   def show
-    @students = Student.find(params[:id])
-    @user = User.all
+    @user = User.find(params[:id])
+    # render json: @user.student
   end
 
   def edit
