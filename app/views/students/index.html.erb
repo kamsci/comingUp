@@ -1,2 +1,9 @@
-<h1>Students#index</h1>
-<p>Find me in app/views/students/index.html.erb</p>
+<h1>Administrator Management Page</h1>
+<nav>
+  <button><%= link_to('Create User', new_user_path) %></button>
+</nav>
+<ul>
+  <% @users.each do |user| %>
+  <li><a href="students/<%=user.id%>"><%=user.name%></a></li>
+  <% end %>
+</ul>
