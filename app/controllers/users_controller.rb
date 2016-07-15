@@ -13,7 +13,8 @@ class UsersController < ApplicationController
     user = User.new(user_params)
     if user.save && !user.admin
       user.create_student
-      redirect_to students_path
+      render json: user
+      # redirect_to students_path
     elsif user.save && user.admin
       redirect_to students_path
     else

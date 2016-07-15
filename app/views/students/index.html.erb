@@ -11,7 +11,8 @@
     <% @users.order('name ASC').each do |user| %>
       <% if !user.admin %>
       <tr>
-        <td><a href="students/<%=user.id%>"><%=user.name%></a></td>
+        <td><a href="students/<%= user.id %>"><%= user.name %></a></td>
+        <td><%= user.email %></td>
         <td><button><%= link_to('Edit User', edit_user_path(user.id)) %></button></td>
       </tr>
       <% end %>
@@ -26,7 +27,7 @@
     <% @users.order('name ASC').each do |user| %>
       <% if user.admin %>
       <tr>
-        <td><%=user.name%></td>
+        <td><%= user.name %></td>
         <td><button><%= link_to('Edit User', edit_user_path(user.id)) %></button></td>
       </tr>
       <% end %>

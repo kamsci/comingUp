@@ -1,5 +1,6 @@
 class Student < ActiveRecord::Base
   belongs_to :user
+  belongs_to :pod
   has_many :reviews
 
   validates :brand,
