@@ -47,15 +47,25 @@
       </form> -->
 
       <%= form_for @user.student do |f| %>
-      <%= f.label :brand %>
-      <%= f.text_area :brand %>
-      <%= f.label :resume %>
-      <%= f.url_field :resume %>
-      <%= f.label :linkedin %>
-      <%= f.url_field :linkedin %>
-      <%= f.label :portfolio %>
-      <%= f.url_field :portfolio %>
-      <%= f.submit %>
+        <div class="row">
+          <p>Branding Statement</p>
+          <div class="branding">
+            <%= f.text_area :brand, class: 'update', readonly: 'readonly'%>
+          </div>
+        </div>
+        <div class="row">
+          <p>Resume Link</p>
+          <%= f.url_field :resume, class: 'url-link update', readonly: 'readonly'%>
+        </div>
+        <div class="row">
+          <p>LinkedIn Link</p>
+          <%= f.url_field :linkedin, class: 'url-link update', readonly: 'readonly' %>
+        </div>
+        <div class="row">
+          <p>Portfolio Link</p>
+          <%= f.url_field :portfolio, class: 'url-link update', readonly: 'readonly'%>
+        </div>
+        <%= f.submit class: 'submit-button'%>
       <% end %>
   </div>
 </div>

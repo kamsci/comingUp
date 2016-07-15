@@ -23,7 +23,7 @@ class StudentsController < ApplicationController
 
   def update
     Student.find(params[:id]).update(student_params)
-    redirect_to student_path(params[:id])
+    redirect_to student_path(params[student.user_id])
   end
 
   private
