@@ -13,10 +13,9 @@
 
 //= require jquery
 //= require jquery_ujs
-//= require students.js
-//= require turbolinks
 //= require_tree .
+//= require students.js
 
-$(document).ready(function() {
+$(document).on('page:change', function() {
   console.log('document is ready');
 });

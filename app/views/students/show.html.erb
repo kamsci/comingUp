@@ -2,10 +2,6 @@
   <div class="row flex-row">
       <h1>Profile</h1>
       <div class="profile-nav">
-        <nav>
-          <button><%= link_to('Edit User', edit_user_path(params[:id])) %></button>
-          <button><%= link_to('Admin Management', students_path) %></button>
-        </nav>
       </div>
     </div>
     <div class="profile">
@@ -21,11 +17,12 @@
           </div>
           <div class="prof-head-col">
             <button class="edit">Edit Profile</button>
+            <%= link_to 'Change Password', edit_user_path(params[:id]) %>
           </div>
         </div>
       </div>
 
-      <form method="put" action="/student/user.id/edit">
+ <!--      <form method="PUT" action="/students/">
         <div class="row">
           <p>Branding Statement</p>
           <div class="branding">
@@ -47,6 +44,28 @@
             <input class= "url-link update" readonly="readonly" type="url" value="<%= @user.student.portfolio %>" />
         </div>
         <input class="submit-button" type="submit" value="Submit">
-      </form>
+      </form> -->
+
+      <%= form_for @user.student do |f| %>
+        <div class="row">
+          <p>Branding Statement</p>
+          <div class="branding">
+            <%= f.text_area :brand, class: 'update', readonly: 'readonly'%>
+          </div>
+        </div>
+        <div class="row">
+          <p>Resume Link</p>
+          <%= f.url_field :resume, class: 'url-link update', readonly: 'readonly'%>
+        </div>
+        <div class="row">
+          <p>LinkedIn Link</p>
+          <%= f.url_field :linkedin, class: 'url-link update', readonly: 'readonly' %>
+        </div>
+        <div class="row">
+          <p>Portfolio Link</p>
+          <%= f.url_field :portfolio, class: 'url-link update', readonly: 'readonly'%>
+        </div>
+        <%= f.submit class: 'submit-button'%>
+      <% end %>
   </div>
 </div>
