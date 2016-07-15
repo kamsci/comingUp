@@ -21,7 +21,7 @@
             <span>Cohort WDI08</span>
           </div>
           <div class="prof-head-col">
-            <button class="edit"><%= link_to('Edit', edit_student_path) %></button>
+            <button class="edit">Edit Profile</button>
           </div>
         </div>
       </div>
@@ -36,7 +36,7 @@
 
         <div class="row">
             <p>Resume Link</p>
-            <input class="url-link update" readonly="readonly" type="url" value="<%= @user.student.resume %>" />
+            <input class="url-link update" readonly type="url" value="<%= @user.student.resume %>" />
         </div>
 
         <div class="row">
