@@ -1,7 +1,7 @@
 class UsersController < ApplicationController
   
   before_action :is_authenticated
-  before_action :is_admin
+  before_action :is_admin, except: [:edit, :update]
 
   # create a new blank template for user, direct to new user page
   def new
@@ -11,7 +11,6 @@ class UsersController < ApplicationController
   # create a new user in the db, redirect to admin profile
   def create
     user = User.new(user_params)
-
     if user.save && !user.admin
       user.create_student
       redirect_to students_path
