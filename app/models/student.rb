@@ -1,7 +1,6 @@
 class Student < ActiveRecord::Base
   belongs_to :user
-
-  #has_secure_password
+  has_many :reviews
 
   validates :brand,
     allow_nil: true,

@@ -29,7 +29,7 @@ class UsersController < ApplicationController
   # update already existing user
   def update
     User.find(params[:id]).update(user_params)
-    redirect_to student_path(params[:id])
+    redirect_to students_path
   end
 
   private
