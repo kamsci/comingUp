@@ -11,12 +11,13 @@ class UsersController < ApplicationController
   # create a new user in the db, redirect to admin profile
   def create
     user = User.new(user_params)
-    if user.save
-      session[:user_id] = user.id
-      @student = user.students.create()
+    if user.save && !user.admin
+      user.create_student
+      redirect_to students_path
+    elsif user.save && user.admin
       redirect_to students_path
     else
-      flash[:danger] = user.errors.messages
+      flash[:danger] = @user.errors.messages
       redirect_to new_user_path
     end
   end
@@ -36,5 +37,9 @@ class UsersController < ApplicationController
   def user_params
     params.require(:user).permit(:name, :email, :password, :admin)
   end
+
+  # def student_params
+  #   params.require(:student).permit(:brand, :linkedin, :resume, :jobtracker, :portfolio)
+  # end
 
 end
