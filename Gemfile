@@ -53,5 +53,6 @@ end
 
 gem 'rest-client'
 
+gem 'bootstrap'
 gem 'bootstrap_form'
 
