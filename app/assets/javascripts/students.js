@@ -8,6 +8,8 @@ $(document).ready(function() {
   $('.edit').on('click', function(e){
     console.log('I\'ve been clicked!');
     $('.update').removeAttr('readonly');
-    $('.submit').
+    $('.submit-button').css('display', 'block');
+    $('.update').css('background-color', 'grey').css('color', 'white');
+    $('.branding').css('background-color', 'grey');
   });
 });

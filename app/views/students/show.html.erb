@@ -26,11 +26,11 @@
         </div>
       </div>
 
-      <form method="get">
+      <form method="put" action="/student/user.id/edit">
         <div class="row">
           <p>Branding Statement</p>
           <div class="branding">
-            <textarea type="text" class="update" readonly="readonly"><%= @user.student.brand %></textarea>
+            <textarea name="<%=@user.brand%>" type="text" class="update" readonly="readonly"><%= @user.student.brand %></textarea>
           </div>
         </div>
 
