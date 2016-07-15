@@ -1,16 +1,14 @@
-<h1>New User</h1>
-  <%= form_for @user do |f| %>
+<div class="page-header">
+  <h1>New User</h1>
+</div>
+  <%= bootstrap_form_for @user do |f| %>
 
-    <%= f.label :name %>
     <%= f.text_field :name %>
     <br>
-    <%= f.label :email %>
     <%= f.text_field :email %>
     <br>
-    <%= f.label :password %>
     <%= f.text_field :password %>
     <br>
-    <%= f.label :password_confirmation %>
     <%= f.text_field :password_confirmation %>
     <br>
     <%= f.radio_button :admin, 'true', :checked => true %>

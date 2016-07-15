@@ -1,6 +1,8 @@
-<h1>Login</h1>
+<div class="page-header"> 
+  <h1>Login</h1>
+</div>
 
-<%= form_for (:user) do |f| %>
+<%= bootstrap_form_for (:user) do |f| %>
   <%= f.email_field :email, placeholder: 'Enter your email' %>
   <br>
   <%= f.password_field :password, placeholder: 'Enter your password' %>

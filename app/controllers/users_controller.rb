@@ -11,10 +11,16 @@ class UsersController < ApplicationController
   # create a new user in the db, redirect to admin profile
   def create
     user = User.new(user_params)
+<<<<<<< HEAD
     if user.save && !user.admin
       user.create_student
       redirect_to students_path
     elsif user.save && user.admin
+=======
+    if user.save
+      session[:user_id] = user.id
+      @students = user.students.create()
+>>>>>>> 7a7bea518daf98a1a2973bf5844129bbe2a81f62
       redirect_to students_path
     else
       flash[:danger] = @user.errors.messages
