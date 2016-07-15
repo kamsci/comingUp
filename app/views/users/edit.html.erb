@@ -1,17 +1,17 @@
 <h1>Edit User</h1>
-<%= form_for @user do |f| %>
-<br>
-<%= f.label :name %>
-<%= f.text_field :name %>
-<br>
-<%= f.label :email %>
-<%= f.text_field :email %>
-<br>
-<%= f.radio_button :admin, 'true', :checked => true %>
-<%= f.label :admin_true, 'admin' %>
-<%= f.radio_button :admin, 'false', :checked => false %>
-<%= f.label :admin_false, 'student' %>
-<br>
-<%= f.submit %>
-
-<% end %>
+  <%= form_for @user do |f| %>
+  <br>
+    <%= f.label :name %>
+    <%= f.text_field :name %>
+    <br>
+    <%= f.label :email %>
+    <%= f.text_field :email %>
+    <br>
+    <%= f.radio_button :admin, 'true', :checked => true %>
+    <%= f.label :admin_true, 'admin' %>
+    <%= f.radio_button :admin, 'false', :checked => false %>
+    <%= f.label :admin_false, 'student' %>
+    <br>
+    <%= f.submit %>
+    <%= link_to('Cancel', students_path) %>
+  <% end %>
