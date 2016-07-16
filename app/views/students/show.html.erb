@@ -1,46 +1,71 @@
+<div class="students-profile">
   <div class="row flex-row">
-    <h1>Profile</h1>
-    <div class="profile-nav">
-      <nav>
-        <button><%= link_to('Edit User', edit_user_path(params[:id])) %></button>
-        <button><%= link_to('Admin Management', students_path) %></button>
-      </nav>
-    </div>
-  </div>
-
-  <div class="profile">
-  <div class="row">
-    <div class="profile-header">
-    <div class="prof-head-col">
-      <div class="profile-pic">
+      <h1>Profile</h1>
+      <div class="profile-nav">
       </div>
     </div>
-    <div class="prof-head-col">
-      <h2><%=@user.name%></h2>
-      <span>Cohort WDI08</span>
-    </div>
-    <div class="prof-head-col">
-      <button><%= link_to('Edit', edit_student_path) %></button>
-    </div>
+    <div class="profile">
+      <div class="row">
+        <div class="profile-header">
+          <div class="prof-head-col">
+            <div class="profile-pic">
+            </div>
+          </div>
+          <div class="prof-head-col">
+            <h2><%=@user.name%></h2>
+            <span>Cohort WDI08</span>
+          </div>
+          <div class="prof-head-col">
+            <button class="edit">Edit Profile</button>
+            <%= link_to 'Change Password', edit_user_path(params[:id]) %>
+          </div>
+        </div>
+      </div>
+
+ <!--      <form method="PUT" action="/students/">
+        <div class="row">
+          <p>Branding Statement</p>
+          <div class="branding">
+            <textarea name="<%=@user.student.brand%>" type="text" class="update" readonly="readonly"><%= @user.student.brand %></textarea>
+          </div>
+        </div>
+
+        <div class="row">
+            <p>Resume Link</p>
+            <input class="url-link update" readonly type="url" value="<%= @user.student.resume %>" />
+        </div>
+
+        <div class="row">
+            <p>LinkedIn Link</p>
+            <input class="url-link update" readonly="readonly" type="url" value="<%= @user.student.linkedin %>" />
+        </div>
+        <div class="row">
+            <p>Portfolio Link</p>
+            <input class= "url-link update" readonly="readonly" type="url" value="<%= @user.student.portfolio %>" />
+        </div>
+        <input class="submit-button" type="submit" value="Submit">
+      </form> -->
+
+      <%= form_for @user.student do |f| %>
+        <div class="row">
+          <p>Branding Statement</p>
+          <div class="branding">
+            <%= f.text_area :brand, class: 'update', readonly: 'readonly'%>
+          </div>
+        </div>
+        <div class="row">
+          <p>Resume Link</p>
+          <%= f.url_field :resume, class: 'url-link update', readonly: 'readonly'%>
+        </div>
+        <div class="row">
+          <p>LinkedIn Link</p>
+          <%= f.url_field :linkedin, class: 'url-link update', readonly: 'readonly' %>
+        </div>
+        <div class="row">
+          <p>Portfolio Link</p>
+          <%= f.url_field :portfolio, class: 'url-link update', readonly: 'readonly'%>
+        </div>
+        <%= f.submit class: 'submit-button'%>
+      <% end %>
   </div>
-  </div>
-
-<div class="row">
-  <div class="branding">
-    <p><%= @user.student.brand %></p>
-  </div>
-</div>
-
-<div class="row">
-    <a href="<%= @user.student.resume %>" class="url-link"><%= @user.student.resume %></a>
-</div>
-
-<div class="row">
-    <a href="<%= @user.student.linkedin %>" class="url-link"><%= @user.student.linkedin %></a>
-</div>
-
-<div class="row">
-    <a href="<%= @user.student.portfolio %>" class="url-link"><%= @user.student.portfolio %></a>
-</div>
-
 </div>

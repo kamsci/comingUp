@@ -9,12 +9,13 @@
 //
 // Read Sprockets README (https://github.com/rails/sprockets#sprockets-directives) for details
 // about supported directives.
-//
+
+
 //= require jquery
 //= require jquery_ujs
-//= require turbolinks
 //= require_tree .
+//= require students.js
 
-$(document).ready(function() {
+$(document).on('page:change', function() {
   console.log('document is ready');
 });

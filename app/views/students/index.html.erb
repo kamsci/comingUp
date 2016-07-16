@@ -1,7 +1,8 @@
-
-<h1>Administrator Management Page</h1>
+<div class="page-header">
+  <h1>Administrator Management Page</h1>
+</div>
 <div>
-  <button><%= link_to('Create User', new_user_path) %></button>
+  <%= link_to('Create User', new_user_path, class: 'btn btn-default') %>
 </div>
 
 <h3>Students</h3>
@@ -10,11 +11,10 @@
   <tbody>
     <% @users.order('name ASC').each do |user| %>
       <% if !user.admin %>
-      <tr>
-        <td><a href="students/<%= user.id %>"><%= user.name %></a></td>
-        <td><%= user.email %></td>
-        <td><button><%= link_to('Edit User', edit_user_path(user.id)) %></button></td>
-      </tr>
+        <tr>
+          <td><a href="students/<%=user.id%>"><%=user.name%></a></td>
+          <td><%= link_to('Edit User', edit_user_path(user.id), class: 'btn btn-default') %></td>
+        </tr>
       <% end %>
     <% end %>
   </tbody>
@@ -26,10 +26,10 @@
   <tbody>
     <% @users.order('name ASC').each do |user| %>
       <% if user.admin %>
-      <tr>
-        <td><%= user.name %></td>
-        <td><button><%= link_to('Edit User', edit_user_path(user.id)) %></button></td>
-      </tr>
+        <tr>
+          <td><%=user.name%></td>
+          <td><%= link_to('Edit User', edit_user_path(user.id), class: 'btn btn-default') %></td>
+        </tr>
       <% end %>
     <% end %>
   </tbody>

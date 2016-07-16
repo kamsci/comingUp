@@ -1,17 +1,25 @@
-<h1>Edit User</h1>
-  <%= form_for @user do |f| %>
+<div class="page-header">
+  <h1>Edit User</h1>
+</div>
+
+<%= bootstrap_form_for @user do |f| %>
   <br>
-    <%= f.label :name %>
-    <%= f.text_field :name %>
-    <br>
-    <%= f.label :email %>
-    <%= f.text_field :email %>
-    <br>
+  <%= f.text_field :name %>
+  <br>
+  <%= f.text_field :email %>
+  <br>
+  <% if @user.admin %>
     <%= f.radio_button :admin, 'true', :checked => true %>
-    <%= f.label :admin_true, 'admin' %>
+    <%= f.label :admin_true, 'student' %>
     <%= f.radio_button :admin, 'false', :checked => false %>
-    <%= f.label :admin_false, 'student' %>
+    <%= f.label :admin_false, 'admin' %>
+  <% elsif !@user.admin %>
+    <%= f.password_field :password %>
     <br>
-    <%= f.submit %>
-    <%= link_to('Cancel', students_path) %>
+    <%= f.password_field :password_confirmation %>
   <% end %>
+  <br>
+  <%= f.submit%>
+
+<% end %>
+
