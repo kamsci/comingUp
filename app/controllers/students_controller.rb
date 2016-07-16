@@ -22,11 +22,11 @@ class StudentsController < ApplicationController
   end
 
   def update
-    student = Student.find(params[:id])
-    student.update(student_params)
-    # puts params[:id], student_params
-    puts student
-    redirect_to student_path(student.user_id)
+    if @current_user
+      student = Student.find(params[:id])
+      student.update(student_params)
+      redirect_to student_path(student.user_id)
+    end
   end
 
   private
