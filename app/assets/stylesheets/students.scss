@@ -18,6 +18,17 @@
       padding: 10px;
     }
 
+    .show_on_edit {
+      display: none;
+    }
+
+    a.hide_on_edit {
+      &:hover{
+        text-decoration:none;
+      }
+
+    }
+
     .submit-button{
       display:none;
       align-self: flex-end;
@@ -25,26 +36,91 @@
       margin: 10px 20px 10px 10px;
     }
   }
-}
 
-.flex-row{
-  width: 66%;
-  margin: 20px auto;
-  h1{
-    margin: 20px 0 20px 20px;
-    font-size: 60px;
+  a.comment_brand {
+    display:block;
+    text-align: right;
+    margin: 0 20px 0 0;
+      &:hover{
+        text-decoration:none;
+      }
+  }
+
+  a.comment_resume {
+    display:block;
+    text-align: right;
+    margin: 0 20px 0 0;
+      &:hover{
+        text-decoration:none;
+      }
+  }
+  
+  a.comment_portfolio {
+    display:block;
+    text-align: right;
+    margin: 0 20px 0 0;
+      &:hover{
+        text-decoration:none;
+      }
+  }
+  
+  a.comment_linkedin {
+    display:block;
+    text-align: right;
+    margin: 0 20px 0 0;
+      &:hover{
+        text-decoration:none;
+      }
+  }
+  a.comment_jobtracker {
+    display:block;
+    text-align: right;
+    margin: 0 20px 0 0;
+      &:hover{
+        text-decoration:none;
+      }
+  }
+
+  .comment_form_brand{
+    display:none;
+  }
+
+  .feild{
+    height: 100px;
+    width: 92%;
+    border-radius: 4px;
+    overflow-y: scroll;
+    overflow-x: hidden;
+  }
+
+  .send{
+    align-self: flex-end;
+    margin: 0 20px 0 auto;
+    border-radius: 4px;
+  }
+  
+
+   .comment_form_resume{
+    display:none;
+  }
+
+   .comment_form_portfolio{
+    display:none;
+  }
+
+   .comment_form_linkedin{
+    display:none;
+  }
+
+   .comment_form_jobtracker{
+    display:none;
   }
 }
 
-.profile-nav{
-  display:flex;
-  align-items: center;
-  margin: 0px 10px 0px auto;
-    button{
-      background-color:red;
-      border-radius: 4px;
-      color: black;
-    }
+
+h1{
+  margin: 20px 0 20px 20px;
+  font-size: 60px;
 }
 
 .profile{
@@ -53,7 +129,7 @@
   width: 66%;
   justify-content:center;
   align-items: center;
-  margin: 0 auto;
+  margin: 100px auto;
   background-color:silver;
 }
 
@@ -86,18 +162,27 @@
     margin:0;
     padding:0 0 0 0px;
   }
+
+  a{
+    &:hover{
+      text-decoration:none;
+    }
+  }
+
+  div.password{
+    margin: 4px 0;
+  }
 }
 
 .prof-head-col:last-child {
   margin: 0 0 0 auto;
-  display:flex;
   align-self: flex-end;
 
   button {
-    margin: 0 -10px 20px auto;
+    margin: 0 -10px 0 auto;
     border-radius: 4px;
+    }  
   }
-}
 
 .branding {
   width: 92%;
