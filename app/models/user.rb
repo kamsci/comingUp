@@ -1,6 +1,7 @@
 class User < ActiveRecord::Base
   has_one :student
-  # accepts_nested_attributes_for :student
+  
+  accepts_nested_attributes_for :student
 
   has_secure_password
   

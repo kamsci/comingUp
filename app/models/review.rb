@@ -1,6 +1,6 @@
 class Review < ActiveRecord::Base
   belongs_to :student
 
-  validates :reviewContent,
+  validates :review_content,
     length: { maximum: 600 }
 end
