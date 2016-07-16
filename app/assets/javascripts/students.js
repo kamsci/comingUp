@@ -3,13 +3,14 @@
 // # You can use CoffeeScript in this file: http://coffeescript.org/
 
 $(document).ready(function() {
-  console.log('edit ready');
 
-  $('.edit').on('click', function(e){
-    console.log('I\'ve been clicked!');
-    $('.update').removeAttr('readonly');
+  $('.edit').on('click', function(e) {
+    $(this).blur();
+    $('.focus').focus();
     $('.submit-button').css('display', 'block');
     $('.update').css('background-color', 'grey').css('color', 'white');
     $('.branding').css('background-color', 'grey');
+    $('.hide_on_edit').css('display', 'none');
+    $('.show_on_edit').css('display', 'block');
   });
 });

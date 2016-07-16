@@ -16,56 +16,62 @@
             <span>Cohort WDI08</span>
           </div>
           <div class="prof-head-col">
+          <% if !@current_user.admin && @current_user == @user %>
             <button class="edit">Edit Profile</button>
             <%= link_to 'Change Password', edit_user_path(params[:id]) %>
+          <% end %>
           </div>
         </div>
       </div>
 
- <!--      <form method="PUT" action="/students/">
-        <div class="row">
-          <p>Branding Statement</p>
-          <div class="branding">
-            <textarea name="<%=@user.student.brand%>" type="text" class="update" readonly="readonly"><%= @user.student.brand %></textarea>
-          </div>
-        </div>
-
-        <div class="row">
-            <p>Resume Link</p>
-            <input class="url-link update" readonly type="url" value="<%= @user.student.resume %>" />
-        </div>
-
-        <div class="row">
-            <p>LinkedIn Link</p>
-            <input class="url-link update" readonly="readonly" type="url" value="<%= @user.student.linkedin %>" />
-        </div>
-        <div class="row">
-            <p>Portfolio Link</p>
-            <input class= "url-link update" readonly="readonly" type="url" value="<%= @user.student.portfolio %>" />
-        </div>
-        <input class="submit-button" type="submit" value="Submit">
-      </form> -->
-
       <%= form_for @user.student do |f| %>
+
         <div class="row">
           <p>Branding Statement</p>
           <div class="branding">
-            <%= f.text_area :brand, class: 'update', readonly: 'readonly'%>
+            <p class="hide_on_edit"><%= @user.student.brand %>
+            </p>
+            <%= f.text_area :brand, class: 'update focus show_on_edit'%>
           </div>
         </div>
+
         <div class="row">
-          <p>Resume Link</p>
-          <%= f.url_field :resume, class: 'url-link update', readonly: 'readonly'%>
+          <p>
+            <span>Resume Link</span>
+            <a class="hide_on_edit" href="<%= @user.student.resume %>"> <%= @user.student.resume %>
+            </a>
+          </p>
+          <%= f.url_field :resume, class: 'url-link update show_on_edit'%>
         </div>
+
         <div class="row">
-          <p>LinkedIn Link</p>
-          <%= f.url_field :linkedin, class: 'url-link update', readonly: 'readonly' %>
+          <p>
+            <span>LinkedIn Link</span>
+            <a class="hide_on_edit" href="<%= @user.student.linkedin %>"> <%= @user.student.linkedin %>
+            </a>
+          </p>
+          <%= f.url_field :linkedin, class: 'url-link update show_on_edit' %>
         </div>
+
         <div class="row">
-          <p>Portfolio Link</p>
-          <%= f.url_field :portfolio, class: 'url-link update', readonly: 'readonly'%>
+          <p><span>Portfolio Link</span>
+            <a class="hide_on_edit" href="<%= @user.student.portfolio %>"> <%= @user.student.portfolio %>
+            </a>
+          </p>
+          <%= f.url_field :portfolio, class: 'url-link update show_on_edit'%>
         </div>
+
+        <div class="row">
+          <p>
+            <span>Job Tracker</span>
+            <a class="hide_on_edit" href="<%= @user.student.jobtracker %>"> <%= @user.student.jobtracker %>
+            </a>
+            </p>
+          <%= f.url_field :jobtracker, class: 'url-link update show_on_edit'%>
+        </div>
+
         <%= f.submit class: 'submit-button'%>
       <% end %>
+
   </div>
 </div>
