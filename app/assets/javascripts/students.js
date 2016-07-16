@@ -13,4 +13,29 @@ $(document).ready(function() {
     $('.hide_on_edit').css('display', 'none');
     $('.show_on_edit').css('display', 'block');
   });
+
+  $('.comment_brand').on('click', function(e) {
+    e.preventDefault();
+    $('.comment_form_brand').css('display', 'block');
+  });
+
+  $('.comment_resume').on('click', function(e) {
+    e.preventDefault();
+    $('.comment_form_resume').css('display', 'block');
+  });
+
+  $('.comment_portfilio').on('click', function(e) {
+    e.preventDefault();
+    $('.comment_form_portfilio').css('display', 'block');
+  });
+
+  $('.comment_linkedin').on('click', function(e) {
+    e.preventDefault();
+    $('.comment_form_linkedin').css('display', 'block');
+  });
+
+  $('.comment_jobtracker').on('click', function(e) {
+    e.preventDefault();
+    $('.comment_form_jobtracker').css('display', 'block');
+  });
 });
