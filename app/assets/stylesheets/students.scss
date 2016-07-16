@@ -85,6 +85,21 @@
     display:none;
   }
 
+  .feild{
+    height: 100px;
+    width: 92%;
+    border-radius: 4px;
+    overflow-y: scroll;
+    overflow-x: hidden;
+  }
+
+  .send{
+    align-self: flex-end;
+    margin: 0 20px 0 auto;
+    border-radius: 4px;
+  }
+  
+
    .comment_form_resume{
     display:none;
   }

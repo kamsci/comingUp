@@ -24,9 +24,9 @@ $(document).ready(function() {
     $('.comment_form_resume').css('display', 'block');
   });
 
-  $('.comment_portfilio').on('click', function(e) {
+  $('.comment_portfolio').on('click', function(e) {
     e.preventDefault();
-    $('.comment_form_portfilio').css('display', 'block');
+    $('.comment_form_portfolio').css('display', 'block');
   });
 
   $('.comment_linkedin').on('click', function(e) {

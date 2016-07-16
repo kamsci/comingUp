@@ -27,14 +27,14 @@
         <div class="branding">
           <p class="hide_on_edit"><%= @user.student.brand %>
           </p>
-          <%= f.text_area :brand, class: 'update focus show_on_edit'%>
+          <%= f.text_area :brand, class: 'update focus show_on_edit', :autofocus => true %>
         </div>
         <% if @user != @current_user %>
           <a href="#" class="comment_brand">Leave a Comment</a>
         <% end %>
       </div>
-      <input type="text-area" class="comment_form_brand" >
-      <input type="submit" class="comment_form_brand">
+      <textarea class="comment_form_brand feild" autofocus ></textarea>
+      <input type="submit" class="comment_form_brand send">
 
       <div class="row">
         <p>
@@ -47,8 +47,8 @@
           <a href="#" class="comment_resume">Leave a Comment</a>
         <% end %>
       </div>
-      <input type="text-area" class="comment_form_resume" >
-      <input type="submit" class="comment_form_resume">
+      <textarea class="comment_form_resume feild" autofocus ></textarea>
+      <input type="submit" class="comment_form_resume send">
 
       <div class="row">
         <p>
@@ -61,8 +61,8 @@
           <a href="#" class="comment_linkedin">Leave a Comment</a>
         <% end %>
       </div>
-      <input type="text-area" class="comment_form_linkedin" >
-      <input type="submit" class="comment_form_linkedin">
+      <textarea class="comment_form_linkedin feild" autofocus ></textarea>
+      <input type="submit" class="comment_form_linkedin send">
 
       <div class="row">
         <p><span>Portfolio Link</span>
@@ -74,8 +74,8 @@
           <a href="#" class="comment_portfolio">Leave a Comment</a>
         <% end %>
       </div>
-      <input type="text-area" class="comment_form_portfolio" >
-      <input type="submit" class="comment_form_portfolio">
+      <textarea class="comment_form_portfolio feild" autofocus></textarea>
+      <input type="submit" class="comment_form_portfolio send">
 
       <div class="row">
         <p>
@@ -88,8 +88,8 @@
           <a href="#" class="comment_jobtracker">Leave a Comment</a>
         <% end %>
       </div>
-      <input type="text-area" class="comment_form_jobtracker" >
-      <input type="submit" class="comment_form_jobtracker">
+      <textarea class="comment_form_jobtracker feild" autofocus ></textarea>
+      <input type="submit" class="comment_form_jobtracker send">
 
       <%= f.submit class: 'submit-button'%>
     <% end %>
