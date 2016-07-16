@@ -1,36 +1,71 @@
 <div class="page-header">
   <h1>Administrator Management Page</h1>
 </div>
+
+<!-- Nav tabs -->
 <div>
-  <%= link_to('Create User', new_user_path, class: 'btn btn-default') %>
+
+  <ul class="nav nav-tabs" role="tablist">
+    <li role="presentation" class="active"><a href="#home" aria-controls="home" role="tab" data-toggle="tab">Students</a></li>
+    <li role="presentation"><a href="#deliverables" aria-controls="deliverables" role="tab" data-toggle="tab">Deliverables</a></li>
+    <li role="presentation"><a href="#admins" aria-controls="admins" role="tab" data-toggle="tab">Admins</a></li>
+    <li role="presentation"><a href="#new-user" aria-controls="new-user" role="tab" data-toggle="tab" class="nav-tabs-left">New User</a></li>
+  </ul>
+
+<!-- Tab panes -->
+<div class="tab-content">
+
+  <!-- Students tab -->
+  <div role="tabpanel" class="tab-pane active" id="home">
+    <h3>Students</h3>
+
+    <table class="table">
+      <tbody>
+        <% @users.order('name ASC').each do |user| %>
+          <% if !user.admin %>
+            <tr>
+              <td><a href="students/<%=user.id%>"><%=user.name%></a></td>
+              <td><%= link_to('Edit User', edit_user_path(user.id), class: 'btn btn-default') %></td>
+            </tr>
+          <% end %>
+        <% end %>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- Deliverables Tab -->
+  <div role="tabpanel" class="tab-pane" id="deliverables">
+    <h3>Deliverables</h3>
+  </div>
+
+  <!-- Admin tab -->
+  <div role="tabpanel" class="tab-pane" id="admins">
+    <h3>Administrators</h3>
+
+    <table class="table">
+      <tbody>
+        <% @users.order('name ASC').each do |user| %>
+          <% if user.admin %>
+            <tr>
+              <td><%=user.name%></td>
+              <td><%= link_to('Edit User', edit_user_path(user.id), class: 'btn btn-default') %></td>
+            </tr>
+          <% end %>
+        <% end %>
+      </tbody>
+    </table>    
+  </div>
+  <div role="tabpanel" class="tab-pane" id="new-user">
+    <div>
+      <%= link_to('Create User', new_user_path, class: 'btn btn-default') %>
+    </div>
+  </div>
+
 </div>
+<!-- end Tab Panes -->
 
-<h3>Students</h3>
+</div>
+<!-- end Nav Tabs -->
 
-<table class="table">
-  <tbody>
-    <% @users.order('name ASC').each do |user| %>
-      <% if !user.admin %>
-        <tr>
-          <td><a href="students/<%=user.id%>"><%=user.name%></a></td>
-          <td><%= link_to('Edit User', edit_user_path(user.id), class: 'btn btn-default') %></td>
-        </tr>
-      <% end %>
-    <% end %>
-  </tbody>
-</table>
 
-<h3>Administrators</h3>
 
-<table class="table">
-  <tbody>
-    <% @users.order('name ASC').each do |user| %>
-      <% if user.admin %>
-        <tr>
-          <td><%=user.name%></td>
-          <td><%= link_to('Edit User', edit_user_path(user.id), class: 'btn btn-default') %></td>
-        </tr>
-      <% end %>
-    <% end %>
-  </tbody>
-</table>
