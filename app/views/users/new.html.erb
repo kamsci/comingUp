@@ -11,10 +11,12 @@
     <br>
     <%= f.password_field :password_confirmation %>
     <br>
-    <%= f.radio_button :admin, 'true', :checked => true %>
-    <%= f.label :admin_true, 'student' %>
-    <%= f.radio_button :admin, 'false', :checked => false %>
-    <%= f.label :admin_false, 'admin' %>
+    <%= f.radio_button :admin, 'false', :checked => true %>
+    <%= f.label :admin_false, 'student' %>
+    <%= f.radio_button :admin, 'true', :checked => false %>
+    <%= f.label :admin_true, 'admin' %>
+    <br>
+
     <br>
     <%= f.submit %>
     <%= link_to('Cancel', students_path) %>

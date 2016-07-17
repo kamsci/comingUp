@@ -13,12 +13,11 @@ class UsersController < ApplicationController
     user = User.new(user_params)
     if user.save && !user.admin
       user.create_student
-      render json: user
-      # redirect_to students_path
+      redirect_to students_path
     elsif user.save && user.admin
       redirect_to students_path
     else
-      flash[:danger] = @user.errors.messages
+      flash[:danger] = user.errors.messages
       redirect_to new_user_path
     end
   end
@@ -36,7 +35,7 @@ class UsersController < ApplicationController
 
   private
   def user_params
-    params.require(:user).permit(:name, :email, :password, :admin)
+    params.require(:user).permit(:name, :email, :password, :admin, :cohort_ids => [])
   end
 
   # def student_params
