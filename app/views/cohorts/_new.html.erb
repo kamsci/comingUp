@@ -1,0 +1,4 @@
+<%= form_for Cohort.new, remote: true do |f| %>
+  <%= f.text_field :cohort, placeholder: 'Add a cohort' %>
+  <%= f.submit %>
+<% end %>

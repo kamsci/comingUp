@@ -3,17 +3,15 @@
 </div>
 
 <!-- Cohort -->
-<div>
-  <select>
-    <option>WDI08</option>
-    <option>WDI09</option>
-  </select>
-</div>
-<form action="/cohorts/new" method="GET" id="cohort">
-  <input type="text" name="cohort" placeholder="Add a cohort">
-  <input type="submit">
-</form>
+<%= render '/cohorts/new', :locals => {:cohort => Cohort.new} %>
 <br>
+
+<select>
+  <%= @cohorts.each do |cohort| %>
+    <option><%= cohort.cohort %></option> 
+  <% end %>
+</select>
+
 <!-- Nav tabs -->
 <div>
 

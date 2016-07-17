@@ -1,1 +1,5 @@
-<option><%= cohort %></option> 
+<select>
+  <%= @cohorts.each do |cohort| %>
+    <option><%= cohort.cohort %></option> 
+  <% end %>
+</select>
