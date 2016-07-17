@@ -8,7 +8,9 @@
         </div>
         <div class="prof-head-col">
           <h2><%=@user.name%></h2>
-          <span>Cohort WDI08</span>
+          <%@user.student.cohorts.each do |cohort|%>
+            <span><%=cohort.cohort%></span>
+          <% end %>
         </div>
         <div class="prof-head-col">
         <% if !@current_user.admin && @current_user == @user %>
@@ -33,6 +35,7 @@
           <a href="#" class="comment_brand">Leave a Comment</a>
         <% end %>
       </div>
+      
       <textarea class="comment_form_brand feild" autofocus ></textarea>
       <input type="submit" class="comment_form_brand send">
 

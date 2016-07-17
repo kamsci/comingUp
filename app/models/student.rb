@@ -1,10 +1,11 @@
 class Student < ActiveRecord::Base
   belongs_to :user
   has_many :reviews
-  has_and_belongs_to_many :cohorts, inverse_of: :student
+  has_and_belongs_to_many :cohorts, through: :cohorts_students, inverse_of: :student
 
   accepts_nested_attributes_for :reviews
   accepts_nested_attributes_for :cohorts
+  accepts_nested_attributes_for :user
 
   validates :brand,
     allow_nil: true,
