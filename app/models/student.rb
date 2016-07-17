@@ -1,7 +1,10 @@
 class Student < ActiveRecord::Base
   belongs_to :user
+  has_many :reviews
+  has_and_belongs_to_many :cohorts, inverse_of: :student
 
-  #has_secure_password
+  accepts_nested_attributes_for :reviews
+  accepts_nested_attributes_for :cohorts
 
   validates :brand,
     allow_nil: true,

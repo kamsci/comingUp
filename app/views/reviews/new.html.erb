@@ -1,0 +1,14 @@
+<h4>New Review</h4>
+
+</div>
+  <%= form_for @review do |f| %>
+    <%= f.label :reviewerName %>
+    <%= f.text_field :reviewerName %>
+    <br>
+    <%= f.label :reviewContent %>
+    <%= f.text_field :reviewContent%>
+    <br>
+    <%= f.submit %>
+
+  <% end %>
+
