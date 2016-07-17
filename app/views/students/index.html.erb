@@ -2,6 +2,18 @@
   <h1>Administrator Management Page</h1>
 </div>
 
+<!-- Cohort -->
+<div>
+  <select>
+    <option>WDI08</option>
+    <option>WDI09</option>
+  </select>
+</div>
+<form action="/cohorts/new" method="GET" id="cohort">
+  <input type="text" name="cohort" placeholder="Add a cohort">
+  <input type="submit">
+</form>
+<br>
 <!-- Nav tabs -->
 <div>
 
@@ -11,6 +23,7 @@
     <li role="presentation"><a href="#admins" aria-controls="admins" role="tab" data-toggle="tab">Admins</a></li>
     <li role="presentation"><a href="#new-user" aria-controls="new-user" role="tab" data-toggle="tab" class="nav-tabs-left">New User</a></li>
   </ul>
+
 
 <!-- Tab panes -->
 <div class="tab-content">
