@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
 
+  get 'auth/failure'
+
   root 'main#index'
 
   resources :users
@@ -11,6 +13,11 @@ Rails.application.routes.draw do
   post 'login', to: 'sessions#create'
 
   delete 'logout', to: 'sessions#destroy'
+
+  get 'auth/:provider/callback', to: 'auth#callback'
+
+  get 'auth/failure', to: 'auth#failure'
+  get 'auth/logout', to: 'auth#logout'
 
 
   # The priority is based upon order of creation: first created -> highest priority.
