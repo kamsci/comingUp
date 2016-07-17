@@ -15,6 +15,7 @@ class StudentsController < ApplicationController
 
   def show
     @user = User.find(params[:id])
+    # render json: @user.student.cohorts
   end
 
   def edit
