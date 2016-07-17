@@ -5,6 +5,8 @@ Rails.application.routes.draw do
   resources :users
 
   resources :students
+  
+  resources :reviews
 
   get 'login', to: 'sessions#new'
 

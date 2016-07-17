@@ -11,10 +11,37 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160713233132) do
+ActiveRecord::Schema.define(version: 20160716224204) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "cohorts", force: :cascade do |t|
+    t.string   "cohort"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "cohorts_students", force: :cascade do |t|
+    t.integer  "cohort_id"
+    t.integer  "student_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  add_index "cohorts_students", ["cohort_id"], name: "index_cohorts_students_on_cohort_id", using: :btree
+  add_index "cohorts_students", ["student_id"], name: "index_cohorts_students_on_student_id", using: :btree
+
+  create_table "reviews", force: :cascade do |t|
+    t.integer  "student_id"
+    t.string   "review_type"
+    t.datetime "created_at",     null: false
+    t.datetime "updated_at",     null: false
+    t.string   "reviewer_name"
+    t.text     "review_content"
+  end
+
+  add_index "reviews", ["student_id"], name: "index_reviews_on_student_id", using: :btree
 
   create_table "students", force: :cascade do |t|
     t.integer  "user_id"
@@ -38,5 +65,8 @@ ActiveRecord::Schema.define(version: 20160713233132) do
     t.datetime "updated_at",      null: false
   end
 
+  add_foreign_key "cohorts_students", "cohorts"
+  add_foreign_key "cohorts_students", "students"
+  add_foreign_key "reviews", "students"
   add_foreign_key "students", "users"
 end
