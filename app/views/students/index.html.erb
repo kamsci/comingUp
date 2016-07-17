@@ -6,11 +6,23 @@
 <%= render '/cohorts/new', :locals => {:cohort => Cohort.new} %>
 <br>
 
-<select>
+<!-- <select>
   <%= @cohorts.each do |cohort| %>
     <option><%= cohort.cohort %></option> 
   <% end %>
-</select>
+</select> -->
+
+<div class="filter_options_container">
+
+  <form class="filter_form">
+    <%= select("cohort", "cohort", Cohort.all.collect(&:cohort)) %>
+    <input type="submit" value="Filter" />
+  </form>
+</div>
+
+<div class="students_cohorts_container">
+  <%= render :partial => 'students_cohorts', :student => @students %>
+</div> 
 
 <!-- Nav tabs -->
 <div>
@@ -36,6 +48,7 @@
           <% if !user.admin %>
             <tr>
               <td><a href="students/<%=user.id%>"><%=user.name%></a></td>
+              <td></td>
               <td><%= link_to('Edit User', edit_user_path(user.id), class: 'btn btn-default') %></td>
             </tr>
           <% end %>

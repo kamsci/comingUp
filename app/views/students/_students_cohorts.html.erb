@@ -1,0 +1,13 @@
+    <h3>Students</h3>
+
+    <table class="table">
+      <tbody>
+        <% @students.each do |student| %>
+          <tr>
+            <td><a href="students/<%=student.student_id%>"><%= student.name %></a></td>
+
+            <td><%= student.cohort %></td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
