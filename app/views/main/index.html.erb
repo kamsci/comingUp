@@ -2,9 +2,36 @@
   <h1>Coming up in the world of Code</h1>
 </div>
 
-<% @data['results'].each do |d| %>
-  <h2><a href="<%= d['event_url'] %>"><%= d['group']['name'] %></a></h1>
-  <div class="well">
-    <p class="description"><%= sanitize(d['description']) %></p>
+<div>
+
+  <ul class="nav nav-tabs" role="tablist">
+    <li role="presentation" class="active"><a href="#home" aria-controls="home" role="tab" data-toggle="tab">Search</a></li>
+    <li role="presentation"><a href="#profile" aria-controls="profile" role="tab" data-toggle="tab">Staff Picks</a></li>
+    <li role="presentation"><a href="#messages" aria-controls="messages" role="tab" data-toggle="tab">Links</a></li>
+    <li role="presentation"><a href="#settings" aria-controls="settings" role="tab" data-toggle="tab">Profile</a></li>
+  </ul>
+
+  <!-- <ul class="list-group">
+    <li class="list-group-item list-group-item-success">Dapibus ac facilisis in</li>
+    <li class="list-group-item list-group-item-info">Cras sit amet nibh libero</li>
+    <li class="list-group-item list-group-item-warning">Porta ac consectetur ac</li>
+    <li class="list-group-item list-group-item-danger">Vestibulum at eros</li>
+  </ul> -->
+
+  <div class="tab-content">
+    <div role="tabpanel" class="tab-pane fade in active" id="home">
+      <%= render '/partials/meetupSearch' %>
+    </div>
+    <div role="tabpanel" class="tab-pane fade" id="profile">
+      <%= render '/partials/staffPicks' %>
+    </div>
+    <div role="tabpanel" class="tab-pane fade" id="messages">
+      <%= render '/partials/links' %>
+    </div>
+    <div role="tabpanel" class="tab-pane fade" id="settings">
+      <%= render '/partials/profile' %>
+    </div>
   </div>
-<% end %>
+
+</div>
+
