@@ -32,6 +32,9 @@ gem 'validate_url'
 # Email Validator
 gem 'email_validator'
 
+gem 'omniauth'
+gem 'omniauth-github'
+
 # Use Unicorn as the app server
 # gem 'unicorn'
 

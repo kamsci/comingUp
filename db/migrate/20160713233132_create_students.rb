@@ -7,7 +7,7 @@ class CreateStudents < ActiveRecord::Migration
       t.text :resume
       t.text :jobtracker
       t.text :portfolio
-
+      
       t.timestamps null: false
     end
   end
