@@ -6,6 +6,7 @@
           <div class="profile-pic">
           </div>
         </div>
+        <!-- This is the Profile Info -->
         <div class="prof-head-col">
           <h2><%=@user.name%></h2>
           <%@user.student.cohorts.each do |cohort|%>
@@ -21,10 +22,10 @@
         </div>
       </div>
     </div>
-
+    <!-- This is the student's deliverables -->
     <%= form_for @user.student do |f| %>
-
-      <div class="row">
+      <!-- Branding Statement -->
+      <div class="row brand">
         <p>Branding Statement</p>
         <div class="branding">
           <p class="hide_on_edit"><%= @user.student.brand %>
@@ -33,12 +34,11 @@
         </div>
         <% if @user != @current_user %>
           <a href="#" class="comment_brand">Leave a Comment</a>
+        <% elsif @user == @current_user && @brand.length > 0 %>
+          <a href="#" class="reviews_brand">See Reviews</a>
         <% end %>
       </div>
-      
-      <textarea class="comment_form_brand feild" autofocus ></textarea>
-      <input type="submit" class="comment_form_brand send">
-
+      <!-- Resume Link -->
       <div class="row">
         <p>
           <span>Resume Link</span>
@@ -48,11 +48,11 @@
         <%= f.url_field :resume, class: 'url-link update show_on_edit'%>
         <% if @user != @current_user %>
           <a href="#" class="comment_resume">Leave a Comment</a>
+        <% elsif @user == @current_user && @resume.length > 1 %>
+          <a href="#" class="reviews_resume">See Reviews</a>
         <% end %>
       </div>
-      <textarea class="comment_form_resume feild" autofocus ></textarea>
-      <input type="submit" class="comment_form_resume send">
-
+      <!-- LinkedIn Link -->
       <div class="row">
         <p>
           <span>LinkedIn Link</span>
@@ -62,11 +62,12 @@
         <%= f.url_field :linkedin, class: 'url-link update show_on_edit' %>
         <% if @user != @current_user %>
           <a href="#" class="comment_linkedin">Leave a Comment</a>
+        <% elsif @user == @current_user && @linkedin.length > 1 %>
+          <a href="#" class="reviews_linkedin">See Reviews</a>
         <% end %>
       </div>
-      <textarea class="comment_form_linkedin feild" autofocus ></textarea>
-      <input type="submit" class="comment_form_linkedin send">
-
+  
+      <!-- Portfolio Link -->
       <div class="row">
         <p><span>Portfolio Link</span>
           <a class="hide_on_edit" href="<%= @user.student.portfolio %>"> <%= @user.student.portfolio %>
@@ -75,11 +76,12 @@
         <%= f.url_field :portfolio, class: 'url-link update show_on_edit'%>
         <% if @user != @current_user %>
           <a href="#" class="comment_portfolio">Leave a Comment</a>
+        <% elsif @user == @current_user && @portfolio.length > 1 %>
+          <a href="#" class="reviews_portfolio">See Reviews</a>
         <% end %>
       </div>
-      <textarea class="comment_form_portfolio feild" autofocus></textarea>
-      <input type="submit" class="comment_form_portfolio send">
-
+      
+      <!-- Job Tracker Link -->
       <div class="row">
         <p>
           <span>Job Tracker</span>
@@ -89,13 +91,76 @@
         <%= f.url_field :jobtracker, class: 'url-link update show_on_edit'%>
         <% if @user != @current_user %>
           <a href="#" class="comment_jobtracker">Leave a Comment</a>
+        <% elsif @user == @current_user && @jobtracker.length > 1 %>
+          <a href="#" class="reviews_jobtracker">See Reviews</a>
         <% end %>
       </div>
-      <textarea class="comment_form_jobtracker feild" autofocus ></textarea>
-      <input type="submit" class="comment_form_jobtracker send">
 
       <%= f.submit class: 'submit-button'%>
     <% end %>
+  </div>
+
+  <!-- Comment for Branding -->
+  <div class="comment_form_brand">
+    <%= form_for @review = Review.new do |r| %>
+      <%= r.hidden_field :student_id, :value => @user.student.id %>
+      <%= r.hidden_field :review_type, :value => 'brand' %>
+      <%= r.hidden_field :reviewer_name, :value => @current_user.name %>
+      <%= r.text_area :review_content, class: 'feild', :autofocus => true %>      
+      <%= r.submit class:'send' %>
+    <% end %>
+    <a href="#" class="cancel_brand">Cancel</a>
+  </div>
+
+  <!-- Comment for Resume Link -->
+  <div class="comment_form_resume">
+    <%= form_for @review = Review.new do |r| %>
+      <%= r.hidden_field :student_id, :value => @user.student.id %>
+      <%= r.hidden_field :review_type, :value => 'resume' %>
+      <%= r.hidden_field :reviewer_name, :value => @current_user.name %>
+      <%= r.text_area :review_content, class: 'feild', :autofocus => true %>
+      <%= r.submit class:'send' %>
+    <% end %>
+    <a href="#" class="cancel_resume">Cancel</a>
+  </div>
+
+  <!-- Comment for LinkedIn Link -->
+  <div class="comment_form_linkedin">
+    <%= form_for @review = Review.new do |r| %>
+      <%= r.hidden_field :student_id, :value => @user.student.id %>
+      <%= r.hidden_field :review_type, :value => 'linkedin' %>
+      <%= r.hidden_field :reviewer_name, :value => @current_user.name %>
+      <%= r.text_area :review_content, class: 'feild', :autofocus => true %>
+      <%= r.submit class:'send' %>
+    <% end %>
+    <a href="#" class="cancel_linkedin">Cancel</a>
+  </div>
+
+  <!-- Comment for Portfolio Link -->
+  <div class="comment_form_portfolio">
+    <%= form_for @review = Review.new do |r| %>
+      <%= r.hidden_field :student_id, :value => @user.student.id %>
+      <%= r.hidden_field :review_type, :value => 'portfolio' %>
+      <%= r.hidden_field :reviewer_name, :value => @current_user.name %>
+      <%= r.text_area :review_content, class: 'feild', :autofocus => true %>      
+      <%= r.submit class:'send' %>
+    <% end %>
+    <a href="#" class="cancel_portfolio">Cancel</a>
 
   </div>
+
+  <!-- Comment for Job Tracker Link -->
+  <div class="comment_form_jobtracker">
+    <%= form_for @review = Review.new do |r| %>
+      <%= r.hidden_field :student_id, :value => @user.student.id %>
+      <%= r.hidden_field :review_type, :value => 'jobtracker' %>
+      <%= r.hidden_field :reviewer_name, :value => @current_user.name %>
+      <%= r.text_area :review_content, class: 'feild', :autofocus => true %>
+      <%= r.submit class:'send' %>
+    <% end %>
+    <a href="#" class="cancel_jobtracker">Cancel</a>
+  </div>
+
+
+
 </div>

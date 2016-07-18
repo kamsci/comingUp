@@ -10,7 +10,10 @@ class ReviewsController < ApplicationController
   end
 
   def create
-    review = Review.create(review_params)
+    @review = Review.create(review_params)
+    student = @review.student_id
+    user = Student.find(student)
+    redirect_to student_path(user.user_id)
   end
 
   def edit
@@ -22,7 +25,7 @@ class ReviewsController < ApplicationController
   private
 
   def review_params
-    params.require(:review).permit(:review_type, :reviewerName, :reviewContent, :student_id)
+    params.require(:review).permit(:review_type, :reviewer_name, :review_content, :student_id)
   end
 
 end

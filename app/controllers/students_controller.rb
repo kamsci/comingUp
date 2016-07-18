@@ -15,7 +15,25 @@ class StudentsController < ApplicationController
 
   def show
     @user = User.find(params[:id])
-    # render json: @user.student.cohorts
+    @review = Review.where(student_id: params[:id])
+    @brand = []
+    @linkedin = []
+    @resume = []
+    @jobtracker = []
+    @portfolio = []
+    @review.each do |review|
+      if review.review_type == 'brand'
+        @brand.push(review)
+      elsif review.review_type == 'linkedin'
+        @linkedin.push(review)
+      elsif review.review_type == 'resume'
+        @resume.push(review)
+      elsif review.review_type == 'jobtracker'
+        @jobtracker.push(review)
+      elsif review.review_type == 'portfolio'
+        @portfolio.push(review)
+      end
+    end
   end
 
   def edit
