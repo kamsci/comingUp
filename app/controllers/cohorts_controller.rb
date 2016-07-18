@@ -1,7 +1,13 @@
 class CohortsController < ApplicationController
 
   def index
-    @cohorts = Cohort.all
+    # @students = User.joins(:students).group(:student_id)
+    # @cohorts = Cohort.select('*').joins(:students)
+    # @students = Cohort.select([:id, :cohort]).jgroup(:id, :cohort)
+    @cohorts = Cohort.all.order('cohort ASC')
+    @students = User.joins(:student, :cohorts).select('*')
+    # render json: @students
+    # render json: @cohorts
   end
 
   def new

@@ -1,7 +1,15 @@
-<h2>Cohorts</h2>
+<div class="page-header">
+  <h1>Cohorts</h1>
+</div>
 
-<select>
-  <%= @cohorts.each do |cohort| %>
-    <option><%= cohort.cohort %></option> 
+
+  <% @cohorts.each do |e| %>
+    <div>
+      <h4><%= e.cohort %></h4>
+      <% @students.each do |s| %>
+        <% if s.cohort_id == e.id %>
+          <p><%= s.name %></p>
+        <% end %> 
+      <% end %>
+    </div>
   <% end %>
-</select>
