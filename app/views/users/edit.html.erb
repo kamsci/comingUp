@@ -14,6 +14,9 @@
       <%= f.label :admin_true, 'student' %>
       <%= f.radio_button :admin, 'false', :checked => false %>
       <%= f.label :admin_false, 'admin' %>
+      <div class="hide_admin">
+        <%= collection_select(:cohorts_students, :cohort_id, Cohort.all, :id, :cohort) %>
+      </div>
     <% elsif @current_user.id == @user.id %>
       <%= f.password_field :password %>
       <br>
