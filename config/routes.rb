@@ -10,6 +10,8 @@ Rails.application.routes.draw do
 
   resources :cohorts
 
+  resources :deliverables
+
   get 'login', to: 'sessions#new'
 
   post 'login', to: 'sessions#create'

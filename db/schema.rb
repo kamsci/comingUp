@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160716233659) do
+ActiveRecord::Schema.define(version: 20160718195601) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -31,6 +31,18 @@ ActiveRecord::Schema.define(version: 20160716233659) do
 
   add_index "cohorts_students", ["cohort_id"], name: "index_cohorts_students_on_cohort_id", using: :btree
   add_index "cohorts_students", ["student_id"], name: "index_cohorts_students_on_student_id", using: :btree
+
+  create_table "deliverables", force: :cascade do |t|
+    t.string   "deliverable_type"
+    t.string   "deliverable_name"
+    t.date     "due_date"
+    t.text     "notes"
+    t.integer  "cohort_id"
+    t.datetime "created_at",       null: false
+    t.datetime "updated_at",       null: false
+  end
+
+  add_index "deliverables", ["cohort_id"], name: "index_deliverables_on_cohort_id", using: :btree
 
   create_table "githubstudents", force: :cascade do |t|
     t.integer  "user_id"
@@ -79,6 +91,7 @@ ActiveRecord::Schema.define(version: 20160716233659) do
 
   add_foreign_key "cohorts_students", "cohorts"
   add_foreign_key "cohorts_students", "students"
+  add_foreign_key "deliverables", "cohorts"
   add_foreign_key "githubstudents", "users"
   add_foreign_key "reviews", "students"
   add_foreign_key "students", "users"

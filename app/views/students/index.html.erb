@@ -28,7 +28,11 @@
           <%= select("cohort", "cohort", Cohort.all.collect(&:cohort), :include_blank => true) %>     
         <input type="submit" value="Filter" />
       </form>
+      <div>
+        <h3 id="cohort-display"></h3>
+      </div>
     </div>
+
     <br>
 
   <!-- Secondary Students Nav -->

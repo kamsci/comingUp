@@ -32,7 +32,28 @@
 
   <!-- Deliverables Tab -->
   <div role="tabpanel" class="tab-pane" id="deliverables">
-    <h3>Deliverables</h3>
+   
+    <h3 class="deliverable-header">Deliverables</h3>
+
+    <h4 class="deliverable-header" "><%= @deliverables[0].cohort.cohort %></h4>
+    <table class="table">
+      <thead><tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Notes</th>
+        <th>Due Date</th>
+      </tr></thead>
+      <tbody>
+        <% @deliverables.each do |s| %>
+        <tr>
+          <td><%= s.deliverable_type %></td>
+          <td><%= s.deliverable_name %></td>
+          <td><%= s.notes %></td>
+          <td><%= s.due_date %></td>
+        </tr>
+      <% end %>
+      </tbody>
+    </table>
   </div> <!-- End Deliverables -->
 
   <!-- Pods Tab -->
