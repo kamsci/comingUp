@@ -1,5 +1,6 @@
 class User < ActiveRecord::Base
   has_one :student
+  has_one :githubstudent
   has_many :cohorts, through: :student
   has_many :reviews, through: :student
   has_many :deliverables, through: :cohorts

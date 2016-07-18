@@ -6,5 +6,6 @@
   <%= f.text_field :deliverable_type, placeholder: 'ie. \'brand\' or \'resume\'' %>
   <%= f.text_field :deliverable_name, placeholder: 'ie. Submit your resumes ya\'ll!' %>
   <%= f.text_area :notes, placeholder: 'Notes for students' %>
+  <%= collection_select(:cohorts_students, :cohort_id, Cohort.all, :id, :cohort) %>
   <%= f.submit %>
 <% end %>

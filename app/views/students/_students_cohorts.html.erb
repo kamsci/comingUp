@@ -3,8 +3,8 @@
 
   <ul class="nav nav-tabs" role="tablist">
     <li role="presentation" class="active"><a href="#home2" aria-controls="home2" role="tab" data-toggle="tab">Cohort List</a></li>
-    <li role="presentation"><a href="#deliverables" aria-controls="deliverables" role="tab" data-toggle="tab">Deliverables</a></li>
-    <li role="presentation"><a href="#pods" aria-controls="pods" role="tab" data-toggle="tab">Pods</a></li>
+    <li role="presentaion"><a href="#deliverables" aria-controls="deliverables" role="tab" data-toggle="tab">Deliverables</a></li>
+    <li role="presentaion"><a href="#pods" aria-controls="pods" role="tab" data-toggle="tab">Pods</a></li>
   </ul>
 
 <!-- Tab panes -->
@@ -29,9 +29,8 @@
 
   </div> <!-- End Students -->
 
-
   <!-- Deliverables Tab -->
-  <div role="tabpanel" class="tab-pane" id="deliverables">
+  <div role="tabpanel" class="tab-pane fade" id="deliverables">
    
     <h3 class="deliverable-header">Deliverables</h3>
 
@@ -54,10 +53,11 @@
       <% end %>
       </tbody>
     </table>
+
   </div> <!-- End Deliverables -->
 
   <!-- Pods Tab -->
-  <div role="tabpanel" class="tab-pane" id="pods">
+  <div role="tabpanel" class="tab-pane fade" id="pods">
     <h2>Student Pods (<span data-bind="text: pods().length"></span>)</h2>
 
     <table>
@@ -74,7 +74,7 @@
   </div> <!-- End Pods -->
 
   <!-- Tab -->
-  <div role="tabpanel" class="tab-pane" id="#">
+  <div role="tabpanel" class="tab-pane fade" id="#">
   </div>
 
 </div>

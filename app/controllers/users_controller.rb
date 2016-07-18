@@ -6,6 +6,7 @@ class UsersController < ApplicationController
   # create a new blank template for user, direct to new user page
   def new
     @user = User.new
+    # @cohorts = Cohort.all
   end
 
   # create a new user in the db, redirect to admin profile
@@ -13,6 +14,7 @@ class UsersController < ApplicationController
     user = User.new(user_params)
     if user.save && !user.admin
       user.create_student
+      CohortsStudents.create(cohort_id: params[:cohorts_students][:cohort_id][0], student_id: user.student.id)
       redirect_to students_path
     elsif user.save && user.admin
       redirect_to students_path
@@ -30,6 +32,9 @@ class UsersController < ApplicationController
   # update already existing user
   def update
     User.find(params[:id]).update(user_params)
+    person = User.find(params[:id])
+    person.student.id
+    check = CohortsStudents.where(student_id: person.student.id).update_all(cohort_id: params[:cohorts_students][:cohort_id][0])
     redirect_to students_path
   end
 
@@ -37,9 +42,5 @@ class UsersController < ApplicationController
   def user_params
     params.require(:user).permit(:name, :email, :password, :admin, :cohort_ids => [])
   end
-
-  # def student_params
-  #   params.require(:student).permit(:brand, :linkedin, :resume, :jobtracker, :portfolio)
-  # end
 
 end
