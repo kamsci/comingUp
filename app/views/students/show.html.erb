@@ -93,48 +93,63 @@
 
 
   <!-- Comment for Branding -->
-  <%= form_for @review = Review.new do |r| %>
-    <%= r.hidden_field :student_id, :value => @user.student.id %>
-    <%= r.hidden_field :review_type, :value => 'brand' %>
-    <%= r.hidden_field :reviewer_name, :value => @current_user.name %>
-    <%= r.text_area :review_content, class: 'comment_form_brand feild', :autofocus => true %>
-    <%= r.submit class:'comment_form_brand send' %>
-  <% end %>
+  <div class="comment_form_brand">
+    <%= form_for @review = Review.new do |r| %>
+      <%= r.hidden_field :student_id, :value => @user.student.id %>
+      <%= r.hidden_field :review_type, :value => 'brand' %>
+      <%= r.hidden_field :reviewer_name, :value => @current_user.name %>
+      <%= r.text_area :review_content, class: 'feild', :autofocus => true %>
+      <%= r.submit class:'send' %>
+    <% end %>
+    <a href="#" class="cancel">Cancel</a>
+  </div>
 
   <!-- Comment for Resume Link -->
-  <%= form_for @review = Review.new do |r| %>
-    <%= r.hidden_field :student_id, :value => @user.student.id %>
-    <%= r.hidden_field :review_type, :value => 'resume' %>
-    <%= r.hidden_field :reviewer_name, :value => @current_user.name %>
-    <%= r.text_area :review_content, class: 'comment_form_resume feild', :autofocus => true %>
-    <%= r.submit class:'comment_form_resume send' %>
-  <% end %>
+  <div class="comment_form_resume">
+    <%= form_for @review = Review.new do |r| %>
+      <%= r.hidden_field :student_id, :value => @user.student.id %>
+      <%= r.hidden_field :review_type, :value => 'resume' %>
+      <%= r.hidden_field :reviewer_name, :value => @current_user.name %>
+      <%= r.text_area :review_content, class: 'feild', :autofocus => true %>
+      <%= r.submit class:'send' %>
+    <% end %>
+    <a href="#" class="cancel">Cancel</a>
+  </div>
 
   <!-- Comment for LinkedIn Link -->
-  <%= form_for @review = Review.new do |r| %>
-    <%= r.hidden_field :student_id, :value => @user.student.id %>
-    <%= r.hidden_field :review_type, :value => 'linkedin' %>
-    <%= r.hidden_field :reviewer_name, :value => @current_user.name %>
-    <%= r.text_area :review_content, class: 'comment_form_linkedin feild', :autofocus => true %>
-    <%= r.submit class:'comment_form_linkedin send' %>
-  <% end %>
+  <div class="comment_form_linkedin">
+    <%= form_for @review = Review.new do |r| %>
+      <%= r.hidden_field :student_id, :value => @user.student.id %>
+      <%= r.hidden_field :review_type, :value => 'linkedin' %>
+      <%= r.hidden_field :reviewer_name, :value => @current_user.name %>
+      <%= r.text_area :review_content, class: 'feild', :autofocus => true %>
+      <%= r.submit class:'send' %>
+    <% end %>
+    <a href="#" class="cancel">Cancel</a>
+  </div>
 
   <!-- Comment for Portfolio Link -->
-  <%= form_for @review = Review.new do |r| %>
-    <%= r.hidden_field :student_id, :value => @user.student.id %>
-    <%= r.hidden_field :review_type, :value => 'portfolio' %>
-    <%= r.hidden_field :reviewer_name, :value => @current_user.name %>
-    <%= r.text_area :review_content, class: 'comment_form_portfolio feild', :autofocus => true %>
-    <%= r.submit class:'comment_form_portfolio send' %>
-  <% end %>
+  <div class="comment_form_portfolio">
+    <%= form_for @review = Review.new do |r| %>
+      <%= r.hidden_field :student_id, :value => @user.student.id %>
+      <%= r.hidden_field :review_type, :value => 'portfolio' %>
+      <%= r.hidden_field :reviewer_name, :value => @current_user.name %>
+      <%= r.text_area :review_content, class: 'feild', :autofocus => true %>
+      <%= r.submit class:'send' %>
+    <% end %>
+    <a href="#" class="cancel">Cancel</a>
+  </div>
 
   <!-- Comment for Job Tracker Link -->
-  <%= form_for @review = Review.new do |r| %>
-    <%= r.hidden_field :student_id, :value => @user.student.id %>
-    <%= r.hidden_field :review_type, :value => 'jobtracker' %>
-    <%= r.hidden_field :reviewer_name, :value => @current_user.name %>
-    <%= r.text_area :review_content, class: 'comment_form_jobtracker feild', :autofocus => true %>
-    <%= r.submit class:'comment_form_jobtracker send' %>
-  <% end %>
+  <div class="comment_form_jobtracker">
+    <%= form_for @review = Review.new do |r| %>
+      <%= r.hidden_field :student_id, :value => @user.student.id %>
+      <%= r.hidden_field :review_type, :value => 'jobtracker' %>
+      <%= r.hidden_field :reviewer_name, :value => @current_user.name %>
+      <%= r.text_area :review_content, class: 'feild', :autofocus => true %>
+      <%= r.submit class:'send' %>
+    <% end %>
+    <a href="#" class="cancel">Cancel</a>
+  </div>
 
 </div>

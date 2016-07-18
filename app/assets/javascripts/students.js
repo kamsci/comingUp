@@ -38,4 +38,10 @@ $(document).ready(function() {
     e.preventDefault();
     $('.comment_form_jobtracker').css('display', 'block');
   });
+
+  $('.cancel').on('click', function(e) {
+    e.preventDefault();
+    $('.cancel').parent().css('display', 'none');
+  });
+  
 });
