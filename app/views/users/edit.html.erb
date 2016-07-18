@@ -2,24 +2,27 @@
   <h1>Edit User</h1>
 </div>
 
-<%= bootstrap_form_for @user do |f| %>
-  <br>
-  <%= f.text_field :name %>
-  <br>
-  <%= f.text_field :email %>
-  <br>
-  <% if @user.admin %>
-    <%= f.radio_button :admin, 'true', :checked => true %>
-    <%= f.label :admin_true, 'student' %>
-    <%= f.radio_button :admin, 'false', :checked => false %>
-    <%= f.label :admin_false, 'admin' %>
-  <% elsif !@user.admin %>
-    <%= f.password_field :password %>
+<% if @current_user.admin  || @current_user.id == @user.id %>
+  <%= bootstrap_form_for @user do |f| %>
     <br>
-    <%= f.password_field :password_confirmation %>
+    <%= f.text_field :name %>
+    <br>
+    <%= f.text_field :email %>
+    <br>
+    <% if @current_user.admin %>
+      <%= f.radio_button :admin, 'true', :checked => true %>
+      <%= f.label :admin_true, 'student' %>
+      <%= f.radio_button :admin, 'false', :checked => false %>
+      <%= f.label :admin_false, 'admin' %>
+    <% elsif @current_user.id == @user.id %>
+      <%= f.password_field :password %>
+      <br>
+      <%= f.password_field :password_confirmation %>
+    <% end %>
+    <br>
+    <%= f.submit%>
+
   <% end %>
-  <br>
-  <%= f.submit%>
 
 <% end %>
 
