@@ -10,8 +10,7 @@
       <% @students.each do |s| %>
         <% if s.cohort_id == e.id %>
           <div class="col-sm-4">
-            <p><%= icon('github-alt') %></p>
-            <p><a href="/students/<%= s.user_id %>"><%= s.name %></a></p>
+            <p><span><%= icon('github-alt') %>   </span><a href="/students/<%= s.user_id %>"><%= s.name %></a></p>
           </div>
         <% end %> 
       <% end %>

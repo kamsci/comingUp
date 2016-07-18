@@ -47,10 +47,10 @@ ActiveRecord::Schema.define(version: 20160716233659) do
   create_table "reviews", force: :cascade do |t|
     t.integer  "student_id"
     t.string   "review_type"
-    t.string   "reviewer_name"
-    t.text     "review_content"
     t.datetime "created_at",     null: false
     t.datetime "updated_at",     null: false
+    t.string   "reviewer_name"
+    t.text     "review_content"
   end
 
   add_index "reviews", ["student_id"], name: "index_reviews_on_student_id", using: :btree
