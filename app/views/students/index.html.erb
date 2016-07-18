@@ -7,7 +7,6 @@
 
   <ul class="nav nav-tabs" role="tablist">
     <li role="presentation" class="active"><a href="#home" aria-controls="home" role="tab" data-toggle="tab">Students</a></li>
-    <li role="presentation"><a href="#deliverables" aria-controls="deliverables" role="tab" data-toggle="tab">Deliverables</a></li>
     <li role="presentation"><a href="#admins" aria-controls="admins" role="tab" data-toggle="tab">Admins</a></li>
     <li role="presentation"><a href="#new-user" aria-controls="new-user" role="tab" data-toggle="tab" class="nav-tabs-left">New User</a></li>
   </ul>
@@ -16,30 +15,28 @@
 <div class="tab-content">
 
   <!-- Students tab -->
-  <div role="tabpanel" class="tab-pane active" id="home">
-    <h3>Students</h3>
+  <div role="tabpanel" class="tab-pane fade in active" id="home">
+    <!-- Cohort -->
+    <h3>By Cohort</h3>
+    <div class="pull-right">
+    <%= render '/cohorts/new', :locals => {:cohort => Cohort.new} %>
+    </div>
+    <!-- Select filter -->
+    <div class="filter_options_container">
+      <form class="filter_form">
 
-    <table class="table">
-      <tbody>
-        <% @users.order('name ASC').each do |user| %>
-          <% if !user.admin %>
-            <tr>
-              <td><a href="students/<%=user.id%>"><%=user.name%></a></td>
-              <td><%= link_to('Edit User', edit_user_path(user.id), class: 'btn btn-default') %></td>
-            </tr>
-          <% end %>
-        <% end %>
-      </tbody>
-    </table>
-  </div>
+          <%= select("cohort", "cohort", Cohort.all.collect(&:cohort), :include_blank => true) %>     
+        <input type="submit" value="Filter" />
+      </form>
+    </div>
+    <br>
 
-  <!-- Deliverables Tab -->
-  <div role="tabpanel" class="tab-pane" id="deliverables">
-    <h3>Deliverables</h3>
+  <!-- Secondary Students Nav -->
+  <%= render :partial => 'students_cohorts', :student => @students %>
   </div>
 
   <!-- Admin tab -->
-  <div role="tabpanel" class="tab-pane" id="admins">
+  <div role="tabpanel" class="tab-pane fade" id="admins">
     <h3>Administrators</h3>
 
     <table class="table">
@@ -55,7 +52,9 @@
       </tbody>
     </table>    
   </div>
-  <div role="tabpanel" class="tab-pane" id="new-user">
+
+  <!-- New User tab -->
+  <div role="tabpanel" class="tab-pane fade" id="new-user">
     <div>
       <%= link_to('Create User', new_user_path, class: 'btn btn-default') %>
     </div>
@@ -66,6 +65,4 @@
 
 </div>
 <!-- end Nav Tabs -->
-
-
 
