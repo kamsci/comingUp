@@ -2,6 +2,19 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 .students-profile {
+
+  div.comment_form_brand{
+    display:none;
+    width: 100%;
+    margin: 0 auto;
+    align-item: center;
+  }
+
+  form.new_review {
+    width: 92%;
+    margin: 0 auto;
+
+  }
   p{
     margin: 0 0 0 20px;
   }
@@ -81,13 +94,10 @@
       }
   }
 
-  .comment_form_brand{
-    display:none;
-  }
 
   .feild{
     height: 100px;
-    width: 92%;
+    width: 100%;
     border-radius: 4px;
     overflow-y: scroll;
     overflow-x: hidden;
@@ -95,8 +105,15 @@
 
   .send{
     align-self: flex-end;
-    margin: 0 20px 0 auto;
+    margin: 4px 0 0 auto;
     border-radius: 4px;
+    display:inline-block;
+  }
+
+  .cancel{
+      margin: 0px 0 auto 20px;
+      position: relative;
+      top: -20px;
   }
   
 
@@ -214,9 +231,4 @@ h1{
     &:hover{
       color:red;
     }
-}
-
-//// Admin Page styles ////
-.manage {
-
 }

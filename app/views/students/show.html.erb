@@ -25,7 +25,7 @@
     <!-- This is the student's deliverables -->
     <%= form_for @user.student do |f| %>
       <!-- Branding Statement -->
-      <div class="row">
+      <div class="row brand">
         <p>Branding Statement</p>
         <div class="branding">
           <p class="hide_on_edit"><%= @user.student.brand %>
@@ -88,9 +88,7 @@
 
       <%= f.submit class: 'submit-button'%>
     <% end %>
-
   </div>
-
 
   <!-- Comment for Branding -->
   <div class="comment_form_brand">
@@ -98,7 +96,7 @@
       <%= r.hidden_field :student_id, :value => @user.student.id %>
       <%= r.hidden_field :review_type, :value => 'brand' %>
       <%= r.hidden_field :reviewer_name, :value => @current_user.name %>
-      <%= r.text_area :review_content, class: 'feild', :autofocus => true %>
+      <%= r.text_area :review_content, class: 'feild', :autofocus => true %>      
       <%= r.submit class:'send' %>
     <% end %>
     <a href="#" class="cancel">Cancel</a>
@@ -134,10 +132,11 @@
       <%= r.hidden_field :student_id, :value => @user.student.id %>
       <%= r.hidden_field :review_type, :value => 'portfolio' %>
       <%= r.hidden_field :reviewer_name, :value => @current_user.name %>
-      <%= r.text_area :review_content, class: 'feild', :autofocus => true %>
+      <%= r.text_area :review_content, class: 'feild', :autofocus => true %>      
       <%= r.submit class:'send' %>
     <% end %>
     <a href="#" class="cancel">Cancel</a>
+
   </div>
 
   <!-- Comment for Job Tracker Link -->

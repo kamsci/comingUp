@@ -11,8 +11,9 @@ class ReviewsController < ApplicationController
 
   def create
     @review = Review.create(review_params)
-    render json: @review
-    # redirect_to student_path(params)
+    student = @review.student_id
+    user = Student.find(student)
+    redirect_to student_path(user.user_id)
   end
 
   def edit
