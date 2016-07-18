@@ -13,7 +13,7 @@ class MainController < ApplicationController
 
     data = RestClient.get 'https://api.meetup.com/2/open_events?sign=true&photo-host=public&zip=' + zip + '&country=' + country + '&topic=' + @topic + '&city=' + city + '&state=WA&page=20&key=23145310778c71694fbb51774f'
 
-    if !data
+    if data['results'] == [] 
       flash[:danger] = 'No Search Results, please try again'
     else
       @data = JSON.parse(data)

@@ -3,3 +3,13 @@
 // # You can use CoffeeScript in this file: http://coffeescript.org/
 
 
+$('#myTabs a').click(function (e) {
+  e.preventDefault()
+  $(this).tab('show')
+});
+
+$( function() {
+    $( "#datepicker" ).datepicker();
+  } );
+
+console.log('the main.js page');

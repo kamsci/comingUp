@@ -5,9 +5,8 @@ class AuthController < ApplicationController
       provider_name: provider_user['provider']) do |u|
       
       u.provider_token = provider_user['credentials']['token']
-      # u.name = provider_user['info']['name']
-      # u.email = provider_user['info']['email']
-      # u.email = provider_user['info']['image']
+
+      @u = provider_user['info']['image']
     end
 
     session[:user_id] = user.id

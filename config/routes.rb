@@ -1,7 +1,5 @@
 Rails.application.routes.draw do
 
-  get 'auth/failure'
-
   root 'main#index'
 
   resources :users
@@ -17,6 +15,7 @@ Rails.application.routes.draw do
   get 'auth/:provider/callback', to: 'auth#callback'
 
   get 'auth/failure', to: 'auth#failure'
+  
   get 'auth/logout', to: 'auth#logout'
 
 

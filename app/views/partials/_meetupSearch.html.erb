@@ -1,0 +1,6 @@
+<% @data['results'].each do |d| %>
+  <h2><a href="<%= d['event_url'] %>"><%= d['group']['name'] %></a></h1>
+  <div class="well">
+    <p class="description"><%= sanitize(d['description']) %></p>
+  </div>
+<% end %>
