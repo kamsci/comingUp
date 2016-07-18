@@ -6,6 +6,7 @@
           <div class="profile-pic">
           </div>
         </div>
+        <!-- This is the Profile Info -->
         <div class="prof-head-col">
           <h2><%=@user.name%></h2>
           <%@user.student.cohorts.each do |cohort|%>
@@ -21,9 +22,9 @@
         </div>
       </div>
     </div>
-
+    <!-- This is the student's deliverables -->
     <%= form_for @user.student do |f| %>
-
+      <!-- Branding Statement -->
       <div class="row">
         <p>Branding Statement</p>
         <div class="branding">
@@ -35,10 +36,7 @@
           <a href="#" class="comment_brand">Leave a Comment</a>
         <% end %>
       </div>
-      
-
-     
-
+      <!-- Resume Link -->
       <div class="row">
         <p>
           <span>Resume Link</span>
@@ -50,9 +48,7 @@
           <a href="#" class="comment_resume">Leave a Comment</a>
         <% end %>
       </div>
-      <textarea class="comment_form_resume feild" autofocus ></textarea>
-      <input type="submit" class="comment_form_resume send">
-
+      <!-- LinkedIn Link -->
       <div class="row">
         <p>
           <span>LinkedIn Link</span>
@@ -64,9 +60,8 @@
           <a href="#" class="comment_linkedin">Leave a Comment</a>
         <% end %>
       </div>
-      <textarea class="comment_form_linkedin feild" autofocus ></textarea>
-      <input type="submit" class="comment_form_linkedin send">
-
+  
+      <!-- Portfolio Link -->
       <div class="row">
         <p><span>Portfolio Link</span>
           <a class="hide_on_edit" href="<%= @user.student.portfolio %>"> <%= @user.student.portfolio %>
@@ -77,9 +72,8 @@
           <a href="#" class="comment_portfolio">Leave a Comment</a>
         <% end %>
       </div>
-      <textarea class="comment_form_portfolio feild" autofocus></textarea>
-      <input type="submit" class="comment_form_portfolio send">
-
+      
+      <!-- Job Tracker Link -->
       <div class="row">
         <p>
           <span>Job Tracker</span>
@@ -91,21 +85,56 @@
           <a href="#" class="comment_jobtracker">Leave a Comment</a>
         <% end %>
       </div>
-      <textarea class="comment_form_jobtracker feild" autofocus ></textarea>
-      <input type="submit" class="comment_form_jobtracker send">
 
       <%= f.submit class: 'submit-button'%>
     <% end %>
 
   </div>
+
+
+  <!-- Comment for Branding -->
+  <%= form_for @review = Review.new do |r| %>
+    <%= r.hidden_field :student_id, :value => @user.student.id %>
+    <%= r.hidden_field :review_type, :value => 'brand' %>
+    <%= r.hidden_field :reviewer_name, :value => @current_user.name %>
+    <%= r.text_area :review_content, class: 'comment_form_brand feild', :autofocus => true %>
+    <%= r.submit class:'comment_form_brand send' %>
+  <% end %>
+
+  <!-- Comment for Resume Link -->
+  <%= form_for @review = Review.new do |r| %>
+    <%= r.hidden_field :student_id, :value => @user.student.id %>
+    <%= r.hidden_field :review_type, :value => 'resume' %>
+    <%= r.hidden_field :reviewer_name, :value => @current_user.name %>
+    <%= r.text_area :review_content, class: 'comment_form_resume feild', :autofocus => true %>
+    <%= r.submit class:'comment_form_resume send' %>
+  <% end %>
+
+  <!-- Comment for LinkedIn Link -->
+  <%= form_for @review = Review.new do |r| %>
+    <%= r.hidden_field :student_id, :value => @user.student.id %>
+    <%= r.hidden_field :review_type, :value => 'linkedin' %>
+    <%= r.hidden_field :reviewer_name, :value => @current_user.name %>
+    <%= r.text_area :review_content, class: 'comment_form_linkedin feild', :autofocus => true %>
+    <%= r.submit class:'comment_form_linkedin send' %>
+  <% end %>
+
+  <!-- Comment for Portfolio Link -->
+  <%= form_for @review = Review.new do |r| %>
+    <%= r.hidden_field :student_id, :value => @user.student.id %>
+    <%= r.hidden_field :review_type, :value => 'portfolio' %>
+    <%= r.hidden_field :reviewer_name, :value => @current_user.name %>
+    <%= r.text_area :review_content, class: 'comment_form_portfolio feild', :autofocus => true %>
+    <%= r.submit class:'comment_form_portfolio send' %>
+  <% end %>
+
+  <!-- Comment for Job Tracker Link -->
+  <%= form_for @review = Review.new do |r| %>
+    <%= r.hidden_field :student_id, :value => @user.student.id %>
+    <%= r.hidden_field :review_type, :value => 'jobtracker' %>
+    <%= r.hidden_field :reviewer_name, :value => @current_user.name %>
+    <%= r.text_area :review_content, class: 'comment_form_jobtracker feild', :autofocus => true %>
+    <%= r.submit class:'comment_form_jobtracker send' %>
+  <% end %>
+
 </div>
-
- <%= form_for @review = Review.new do |r| %>
-        <%= r.hidden_field :student_id, :value => @user.student.id %>
-        <%= r.hidden_field :review_type, :value => 'brand' %>
-        <%= r.hidden_field :reviewer_name, :value => @current_user.name %>
-        <%= r.text_area :review_content, class: 'comment_form_brand feild', :autofocus => true %>
-        <%= r.submit class:'comment_form_brand send' %>
-      <% end %>
-
-      <!-- (student_id: @user.student.id, review_type: 'brand', reviewer_name: @current_user.name)  -->
