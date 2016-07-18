@@ -1,0 +1,18 @@
+@import "bootstrap";
+@import "font-awesome-sprockets";
+@import "font-awesome";
+
+
+ .page-header, h1, h2 {
+  text-align: center;
+  padding-top: 20px;
+ }
+
+ .titleImage {
+  width: 10px;
+  height: 12px;
+ }
+
+ .list-group {
+  float: right;
+ }

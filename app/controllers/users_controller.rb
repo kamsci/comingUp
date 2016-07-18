@@ -6,6 +6,7 @@ class UsersController < ApplicationController
   # create a new blank template for user, direct to new user page
   def new
     @user = User.new
+    # @cohorts = Cohort.all
   end
 
   # create a new user in the db, redirect to admin profile

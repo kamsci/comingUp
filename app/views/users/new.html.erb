@@ -17,6 +17,8 @@
   <%= f.radio_button :admin, 'true', :checked => false %>
   <%= f.label :admin_true, 'admin' %>
   <br>
+  <%= collection_check_boxes(:cohorts_students, :cohort_id, Cohort.all, :id, :cohort) %>
+  <br>
   <%= f.submit %>
   <%= link_to('Cancel', students_path) %>
 
