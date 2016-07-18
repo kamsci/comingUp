@@ -36,8 +36,8 @@
         <% end %>
       </div>
       
-      <textarea class="comment_form_brand feild" autofocus ></textarea>
-      <input type="submit" class="comment_form_brand send">
+
+     
 
       <div class="row">
         <p>
@@ -99,3 +99,13 @@
 
   </div>
 </div>
+
+ <%= form_for @review = Review.new do |r| %>
+        <%= r.hidden_field :student_id, :value => @user.student.id %>
+        <%= r.hidden_field :review_type, :value => 'brand' %>
+        <%= r.hidden_field :reviewer_name, :value => @current_user.name %>
+        <%= r.text_area :review_content, class: 'comment_form_brand feild', :autofocus => true %>
+        <%= r.submit class:'comment_form_brand send' %>
+      <% end %>
+
+      <!-- (student_id: @user.student.id, review_type: 'brand', reviewer_name: @current_user.name)  -->

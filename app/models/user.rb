@@ -1,6 +1,7 @@
 class User < ActiveRecord::Base
   has_one :student
   has_many :cohorts, through: :student
+  has_many :reviews, through: :student
   
   accepts_nested_attributes_for :student
 
