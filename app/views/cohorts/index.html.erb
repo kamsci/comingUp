@@ -3,13 +3,18 @@
 </div>
 
 
+<div class="row">
   <% @cohorts.each do |e| %>
-    <div>
+    <div class="col-sm-4 cohort">
       <h4><%= e.cohort %></h4>
       <% @students.each do |s| %>
         <% if s.cohort_id == e.id %>
-          <p><%= s.name %></p>
+          <div class="col-sm-4">
+            <p><%= icon('github-alt') %></p>
+            <p><a href="/students/<%= s.user_id %>"><%= s.name %></a></p>
+          </div>
         <% end %> 
       <% end %>
     </div>
   <% end %>
+</div>

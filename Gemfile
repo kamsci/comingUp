@@ -31,6 +31,9 @@ gem 'validate_url'
 # Email Validator
 gem 'email_validator'
 
+# Font Awesome
+gem 'font-awesome-sass', '~> 4.6.2'
+
 # Use Unicorn as the app server
 # gem 'unicorn'
 

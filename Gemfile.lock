@@ -64,6 +64,8 @@ GEM
       activemodel
     erubis (2.7.0)
     execjs (2.7.0)
+    font-awesome-sass (4.6.2)
+      sass (>= 3.2)
     globalid (0.3.6)
       activesupport (>= 4.1.0)
     http-cookie (1.0.2)
@@ -174,6 +176,7 @@ DEPENDENCIES
   byebug
   coffee-rails (~> 4.1.0)
   email_validator
+  font-awesome-sass (~> 4.6.2)
   jbuilder (~> 2.0)
   jquery-rails
   pg (~> 0.15)

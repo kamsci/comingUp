@@ -1,0 +1,7 @@
+{
+"version": 3,
+"mappings": "AAIA,OAAQ;EACN,SAAS,EAAE,GAAG;EACd,UAAU,EAAE,KAAK;EACjB,MAAM,EAAE,SAAS;EACjB,MAAM,EAAE,cAAc;EAEtB,UAAG;IACD,KAAK,EAAE,GAAG;EAEZ,aAAM;IACJ,SAAS,EAAE,GAAG;IACd,UAAU,EAAE,IAAI;IAChB,KAAK,EAAE,IAAI",
+"sources": ["cohorts.scss"],
+"names": [],
+"file": "cohorts.css"
+}
