@@ -16,13 +16,6 @@ Rails.application.routes.draw do
 
   delete 'logout', to: 'sessions#destroy'
 
-  get 'auth/:provider/callback', to: 'auth#callback'
-
-  get 'auth/failure', to: 'auth#failure'
-  
-  get 'auth/logout', to: 'auth#logout'
-
-
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
