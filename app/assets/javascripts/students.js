@@ -44,9 +44,29 @@ $(document).ready(function() {
     $('.comment_form_jobtracker').css('display', 'block');
   });
 
-  $('.cancel').on('click', function(e) {
+  $('.cancel_brand').on('click', function(e) {
     e.preventDefault();
-      $('.cancel').parent().css('display', 'none');
+    $(this).parent().css('display', 'none');
   });
   
+  $('.cancel_portfolio').on('click', function(e) {
+    e.preventDefault();
+    $(this).parent().css('display', 'none');
+  });
+
+  $('.cancel_jobtracker').on('click', function(e) {
+    e.preventDefault();
+      $(this).parent().css('display', 'none');
+  });
+
+  $('.cancel_resume').on('click', function(e) {
+    e.preventDefault();
+    $(this).parent().css('display', 'none');
+  });
+
+  $('.cancel_linkedin').on('click', function(e) {
+    e.preventDefault();
+    $(this).parent().css('display', 'none');
+  });
+
 });

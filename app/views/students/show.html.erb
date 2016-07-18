@@ -34,6 +34,8 @@
         </div>
         <% if @user != @current_user %>
           <a href="#" class="comment_brand">Leave a Comment</a>
+        <% elsif @user == @current_user && @brand.length > 0 %>
+          <a href="#" class="reviews_brand">See Reviews</a>
         <% end %>
       </div>
       <!-- Resume Link -->
@@ -46,6 +48,8 @@
         <%= f.url_field :resume, class: 'url-link update show_on_edit'%>
         <% if @user != @current_user %>
           <a href="#" class="comment_resume">Leave a Comment</a>
+        <% elsif @user == @current_user && @resume.length > 1 %>
+          <a href="#" class="reviews_resume">See Reviews</a>
         <% end %>
       </div>
       <!-- LinkedIn Link -->
@@ -58,6 +62,8 @@
         <%= f.url_field :linkedin, class: 'url-link update show_on_edit' %>
         <% if @user != @current_user %>
           <a href="#" class="comment_linkedin">Leave a Comment</a>
+        <% elsif @user == @current_user && @linkedin.length > 1 %>
+          <a href="#" class="reviews_linkedin">See Reviews</a>
         <% end %>
       </div>
   
@@ -70,6 +76,8 @@
         <%= f.url_field :portfolio, class: 'url-link update show_on_edit'%>
         <% if @user != @current_user %>
           <a href="#" class="comment_portfolio">Leave a Comment</a>
+        <% elsif @user == @current_user && @portfolio.length > 1 %>
+          <a href="#" class="reviews_portfolio">See Reviews</a>
         <% end %>
       </div>
       
@@ -83,6 +91,8 @@
         <%= f.url_field :jobtracker, class: 'url-link update show_on_edit'%>
         <% if @user != @current_user %>
           <a href="#" class="comment_jobtracker">Leave a Comment</a>
+        <% elsif @user == @current_user && @jobtracker.length > 1 %>
+          <a href="#" class="reviews_jobtracker">See Reviews</a>
         <% end %>
       </div>
 
@@ -99,7 +109,7 @@
       <%= r.text_area :review_content, class: 'feild', :autofocus => true %>      
       <%= r.submit class:'send' %>
     <% end %>
-    <a href="#" class="cancel">Cancel</a>
+    <a href="#" class="cancel_brand">Cancel</a>
   </div>
 
   <!-- Comment for Resume Link -->
@@ -111,7 +121,7 @@
       <%= r.text_area :review_content, class: 'feild', :autofocus => true %>
       <%= r.submit class:'send' %>
     <% end %>
-    <a href="#" class="cancel">Cancel</a>
+    <a href="#" class="cancel_resume">Cancel</a>
   </div>
 
   <!-- Comment for LinkedIn Link -->
@@ -123,7 +133,7 @@
       <%= r.text_area :review_content, class: 'feild', :autofocus => true %>
       <%= r.submit class:'send' %>
     <% end %>
-    <a href="#" class="cancel">Cancel</a>
+    <a href="#" class="cancel_linkedin">Cancel</a>
   </div>
 
   <!-- Comment for Portfolio Link -->
@@ -135,7 +145,7 @@
       <%= r.text_area :review_content, class: 'feild', :autofocus => true %>      
       <%= r.submit class:'send' %>
     <% end %>
-    <a href="#" class="cancel">Cancel</a>
+    <a href="#" class="cancel_portfolio">Cancel</a>
 
   </div>
 
@@ -148,7 +158,9 @@
       <%= r.text_area :review_content, class: 'feild', :autofocus => true %>
       <%= r.submit class:'send' %>
     <% end %>
-    <a href="#" class="cancel">Cancel</a>
+    <a href="#" class="cancel_jobtracker">Cancel</a>
   </div>
+
+
 
 </div>
