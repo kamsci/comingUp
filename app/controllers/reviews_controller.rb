@@ -1,4 +1,6 @@
 class ReviewsController < ApplicationController
+
+  before_action :is_authenticated
   
   def index
     @user = User.find(16)

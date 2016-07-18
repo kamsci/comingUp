@@ -1,5 +1,9 @@
 class CohortsController < ApplicationController
 
+  before_action :is_authenticated
+
+  before_action :is_admin, only: [:edit, :update]
+
   def index
     # @students = User.joins(:students).group(:student_id)
     # @cohorts = Cohort.select('*').joins(:students)

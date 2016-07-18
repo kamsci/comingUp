@@ -15,7 +15,7 @@
 <div class="tab-content">
 
   <!-- Students tab -->
-  <div role="tabpanel" class="tab-pane active" id="home">
+  <div role="tabpanel" class="tab-pane fade in active" id="home">
     <!-- Cohort -->
     <h3>By Cohort</h3>
     <div class="pull-right">
@@ -36,7 +36,7 @@
   </div>
 
   <!-- Admin tab -->
-  <div role="tabpanel" class="tab-pane" id="admins">
+  <div role="tabpanel" class="tab-pane fade" id="admins">
     <h3>Administrators</h3>
 
     <table class="table">
@@ -54,7 +54,7 @@
   </div>
 
   <!-- New User tab -->
-  <div role="tabpanel" class="tab-pane" id="new-user">
+  <div role="tabpanel" class="tab-pane fade" id="new-user">
     <div>
       <%= link_to('Create User', new_user_path, class: 'btn btn-default') %>
     </div>
@@ -65,6 +65,4 @@
 
 </div>
 <!-- end Nav Tabs -->
-
-
 

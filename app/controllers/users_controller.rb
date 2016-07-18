@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
-  
+
   before_action :is_authenticated
   before_action :is_admin, except: [:edit, :update]
 
