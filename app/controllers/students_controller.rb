@@ -5,12 +5,21 @@ class StudentsController < ApplicationController
   # do we need this next line?  I think we deleted it from the student model
   before_action :is_student, only: [:edit, :update]
 
-  # @users = User.all
-  # @students = Student.all
 
   def index
-      @students = Student.all
-      @users = User.all
+    @users = User.all
+    @cohorts = Cohort.all
+
+    # render json: params[:cohort]
+
+    if (params[:cohort] && params[:cohort][:cohort] && params[:cohort][:cohort] != '')
+      @students = User.joins(:student, :cohorts).select('*').where(cohorts:{cohort: params[:cohort][:cohort]})
+      # render json: @students
+    else
+      @students = User.joins(:student, :cohorts).select('*')
+      # render json: params[:cohort]
+    end
+    # render json: @students
   end
 
   def show

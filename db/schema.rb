@@ -32,12 +32,6 @@ ActiveRecord::Schema.define(version: 20160716233659) do
   add_index "cohorts_students", ["cohort_id"], name: "index_cohorts_students_on_cohort_id", using: :btree
   add_index "cohorts_students", ["student_id"], name: "index_cohorts_students_on_student_id", using: :btree
 
-  create_table "reviews", force: :cascade do |t|
-    t.integer  "student_id"
-    t.string   "review_type"
-    t.string   "reviewer_name"
-    t.text     "review_content"
-
   create_table "githubstudents", force: :cascade do |t|
     t.integer  "user_id"
     t.string   "provider_id"
@@ -48,10 +42,18 @@ ActiveRecord::Schema.define(version: 20160716233659) do
     t.datetime "updated_at",     null: false
   end
 
-
-  add_index "reviews", ["student_id"], name: "index_reviews_on_student_id", using: :btree
   add_index "githubstudents", ["user_id"], name: "index_githubstudents_on_user_id", using: :btree
 
+  create_table "reviews", force: :cascade do |t|
+    t.integer  "student_id"
+    t.string   "review_type"
+    t.string   "reviewer_name"
+    t.text     "review_content"
+    t.datetime "created_at",     null: false
+    t.datetime "updated_at",     null: false
+  end
+
+  add_index "reviews", ["student_id"], name: "index_reviews_on_student_id", using: :btree
 
   create_table "students", force: :cascade do |t|
     t.integer  "user_id"
@@ -75,10 +77,9 @@ ActiveRecord::Schema.define(version: 20160716233659) do
     t.datetime "updated_at",      null: false
   end
 
-
   add_foreign_key "cohorts_students", "cohorts"
   add_foreign_key "cohorts_students", "students"
-  add_foreign_key "reviews", "students"
   add_foreign_key "githubstudents", "users"
+  add_foreign_key "reviews", "students"
   add_foreign_key "students", "users"
 end
