@@ -14,6 +14,7 @@ class UsersController < ApplicationController
     user = User.new(user_params)
     if user.save && !user.admin
       user.create_student
+      CohortsStudents.create(cohort_id: params[:cohorts_students][:cohort_id][0], student_id: user.student.id)
       redirect_to students_path
     elsif user.save && user.admin
       redirect_to students_path
