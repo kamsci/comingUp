@@ -1,0 +1,148 @@
+.students-profile p {
+  margin: 0 0 0 20px; }
+.students-profile form {
+  width: 66%;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center; }
+  .students-profile form textarea {
+    margin: 0;
+    padding: 10px; }
+  .students-profile form .show_on_edit {
+    display: none; }
+  .students-profile form a.hide_on_edit:hover {
+    text-decoration: none; }
+  .students-profile form .submit-button {
+    display: none;
+    align-self: flex-end;
+    border-radius: 4px;
+    margin: 10px 20px 10px 10px; }
+.students-profile a.comment_brand {
+  display: block;
+  text-align: right;
+  margin: 0 20px 0 0; }
+  .students-profile a.comment_brand:hover {
+    text-decoration: none; }
+.students-profile a.comment_resume {
+  display: block;
+  text-align: right;
+  margin: 0 20px 0 0; }
+  .students-profile a.comment_resume:hover {
+    text-decoration: none; }
+.students-profile a.comment_portfolio {
+  display: block;
+  text-align: right;
+  margin: 0 20px 0 0; }
+  .students-profile a.comment_portfolio:hover {
+    text-decoration: none; }
+.students-profile a.comment_linkedin {
+  display: block;
+  text-align: right;
+  margin: 0 20px 0 0; }
+  .students-profile a.comment_linkedin:hover {
+    text-decoration: none; }
+.students-profile a.comment_jobtracker {
+  display: block;
+  text-align: right;
+  margin: 0 20px 0 0; }
+  .students-profile a.comment_jobtracker:hover {
+    text-decoration: none; }
+.students-profile .comment_form_brand {
+  display: none; }
+.students-profile .feild {
+  height: 100px;
+  width: 92%;
+  border-radius: 4px;
+  overflow-y: scroll;
+  overflow-x: hidden; }
+.students-profile .send {
+  align-self: flex-end;
+  margin: 0 20px 0 auto;
+  border-radius: 4px; }
+.students-profile .comment_form_resume {
+  display: none; }
+.students-profile .comment_form_portfolio {
+  display: none; }
+.students-profile .comment_form_linkedin {
+  display: none; }
+.students-profile .comment_form_jobtracker {
+  display: none; }
+
+h1 {
+  margin: 20px 0 20px 20px;
+  font-size: 60px; }
+
+.profile {
+  display: flex;
+  flex-direction: column;
+  width: 66%;
+  justify-content: center;
+  align-items: center;
+  margin: 100px auto;
+  background-color: silver; }
+
+.profile-pic {
+  height: 140px;
+  width: 100px;
+  background-color: white;
+  margin: 10px 10px 10px 10px; }
+
+.profile-header {
+  width: 92%;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: row;
+  background-color: black;
+  padding: 10px 10px;
+  color: white; }
+
+.prof-head-col {
+  padding: 0 20px 0 0; }
+  .prof-head-col h2 {
+    margin: 10px 0 6px 0;
+    font-size: 2em; }
+  .prof-head-col span {
+    display: block;
+    margin: 0;
+    padding: 0 0 0 0px; }
+  .prof-head-col a:hover {
+    text-decoration: none; }
+  .prof-head-col div.password {
+    margin: 4px 0; }
+
+.prof-head-col:last-child {
+  margin: 0 0 0 auto;
+  align-self: flex-end; }
+  .prof-head-col:last-child button {
+    margin: 0 -10px 0 auto;
+    border-radius: 4px; }
+
+.branding {
+  width: 92%;
+  height: 100px;
+  margin: 10px auto 0 auto;
+  border-radius: 4px;
+  border: 1px solid grey;
+  padding: 0;
+  background-color: white; }
+  .branding textarea {
+    margin: 0;
+    height: 100%;
+    width: 100%;
+    border: none;
+    resize: none; }
+
+.url-link {
+  width: 92%;
+  height: 20px;
+  margin: 10px auto;
+  display: block;
+  padding: 2px 10px;
+  border-radius: 4px;
+  border: 1px solid grey;
+  background-color: white; }
+  .url-link:hover {
+    color: red; }
+
+/*# sourceMappingURL=students.css.map */

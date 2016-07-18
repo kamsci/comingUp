@@ -5,16 +5,44 @@ class StudentsController < ApplicationController
   # do we need this next line?  I think we deleted it from the student model
   before_action :is_student, only: [:edit, :update]
 
-  # @users = User.all
-  # @students = Student.all
 
   def index
-      @students = Student.all
-      @users = User.all
+    @users = User.all
+    @cohorts = Cohort.all
+
+    # render json: params[:cohort]
+
+    if (params[:cohort] && params[:cohort][:cohort] && params[:cohort][:cohort] != '')
+      @students = User.joins(:student, :cohorts).select('*').where(cohorts:{cohort: params[:cohort][:cohort]})
+      # render json: @students
+    else
+      @students = User.joins(:student, :cohorts).select('*')
+      # render json: params[:cohort]
+    end
+    # render json: @students
   end
 
   def show
     @user = User.find(params[:id])
+    @review = Review.where(student_id: params[:id])
+    @brand = []
+    @linkedin = []
+    @resume = []
+    @jobtracker = []
+    @portfolio = []
+    @review.each do |review|
+      if review.review_type == 'brand'
+        @brand.push(review)
+      elsif review.review_type == 'linkedin'
+        @linkedin.push(review)
+      elsif review.review_type == 'resume'
+        @resume.push(review)
+      elsif review.review_type == 'jobtracker'
+        @jobtracker.push(review)
+      elsif review.review_type == 'portfolio'
+        @portfolio.push(review)
+      end
+    end
   end
 
   def edit
@@ -22,8 +50,11 @@ class StudentsController < ApplicationController
   end
 
   def update
-    Student.find(params[:id]).update(student_params)
-    redirect_to student_path(params[:id])
+    if @current_user
+      student = Student.find(params[:id])
+      student.update(student_params)
+      redirect_to student_path(student.user_id)
+    end
   end
 
   private

@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
-  
+
   before_action :is_authenticated
   before_action :is_admin, except: [:edit, :update]
 
@@ -17,7 +17,7 @@ class UsersController < ApplicationController
     elsif user.save && user.admin
       redirect_to students_path
     else
-      flash[:danger] = @user.errors.messages
+      flash[:danger] = user.errors.messages
       redirect_to new_user_path
     end
   end
@@ -30,12 +30,12 @@ class UsersController < ApplicationController
   # update already existing user
   def update
     User.find(params[:id]).update(user_params)
-    redirect_to student_path(params[:id])
+    redirect_to students_path
   end
 
   private
   def user_params
-    params.require(:user).permit(:name, :email, :password, :admin)
+    params.require(:user).permit(:name, :email, :password, :admin, :cohort_ids => [])
   end
 
   # def student_params

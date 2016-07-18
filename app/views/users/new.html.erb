@@ -1,21 +1,23 @@
 <div class="page-header">
   <h1>New User</h1>
 </div>
-  <%= bootstrap_form_for @user do |f| %>
 
-    <%= f.text_field :name %>
-    <br>
-    <%= f.text_field :email %>
-    <br>
-    <%= f.text_field :password %>
-    <br>
-    <%= f.text_field :password_confirmation %>
-    <br>
-    <%= f.radio_button :admin, 'true', :checked => true %>
-    <%= f.label :admin_true, 'student' %>
-    <%= f.radio_button :admin, 'false', :checked => false %>
-    <%= f.label :admin_false, 'admin' %>
-    <br>
-    <%= f.submit %>
+<%= bootstrap_form_for @user do |f| %>
+
+  <%= f.text_field :name %>
+  <br>
+  <%= f.text_field :email %>
+  <br>
+  <%= f.password_field :password %>
+  <br>
+  <%= f.password_field :password_confirmation %>
+  <br>
+  <%= f.radio_button :admin, 'false', :checked => true %>
+  <%= f.label :admin_false, 'student' %>
+  <%= f.radio_button :admin, 'true', :checked => false %>
+  <%= f.label :admin_true, 'admin' %>
+  <br>
+  <%= f.submit %>
+  <%= link_to('Cancel', students_path) %>
 
 <% end %>

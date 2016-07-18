@@ -26,3 +26,46 @@ Things you may want to cover:
 
 Please feel free to use a different markup language if you do not plan to run
 <tt>rake doc:app</tt>.
+
+# comingUP
+
+##Krista Calderon, Joe Marzullo, Jamie Karlovich
+
+##comingUp is a platform specifically made for General Assembly's outcomes team.  As students, we were underwhelmed with the current system for posting our deliverables to Larry and Beth.  There were multiple forms on multiple forms of applications to review and it because difficult to know if we had completed everything asked for.  WE thought we could make it more intuitive for the students to find what they need as well as make it easier for Larry and Beth to get each students' information in one place.
+
+##Features
+  ###Login and Logout feature for General Assembly administrators and students
+  ###An up-to-date list of technology meetups for networking
+  ###A reference sidebar including all of the common links needed for students
+
+  ###For Administrators:
+    ###Administrators can create new users and delegate permissions for administrators.
+    ###Can see all the students by cohort
+    ###Can link to any student's profile page and leave them comments
+    ###Can add networking events they especially recommend
+    ###Can set due dates for deliverables and the platform will automatically remind students a deadline is coming up.
+
+  ###For Students:
+    ###Can sign in with their github account
+    ###Can see all of thier fellow students within their cohort.
+    ###Can add their branding statement and links to their linkedin, jobtraker, resume, and portfolio
+    ###Can link to any student's profile page and leave them comments.
+    ###Can reset their password
+    ###Can look up up-and-coming network events
+    ###Have one easy place to post their deliverables.
+
+##Krista:
+  ###set up sessions controller with log in and log out features
+  ###worked on Administrator Management Page
+  ##worked with Jamie on setting up database, models, and controllers
+
+##Joe:
+  ###set up the landing page with the MeetUp API
+  ###designed and styled nav bar
+  ###made the general styling layout
+
+##Jamie:
+  ###set up students controller
+  ###worked on student profile page implementing forms for editing information depending on what user is logged in as well as styled it
+  ###worked with Krista on setting up database, models, and controllers
+

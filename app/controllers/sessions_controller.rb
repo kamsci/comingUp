@@ -8,7 +8,11 @@ class SessionsController < ApplicationController
     if user
       session[:user_id] = user.id
       flash[:success] = 'You are logged in'
-      redirect_to root_path
+      if !user.admin
+        redirect_to student_path(user.id)
+      else
+        redirect_to students_path
+      end
     else
       flash[:danger] = 'Credentials invalid, please try again'
       redirect_to login_path
