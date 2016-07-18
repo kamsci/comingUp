@@ -2,79 +2,37 @@
   <h1>Administrator Management Page</h1>
 </div>
 
-<!-- Cohort -->
-<%= render '/cohorts/new', :locals => {:cohort => Cohort.new} %>
-<br>
-
-<!-- <select>
-  <%= @cohorts.each do |cohort| %>
-    <option><%= cohort.cohort %></option> 
-  <% end %>
-</select> -->
-
-<div class="filter_options_container">
-
-  <form class="filter_form">
-    <%= select("cohort", "cohort", Cohort.all.collect(&:cohort)) %>
-    <input type="submit" value="Filter" />
-  </form>
-</div>
-
-<div class="students_cohorts_container">
-  <%= render :partial => 'students_cohorts', :student => @students %>
-</div> 
-
 <!-- Nav tabs -->
 <div>
 
   <ul class="nav nav-tabs" role="tablist">
     <li role="presentation" class="active"><a href="#home" aria-controls="home" role="tab" data-toggle="tab">Students</a></li>
-    <li role="presentation"><a href="#deliverables" aria-controls="deliverables" role="tab" data-toggle="tab">Deliverables</a></li>
     <li role="presentation"><a href="#admins" aria-controls="admins" role="tab" data-toggle="tab">Admins</a></li>
     <li role="presentation"><a href="#new-user" aria-controls="new-user" role="tab" data-toggle="tab" class="nav-tabs-left">New User</a></li>
   </ul>
-
 
 <!-- Tab panes -->
 <div class="tab-content">
 
   <!-- Students tab -->
   <div role="tabpanel" class="tab-pane active" id="home">
-    <h3>Students</h3>
+    <!-- Cohort -->
+    <h3>By Cohort</h3>
+    <div class="pull-right">
+    <%= render '/cohorts/new', :locals => {:cohort => Cohort.new} %>
+    </div>
+    <!-- Select filter -->
+    <div class="filter_options_container">
+      <form class="filter_form">
 
-    <table class="table">
-      <tbody>
-        <% @users.order('name ASC').each do |user| %>
-          <% if !user.admin %>
-            <tr>
-              <td><a href="students/<%=user.id%>"><%=user.name%></a></td>
-              <td></td>
-              <td><%= link_to('Edit User', edit_user_path(user.id), class: 'btn btn-default') %></td>
-            </tr>
-          <% end %>
-        <% end %>
-      </tbody>
-    </table>
-  </div>
+          <%= select("cohort", "cohort", Cohort.all.collect(&:cohort), :include_blank => true) %>     
+        <input type="submit" value="Filter" />
+      </form>
+    </div>
+    <br>
 
-  <h2>Student Pods (<span data-bind="text: pods().length"></span>)</h2>
-
-  <table>
-      <thead><tr>
-          <th>Student Name</th><th>Pod</th>
-      </tr></thead>
-      <tbody data-bind="foreach: pods">
-          <tr>
-              
-          </tr>    
-      </tbody>
-  </table>
-
-
-
-  <!-- Deliverables Tab -->
-  <div role="tabpanel" class="tab-pane" id="deliverables">
-    <h3>Deliverables</h3>
+  <!-- Secondary Students Nav -->
+  <%= render :partial => 'students_cohorts', :student => @students %>
   </div>
 
   <!-- Admin tab -->
@@ -94,6 +52,8 @@
       </tbody>
     </table>    
   </div>
+
+  <!-- New User tab -->
   <div role="tabpanel" class="tab-pane" id="new-user">
     <div>
       <%= link_to('Create User', new_user_path, class: 'btn btn-default') %>

@@ -1,13 +1,63 @@
+<!-- Secondary Nav tabs -->
+<div>
+
+  <ul class="nav nav-tabs" role="tablist">
+    <li role="presentation" class="active"><a href="#home2" aria-controls="home2" role="tab" data-toggle="tab">Cohort List</a></li>
+    <li role="presentation"><a href="#deliverables" aria-controls="deliverables" role="tab" data-toggle="tab">Deliverables</a></li>
+    <li role="presentation"><a href="#pods" aria-controls="pods" role="tab" data-toggle="tab">Pods</a></li>
+  </ul>
+
+<!-- Tab panes -->
+<div class="tab-content">
+
+  <!-- Students tab -->
+  <div role="tabpanel" class="tab-pane active" id="home2">
+
     <h3>Students</h3>
 
     <table class="table">
       <tbody>
         <% @students.each do |student| %>
           <tr>
-            <td><a href="students/<%=student.student_id%>"><%= student.name %></a></td>
-
+            <td><a href="students/<%=student.user_id%>"><%= student.name %></a></td>
             <td><%= student.cohort %></td>
+            <td><%= link_to('Edit User', edit_user_path(student.user_id), class: 'btn btn-default') %></td>
           </tr>
         <% end %>
       </tbody>
     </table>
+
+  </div> <!-- End Students -->
+
+
+  <!-- Deliverables Tab -->
+  <div role="tabpanel" class="tab-pane" id="deliverables">
+    <h3>Deliverables</h3>
+  </div> <!-- End Deliverables -->
+
+  <!-- Pods Tab -->
+  <div role="tabpanel" class="tab-pane" id="pods">
+    <h2>Student Pods (<span data-bind="text: pods().length"></span>)</h2>
+
+    <table>
+        <thead><tr>
+            <th>Student Name</th><th>Pod</th>
+        </tr></thead>
+        <tbody data-bind="foreach: pods">
+            <tr>
+                
+            </tr>    
+        </tbody>
+    </table>
+
+  </div> <!-- End Pods -->
+
+  <!-- Tab -->
+  <div role="tabpanel" class="tab-pane" id="#">
+  </div>
+
+</div>
+<!-- end Tab Panes -->
+
+</div>
+<!-- end Nav Tabs -->
