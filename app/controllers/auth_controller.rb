@@ -6,11 +6,12 @@ class AuthController < ApplicationController
       
       u.provider_token = provider_user['credentials']['token']
 
-      @u = provider_user['info']['image']
+      # @u = provider_user['info']['image']
     end
 
     session[:user_id] = user.id
     redirect_to root_path
+    # render json: provider_user
   end
 
 

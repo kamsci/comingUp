@@ -8,8 +8,5 @@ $('#myTabs a').click(function (e) {
   $(this).tab('show')
 });
 
-$( function() {
-    $( "#datepicker" ).datepicker();
-  } );
 
 console.log('the main.js page');
