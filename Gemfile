@@ -31,6 +31,7 @@ gem 'validate_url'
 # Email Validator
 gem 'email_validator'
 
+gem 'figaro'
 
 gem 'omniauth'
 gem 'omniauth-github'
