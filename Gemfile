@@ -63,3 +63,6 @@ gem 'rest-client'
 gem 'bootstrap'
 gem 'bootstrap_form'
 
+group :production do
+  gem 'rails_12factor'
+end
