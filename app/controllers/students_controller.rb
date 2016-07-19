@@ -49,6 +49,7 @@ class StudentsController < ApplicationController
 
   def create
     @picks = Staffpick.create(staff_params)
+    render json: @picks
     redirect_to root_path
   end
 

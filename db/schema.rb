@@ -86,12 +86,6 @@ ActiveRecord::Schema.define(version: 20160719175118) do
     t.boolean  "admin"
     t.datetime "created_at",      null: false
     t.datetime "updated_at",      null: false
-    t.string   "provider_id"
-    t.string   "provider_token"
-    t.string   "provider_name"
-    t.text     "picture"
-    t.string   "reset_code"
-    t.datetime "expires_at"
   end
 
   add_foreign_key "cohorts_students", "cohorts"

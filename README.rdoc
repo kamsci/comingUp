@@ -69,7 +69,7 @@ comingUp is a platform specifically made for General Assembly's outcomes team.  
 
 ==Things We Would Like to Implement:
   * github oauth
-  * send reminder e-mails to students when deliverable due dates are approaching
+  * send password resend and reminder e-mails to students when deliverable due dates are approaching
   * allow a user to be in multiple cohorts if they return to GA for a new course (as of now they can only be assigned one at a time)
   * add a picture to the student profile page from their github account
   * set up reset password in case a user forgets their password
