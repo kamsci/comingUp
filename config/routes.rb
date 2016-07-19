@@ -10,7 +10,8 @@ Rails.application.routes.draw do
 
   resources :cohorts
 
-  # get 'staffpicks/index', to: 'staffpicks#index'
+  resources :deliverables
+
 
   get 'login', to: 'sessions#new'
 

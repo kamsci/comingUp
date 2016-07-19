@@ -3,15 +3,40 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 .cohort {
-  min-width: 80%;
-  min-height: 800px;
-  margin: auto auto;
-  border: 1px solid gray;
+  width: 38%;
+  min-height: 300px;
+  display: inline-block;
+  margin: 5px 5px;
+  padding: 5px 5px;
+  border-right: 1px solid gray;
   
+  @media (max-width: 600px) {
+    width: 100%;
+  }
+
   h4 {
     color: red;
     @min-width: 770px {
       display: inline-block;
     }
   }  
+}
+.deliverable { 
+  width: 58%;
+  display: inline-block;
+  margin: 5px 5px;
+  padding: 5px 5px;
+  float: right;
+
+  @media (max-width: 600px) {
+    width: 100%;
+  }
+
+  .due {
+    color: red;
+  }
+}
+
+.hr {
+  border: 2px solid gray;
 }
