@@ -11,7 +11,8 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160719165542) do
+ActiveRecord::Schema.define(version: 20160719175118) do
+
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -44,6 +45,18 @@ ActiveRecord::Schema.define(version: 20160719165542) do
 
   add_index "deliverables", ["cohort_id"], name: "index_deliverables_on_cohort_id", using: :btree
 
+  create_table "githubstudents", force: :cascade do |t|
+    t.integer  "user_id"
+    t.string   "provider_id"
+    t.string   "provider_token"
+    t.string   "provider_name"
+    t.text     "picture"
+    t.datetime "created_at",     null: false
+    t.datetime "updated_at",     null: false
+  end
+
+  add_index "githubstudents", ["user_id"], name: "index_githubstudents_on_user_id", using: :btree
+
   create_table "reviews", force: :cascade do |t|
     t.integer  "student_id"
     t.string   "review_type"
@@ -58,8 +71,12 @@ ActiveRecord::Schema.define(version: 20160719165542) do
   create_table "staffpicks", force: :cascade do |t|
     t.string   "name"
     t.string   "url"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "created_at",      null: false
+    t.datetime "updated_at",      null: false
+    t.date     "date"
+    t.string   "host_location"
+    t.string   "staff_attending"
+    t.string   "notes"
   end
 
   create_table "students", force: :cascade do |t|
@@ -82,17 +99,21 @@ ActiveRecord::Schema.define(version: 20160719165542) do
     t.boolean  "admin"
     t.datetime "created_at",      null: false
     t.datetime "updated_at",      null: false
+<<<<<<< HEAD
     t.string   "provider_id"
     t.string   "provider_token"
     t.string   "provider_name"
     t.text     "picture"
     t.string   "reset_code"
     t.datetime "expires_at"
+=======
+>>>>>>> 0833d3f339bca44e617a102e6023beeec988514f
   end
 
   add_foreign_key "cohorts_students", "cohorts"
   add_foreign_key "cohorts_students", "students"
   add_foreign_key "deliverables", "cohorts"
+  add_foreign_key "githubstudents", "users"
   add_foreign_key "reviews", "students"
   add_foreign_key "students", "users"
 end

@@ -17,14 +17,14 @@
     <div role="tabpanel" class="tab-pane fade in active" id="home">
       <!-- Cohort -->
       <h3>By Cohort</h3>
-      <div class="pull-right">
+      <div class=" form pull-right">
       <%= render '/cohorts/new', :locals => {:cohort => Cohort.new} %>
       </div>
       <!-- Select filter -->
       <div class="filter_options_container">
         <form class="filter_form">
-            <%= select("cohort", "cohort", Cohort.all.collect(&:cohort), :include_blank => true) %>     
-          <input type="submit" value="Filter" />
+            <%= select("cohort", "cohort", Cohort.all.collect(&:cohort), :include_blank => true, class: "form-control") %>     
+          <input class="btn btn-default" id= "form-submit" type="submit" value="Filter" />
         </form>
         <div>
           <h3 id="cohort-display"></h3>
@@ -54,7 +54,6 @@
       </table>    
     </div>
 
-
   <!-- Staff-Picks Tab -->
     <div role="tabpanel" class="tab-pane fade" id="staff-picks">
       <h3>Enter a Staff Favorite Meet Up</h3>
@@ -62,36 +61,13 @@
 
         <%= p.text_field :name %>
         <%= p.text_field :url %>
-
+        <%= p.text_field :host_location %>
+        <%= p.text_field :staff_attending %>
+        <%= p.text_field :notes %>
+        <%= p.date_field :date %>
         <%= p.submit %>
       <% end %>
     </div>
-
-  <!-- Admin tab -->
-  <div role="tabpanel" class="tab-pane fade" id="admins">
-    <h2>Enter a Staff Favorite Meet Up</h2>
-    <%= bootstrap_form_for(:picks) do |p| %>
-
-      <%= p.text_field :name %>
-      <%= p.text_field :url %>
-
-    <%= p.submit %>
-  <% end %>
-  
-    <table class="table">
-      <tbody>
-        <% @users.order('name ASC').each do |user| %>
-          <% if user.admin %>
-            <tr>
-              <td><%= user.name %></td>
-              <td><%= user.email %></td>
-              <td><%= link_to('Edit User', edit_user_path(user.id), class: 'btn btn-default') %></td>
-            </tr>
-            <% end %>
-          <% end %>
-        </tbody>
-      </table>    
-  </div>
 
     <!-- New User tab -->
     <div role="tabpanel" class="tab-pane fade" id="new-user">

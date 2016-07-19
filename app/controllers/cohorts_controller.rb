@@ -14,7 +14,7 @@ class CohortsController < ApplicationController
     @students = User.joins(:student, :cohorts).select('*')
     @deliverables = Deliverable.all
     # render json: @user.student
-    # render json: @cohorts
+    render json: @students
   end
 
   def new
