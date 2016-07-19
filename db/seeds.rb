@@ -13,6 +13,7 @@ Review.delete_all
 Cohort.delete_all
 Student.delete_all
 User.delete_all
+Staffpick.delete_all
 
 
 # Admin Users
@@ -255,4 +256,28 @@ reveiws = Review.create([
   }
 ])
 
+# Staff Picks
+
+Staffpick.create ([
+  {
+    name: 'Young Professionals Seattle', 
+    url: 'http://www.youngprofessionalsofseattle.com/#!blank/c1csg', 
+    staff_attending: 'Marina', 
+    host_location: 'Thompson Hotel', 
+    date: '2016-07-26'
+  },
+  {
+    name: 'Tech Crawl', 
+    url: 'http://www.washingtontechnology.org/event/tech-crawl-3/', 
+    staff_attending: 'Casey, Larry', 
+    notes: 'No actual pubs guys. Stops include: Outreach.io, Google and Thinkspace', 
+    date: '2016-07-28'
+  },
+  {
+    name: 'Dribble', 
+    url: 'https://nvite.com/SEADribbble/e459', 
+    staff_attending: 'Beth', 
+    date: '2016-07-21'
+  }
+])
 
