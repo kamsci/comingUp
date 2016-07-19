@@ -4,6 +4,20 @@
 <% @picks.each do |p| %>
   <div class="well">
     <h3><a href="<%= p.url %>"><%= p.name %></a></h3>
+    <label>Host: </label>
+    <% if p.host_location != '' %>
+      <p class="pick" style="width: 100px;"><%= p.host_location %></p>
+      <label>Staff Attending: </label>
+    <% end %>
+    <p class="pick"><%= p.staff_attending %></p>
+    <br>
+    <label>Date: </label>
+    <p class="pick"><%= p.date %></p>
+    <br>
+    <% if p.notes != '' %>
+      <label>Notes: </label><br>
+      <p><%= p.notes %></p>
+    <% end %>
   </div>
 <% end %>
 

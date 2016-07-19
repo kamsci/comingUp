@@ -52,7 +52,7 @@
           <td><%= s.deliverable_name %></td>
           <td><%= s.notes %></td>
           <td><%= s.due_date %></td>
-          <td><%= link_to('Edit', edit_deliverable_path(s.id), class: 'btn btn-default') %></td>
+          <td><%= link_to('Edit', edit_deliverable_path(s.deliverable_id), class: 'btn btn-default') %></td>
         </tr>
       <% end %>
       </tbody>

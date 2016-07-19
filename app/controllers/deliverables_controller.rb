@@ -5,7 +5,7 @@ class DeliverablesController < ApplicationController
 
   def new
     @deliverable = Deliverable.new
-    # render json: @deliverable
+    render json: @deliverable
   end
 
   def create
@@ -14,11 +14,12 @@ class DeliverablesController < ApplicationController
   end
 
   def edit
-    # @deliverable = Deliverable.find_by_id(params[:id])
+    @deliverable = Deliverable.find_by_id(params[:id])
   end
 
   def update
     Deliverable.find_by_id(params[:id]).update(deliverable_params)
+    redirect_to students_path
   end
 
   private
