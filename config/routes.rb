@@ -1,5 +1,9 @@
 Rails.application.routes.draw do
 
+  get 'passwords/new'
+
+  get 'passwords/edit'
+
   root 'main#index'
 
   resources :users
@@ -12,13 +16,19 @@ Rails.application.routes.draw do
 
   resources :deliverables
 
-
   get 'login', to: 'sessions#new'
 
   post 'login', to: 'sessions#create'
 
   delete 'logout', to: 'sessions#destroy'
 
+  get 'reset' => 'passwords#new'
+
+  post 'reset' => 'passwords#create'
+
+  get 'reset/:code' => 'passwords#edit', as: :reset_code
+
+  put 'reset/:code' => 'passwords#update'
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
