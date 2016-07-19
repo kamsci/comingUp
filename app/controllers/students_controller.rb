@@ -9,6 +9,7 @@ class StudentsController < ApplicationController
   def index
     @users = User.all
     @cohorts = Cohort.all
+   # @picks = Staffpick.all
 
     # render json: params[:cohort]
 
@@ -49,6 +50,11 @@ class StudentsController < ApplicationController
     @student = Student.find(params[:id])
   end
 
+  def create
+    @picks = Staffpick.create(staff_params)
+    redirect_to root_path
+  end
+
   def update
     if @current_user
       student = Student.find(params[:id])
@@ -61,5 +67,9 @@ class StudentsController < ApplicationController
   
   def student_params
      params.require(:student).permit(:brand, :linkedin, :resume, :jobtracker, :portfolio, :user_id => [])
+  end
+
+  def staff_params
+    params.require(:picks).permit(:name, :url)
   end
 end

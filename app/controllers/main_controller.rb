@@ -18,6 +18,8 @@ class MainController < ApplicationController
     else
       @data = JSON.parse(data)
     end
+
+    @picks = Staffpick.all
   end
 
 end
