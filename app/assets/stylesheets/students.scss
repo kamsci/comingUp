@@ -4,11 +4,11 @@
 
 // EVERYTHING ENCOMPASSED BY .STUDENT-PROFILE TO NOT MESS WITH OTHERS' SCSS //
 .students-profile {
-
   // GENERAL STYLING //
   .row {
     width: 100%;
-    margin: 0px 0;
+    margin: 0;
+    padding: 0 0 20px 0;
     border-bottom: 1px solid silver;
     min-height: 100px;
   }
@@ -110,31 +110,42 @@
   // ALL ACCORDIANS //
 
   .ui-state-active {
-    color: red;
+    color: blue;
     border: none;
     background-color:gray;
+  }
+  .ui-state-default {
+    background-image: none;
+    background-color: silver;
+    &:hover {
+    }
   }
 
   .ui-state-hover{
     color:blue;
     border:1px solid blue; 
-    background-color:grey;
   }
   // END ALL ACCORDIANS STYLES //
   // ACCORDIAN INDIVIDUALS //
 
   // branding statement //
-  .accordion_brand h3{
-    margin:0;
-    font-size: 1em;
-    font-weight: 200;
-    &:hover{
-      background-color:grey;
+  div.accordion_brand {
+    display:none;
+    div p {
+      margin-bottom: 20px;
+    }
+    h3{
+      margin:0;
+      font-size: 1em;
+      font-weight: 200;
+      &:hover{
+        background-color: grey;
+      }
     }
   }
 
   .accordion_brand {
-    display:none;
+    
   }
 
   .reviews_brand {
