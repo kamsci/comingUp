@@ -1,5 +1,7 @@
-<h1>Staff Picks</h1>
+<div class="container">
+  <h1>Staff Picks</h1>
 
-<% @picks.each do |p| %>
-  <h3><a href="<%= p.url %>"><%= p.name %></h3>
-<% end %>
+  <% @picks.each do |p| %>
+    <h3><a href="<%= p.url %>"><%= p.name %></a></h3>
+  <% end %>
+</div>
