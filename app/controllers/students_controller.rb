@@ -12,10 +12,10 @@ class StudentsController < ApplicationController
 
     if (params[:cohort] && params[:cohort][:cohort] && params[:cohort][:cohort] != '')
       @students = User.joins(:student, :cohorts).select('*').where(cohorts:{cohort: params[:cohort][:cohort]})
-      @deliverables = Deliverable.select('*').joins(:cohort).where(cohorts:{cohort: params[:cohort][:cohort]})
+      @deliverables = Deliverable.select('deliverables.id AS deliverable_id, *').joins(:cohort).where(cohorts:{cohort: params[:cohort][:cohort]})
     else
       @students = User.joins(:student, :cohorts).select('*')
-      @deliverables = Deliverable.joins(:cohort).select('*')
+      @deliverables = Deliverable.joins(:cohort).select('deliverables.id AS deliverable_id, *')
     end
   end
 
@@ -67,6 +67,6 @@ class StudentsController < ApplicationController
   end
 
   def staff_params
-    params.require(:picks).permit(:name, :url)
+    params.require(:picks).permit(:name, :url, :staff_attending, :host_location, :notes, :date)
   end
 end

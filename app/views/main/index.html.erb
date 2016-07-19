@@ -5,10 +5,12 @@
 <div>
 
   <ul class="nav nav-tabs" role="tablist">
-    <li role="presentation" class="active"><a href="#home" aria-controls="home" role="tab" data-toggle="tab">Search</a></li>
-    <li role="presentation"><a href="#profile" aria-controls="profile" role="tab" data-toggle="tab">Staff Picks</a></li>
-    <li role="presentation"><a href="#messages" aria-controls="messages" role="tab" data-toggle="tab">Links</a></li>
+    <li role="presentation" class="active"><a href="#home" aria-controls="home" role="tab" data-toggle="tab">Search Events</a></li>
+    <li role="presentation"><a href="#profile" aria-controls="profile" role="tab" data-toggle="tab">Events - Staff Picks</a></li>
+    <li role="presentation"><a href="#messages" aria-controls="messages" role="tab" data-toggle="tab">Useful Links</a></li>
+    <% if @current_user %> 
     <li role="presentation"><a href="#settings" aria-controls="settings" role="tab" data-toggle="tab">Cohorts</a></li>
+    <% end %>
   </ul>
 
   

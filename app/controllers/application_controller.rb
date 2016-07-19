@@ -31,4 +31,8 @@
     @current_user ||= User.find_by_id(session[:user_id])
   end
 
+  def current_cohort
+    @current_cohort ||= Student.find_by_id(session[:user_id]).joins(:cohorts)
+  end
+
 end
