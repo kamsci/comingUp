@@ -7,7 +7,7 @@
       <% @students.each do |s| %>
         <% if s.cohort_id == c.id %>
           <div class="cell">
-            <p><span><%= icon('github-alt') %>   </span><a href="/students/<%= s.user_id %>"><%= s.name %></a></p>
+            <p class="student"><span><%= icon('github-alt') %>   </span><a href="/students/<%= s.user_id %>"><%= s.name %></a></p>
           </div>
         <% end %> 
       <% end %>
@@ -16,14 +16,14 @@
       <h4>Schedule of Deliverables</h4>
       <table class="table">
         <thead><tr>
-          <th>Assignment</th>
+          <th class="assign">Assignment</th>
           <th>Notes</th>
-          <th class="due">Due_Date</th>
+          <th class="due">Due Date</th>
         </tr></thead>
         <% @deliverables.each do |d| %>
           <% if d.cohort_id == c.id %>
             <tr>
-              <td><%= d.deliverable_name %></td>
+              <td class="d-name"><%= d.deliverable_name %></td>
               <td><%= d.notes %></td>
               <td class="due"><%= d.due_date.to_formatted_s(:short) %></td>
             </tr>

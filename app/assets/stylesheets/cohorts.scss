@@ -3,7 +3,7 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 .cohort {
-  width: 38%;
+  width: 28%;
   min-height: 300px;
   display: inline-block;
   margin: 5px 5px;
@@ -22,7 +22,7 @@
   }  
 }
 .deliverable { 
-  width: 58%;
+  width: 68%;
   display: inline-block;
   margin: 5px 5px;
   padding: 5px 5px;
@@ -31,9 +31,20 @@
   @media (max-width: 600px) {
     width: 100%;
   }
-
+  .student a {
+    font-size: 40px;
+  }
   .due {
     color: red;
+    font-size: 16px;
+    min-width: 100px;
+    text-align: center;
+  }
+  .assign {
+    min-width: 200px;
+  }
+  .d-name {
+    font-size: 14px;
   }
 }
 
