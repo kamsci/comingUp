@@ -9,8 +9,6 @@ $(document).ready(function() {
     $(this).blur();
     $('.focus').focus();
     $('.submit-button').css('display', 'block');
-    $('.update').css('background-color', 'grey').css('color', 'white');
-    $('.branding').css('background-color', 'grey');
     $('.hide_on_edit').css('display', 'none');
     $('.show_on_edit').css('display', 'block');
   });
@@ -72,10 +70,11 @@ $(document).ready(function() {
     $(this).parent().css('display', 'none');
   });
 
-// to show comments
+// to show accordian comments to user
   // brand
   $('.reviews_brand').on('click', function(e) {
     e.preventDefault();
+    $('.close_brand').after($('.accordion_brand'));
     $('.accordion_brand').css('display', 'block');
     $('.close_brand').css('display', 'block');
     $(this).css('display', 'none');
@@ -97,6 +96,7 @@ $(document).ready(function() {
   // resume
   $('.reviews_resume').on('click', function(e) {
     e.preventDefault();
+    $('.close_resume').after($('.accordion_resume'));
     $('.accordion_resume').css('display', 'block');
     $('.close_resume').css('display', 'block');
     $(this).css('display', 'none');
@@ -118,6 +118,7 @@ $(document).ready(function() {
  // portfolio
    $('.reviews_portfolio').on('click', function(e) {
     e.preventDefault();
+    $('.close_portfolio').after($('.accordion_portfolio'));
     $('.accordion_portfolio').css('display', 'block');
     $('.close_portfolio').css('display', 'block');
     $(this).css('display', 'none');
@@ -136,9 +137,10 @@ $(document).ready(function() {
     });
   });
 
-  // linkelinkedin$('.reviews_linkedin').on('click', function(e) {
+  // linkedin //
   $('.reviews_linkedin').on('click', function(e) {
     e.preventDefault();
+    $('.close_linkedin').after($('.accordion_linkedin'));
     $('.accordion_linkedin').css('display', 'block');
     $('.close_linkedin').css('display', 'block');
     $(this).css('display', 'none');
@@ -159,6 +161,7 @@ $(document).ready(function() {
    // jobtracker
   $('.reviews_jobtracker').on('click', function(e) {
     e.preventDefault();
+    $('.close_jobtracker').after($('.accordion_jobtracker'));
     $('.accordion_jobtracker').css('display', 'block');
     $('.close_jobtracker').css('display', 'block');
     $(this).css('display', 'none');

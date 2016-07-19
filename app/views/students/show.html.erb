@@ -1,10 +1,10 @@
 <div class="students-profile">
-  <div class="profile">
+<!--   <div class="profile"> -->
     <div class="row">
       <div class="profile-header">
-        <!-- This is the Profile Info -->
+        <!-- This is the Profile Header Row -->
         <div class="prof-head-col">
-          <h2><%=@user.name%></h2>
+          <h1><%=@user.name%></h1>
           <%@user.student.cohorts.each do |cohort|%>
             <span><%=cohort.cohort%></span>
           <% end %>
@@ -22,7 +22,7 @@
     <%= form_for @user.student do |f| %>
       <!-- Branding Statement -->
       <div class="row brand">
-        <p>Branding Statement</p>
+        <h2>Branding Statement</h2>
         <div class="branding">
           <p class="hide_on_edit"><%= @user.student.brand %>
           </p>
@@ -32,23 +32,14 @@
           <h4><a href="#" class="comment_brand">Leave a Comment</a></h4>
         <% elsif @user == @current_user && @brand.length > 0 %>
           <a href="#" class="reviews_brand">See Reviews</a>
-        <% end %>
-      </div>
-      <a href="#" class="close_brand">Close</a>
-      <div class="accordion_brand">
-        <% @brand.each do |brand|%>
-          <h3>From <%=brand.reviewer_name%></h3>
-          <div>
-            <p><%=brand.review_content%></p>
-          </div>
+          <a href="#" class="close_brand">Close</a>
         <% end %>
       </div>
 
-
-      <!-- Resume Link -->
+      <!-- Resume -->
       <div class="row">
         <p>
-          <span>Resume Link</span>
+          <h2>Resume Link</h2>
           <a class="hide_on_edit" href="<%= @user.student.resume %>"> <%= @user.student.resume %>
           </a>
         </p>
@@ -57,21 +48,14 @@
           <a href="#" class="comment_resume">Leave a Comment</a>
         <% elsif @user == @current_user && @resume.length > 0 %>
           <a href="#" class="reviews_resume">See Reviews</a>
+          <a href="#" class="close_resume">Close</a>
         <% end %>
       </div>
-      <a href="#" class="close_resume">Close</a>
-      <div class="accordion_resume">
-        <% @resume.each do |resume|%>
-          <h3>From <%=resume.reviewer_name%></h3>
-          <div>
-            <p><%=resume.review_content%></p>
-          </div>
-        <% end %>
-      </div>
+
       <!-- LinkedIn Link -->
       <div class="row">
         <p>
-          <span>LinkedIn Link</span>
+          <h2>LinkedIn Link</h2>
           <a class="hide_on_edit" href="<%= @user.student.linkedin %>"> <%= @user.student.linkedin %>
           </a>
         </p>
@@ -80,21 +64,13 @@
           <a href="#" class="comment_linkedin">Leave a Comment</a>
         <% elsif @user == @current_user && @linkedin.length > 0 %>
           <a href="#" class="reviews_linkedin">See Reviews</a>
+          <a href="#" class="close_linkedin">Close</a>
         <% end %>
       </div>
-       <a href="#" class="close_linkedin">Close</a>
-      <div class="accordion_linkedin">
-        <% @linkedin.each do |linkedin|%>
-          <h3>From <%=linkedin.reviewer_name%></h3>
-          <div>
-            <p><%=linkedin.review_content%></p>
-          </div>
-        <% end %>
-      </div>
-  
-      <!-- Portfolio Link -->
+
+      <!-- Portfolio -->
       <div class="row">
-        <p><span>Portfolio Link</span>
+        <p><h2>Portfolio Link</h2>
           <a class="hide_on_edit" href="<%= @user.student.portfolio %>"> <%= @user.student.portfolio %>
           </a>
         </p>
@@ -103,21 +79,14 @@
           <a href="#" class="comment_portfolio">Leave a Comment</a>
         <% elsif @user == @current_user && @portfolio.length > 0 %>
           <a href="#" class="reviews_portfolio">See Reviews</a>
+          <a href="#" class="close_portfolio">Close</a>
         <% end %>
       </div>
-       <a href="#" class="close_portfolio">Close</a>
-      <div class="accordion_portfolio">
-        <% @portfolio.each do |portfolio|%>
-          <h3>From <%=portfolio.reviewer_name%></h3>
-          <div>
-            <p><%=portfolio.review_content%></p>
-          </div>
-        <% end %>
-      </div>
+
       <!-- Job Tracker Link -->
       <div class="row">
         <p>
-          <span>Job Tracker</span>
+          <h2>Job Tracker</h2>
           <a class="hide_on_edit" href="<%= @user.student.jobtracker %>"> <%= @user.student.jobtracker %>
           </a>
           </p>
@@ -126,22 +95,67 @@
           <a href="#" class="comment_jobtracker">Leave a Comment</a>
         <% elsif @user == @current_user && @jobtracker.length > 0 %>
           <a href="#" class="reviews_jobtracker">See Reviews</a>
+          <a href="#" class="close_jobtracker">Close</a>
         <% end %>
       </div>
-       <a href="#" class="close_jobtracker">Close</a>
-      <div class="accordion_jobtracker">
-        <% @jobtracker.each do |jobtracker|%>
-          <h3>From <%=jobtracker.reviewer_name%></h3>
-          <div>
-            <p><%=jobtracker.review_content%></p>
-          </div>
-        <% end %>
-      </div>
+
       <%= f.submit class: 'submit-button'%>
+    <% end %>
+<!-- ^ABOVE: END OF EDIT PROFILE FORM ^ -->
+
+<!-- END .PROFILE -->
+  <!-- </div> -->
+
+
+<!-- ACCORDIANS FOR SEEING COMMENTS -->
+  <div class="accordion_brand">
+    <% @brand.each do |brand|%>
+      <h3>From <%=brand.reviewer_name%></h3>
+      <div>
+        <p><%=brand.review_content%></p>
+      </div>
+    <% end %>
+  </div>
+      
+  <div class="accordion_resume">
+    <% @resume.each do |resume|%>
+      <h3>From <%=resume.reviewer_name%></h3>
+      <div>
+        <p><%=resume.review_content%></p>
+      </div>
     <% end %>
   </div>
 
-  <!-- Comment for Branding -->
+  <div class="accordion_linkedin">
+    <% @linkedin.each do |linkedin|%>
+      <h3>From <%=linkedin.reviewer_name%></h3>
+      <div>
+        <p><%=linkedin.review_content%></p>
+      </div>
+    <% end %>
+  </div>
+
+  <div class="accordion_portfolio">
+    <% @portfolio.each do |portfolio|%>
+      <h3>From <%=portfolio.reviewer_name%></h3>
+      <div>
+        <p><%=portfolio.review_content%></p>
+      </div>
+    <% end %>
+  </div>
+
+  <div class="accordion_jobtracker">
+    <% @jobtracker.each do |jobtracker|%>
+      <h3>From <%=jobtracker.reviewer_name%></h3>
+      <div>
+        <p><%=jobtracker.review_content%></p>
+      </div>
+    <% end %>
+  </div>
+
+<!-- END OF ACCORDIANS -->
+
+<!-- FORMS FOR ADDING A COMMENT -->
   <div class="comment_form_brand">
     <%= form_for @review = Review.new do |r| %>
       <%= r.hidden_field :student_id, :value => @user.student.id %>
@@ -153,7 +167,6 @@
     <a href="#" class="cancel_brand">Cancel</a>
   </div>
 
-  <!-- Comment for Resume Link -->
   <div class="comment_form_resume">
     <%= form_for @review = Review.new do |r| %>
       <%= r.hidden_field :student_id, :value => @user.student.id %>
@@ -165,7 +178,6 @@
     <a href="#" class="cancel_resume">Cancel</a>
   </div>
 
-  <!-- Comment for LinkedIn Link -->
   <div class="comment_form_linkedin">
     <%= form_for @review = Review.new do |r| %>
       <%= r.hidden_field :student_id, :value => @user.student.id %>
@@ -177,7 +189,6 @@
     <a href="#" class="cancel_linkedin">Cancel</a>
   </div>
 
-  <!-- Comment for Portfolio Link -->
   <div class="comment_form_portfolio">
     <%= form_for @review = Review.new do |r| %>
       <%= r.hidden_field :student_id, :value => @user.student.id %>
@@ -187,10 +198,8 @@
       <%= r.submit class:'send' %>
     <% end %>
     <a href="#" class="cancel_portfolio">Cancel</a>
-
   </div>
 
-  <!-- Comment for Job Tracker Link -->
   <div class="comment_form_jobtracker">
     <%= form_for @review = Review.new do |r| %>
       <%= r.hidden_field :student_id, :value => @user.student.id %>
@@ -201,4 +210,7 @@
     <% end %>
     <a href="#" class="cancel_jobtracker">Cancel</a>
   </div>
+<!-- END FORMS FOR CREATING COMMENTS -->
+
+<!-- END OF CONTAINER FOR STUDENTS SHOW PAGE .STUDENTS-PROFILE -->
 </div>

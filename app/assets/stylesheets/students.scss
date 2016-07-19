@@ -1,40 +1,129 @@
 // Place all the styles related to the students controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+// EVERYTHING ENCOMPASSED BY .STUDENT-PROFILE TO NOT MESS WITH OTHERS' SCSS //
 .students-profile {
 
-// accordian stuff////////////////////
-
-  .ui-widget {
-    display:none;
+  // GENERAL STYLING //
+  .row {
     width: 100%;
-    margin: 0 0 10px 0;
+    margin: 0px 0;
+    border-bottom: 1px solid silver;
+    min-height: 100px;
   }
-  .ui-widget-header{
-    background-color:grey;
 
-    &:hover{
-      background-color:grey;
+  .row:first-child {
+    border-bottom: none;
+  }
+
+  .profile-header {
+    width: 100%;
+    margin:80px auto 20px auto;
+    display:flex;
+    flex-direction: row;
+    background-color: white;
+    padding: 10px 10px;
+    color: black;
+    border-bottom: 1px solid gray;
+  }
+
+  // PROF-HEAD-COL STYLES //
+  .prof-head-col {
+    padding: 0 20px 0 0;
+
+    h1{
+      margin:10px 0 6px 0;
+      font-size: 3em;
+      font-weight: 200;
+    }
+    span {
+      display:block;
+      margin:0 0 0 4px;
+      padding:0 0 0 0px;
+    }
+
+    a{
+      &:hover{
+        text-decoration:none;
+      }
+    }
+
+    div.password{
+      margin: 4px 0;
     }
   }
+
+  h2 {
+    text-align: left;
+    font-size: 1.4em;
+    font-weight: 200;
+  }
+
+  a.hide_on_edit {
+    font-weight: 400;
+    margin: 0 0 0 40px;
+    display:block;
+    
+  }
+  .prof-head-col:last-child {
+    margin: 0 0 0 auto;
+    align-self: flex-end;
+
+    button {
+      margin: 0 -10px 0 auto;
+      border-radius: 4px;
+      }  
+  }
+  // END PROF-HEAD-COL STYLING //
+
+  .branding {
+  width: 92%;
+  height: 100px;
+  margin: 10px auto 0 auto;
+  border-radius: 4px;
+  padding: 0;
+  background-color:white;
+
+    textarea{
+      margin: 0;
+      height: 100%;
+      width: 100%;
+      border:none;
+      resize:none;
+    }
+  }
+
+  .url-link {
+    width: 92%;
+    height: 20px;
+    margin: 10px auto;
+    display:block;
+    padding: 2px 10px;
+    border-radius: 4px;
+    border: 1px solid grey;
+    background-color:white;
+  }
+  // END GENERAL STYLING //
+
+  // ACCORDIAN STUFF //
+  // ALL ACCORDIANS //
+
   .ui-state-active {
     color: red;
     border: none;
+    background-color:gray;
   }
-  .ui-state-default{
 
-  }
- .ui-accordion-icons{
-  background-color:white;
-  &:hover{
-    background-color:white; 
-  }
- }
   .ui-state-hover{
     color:blue;
     border:1px solid blue; 
+    background-color:grey;
   }
-// accordion brand //////////////////////////////////////
+  // END ALL ACCORDIANS STYLES //
+  // ACCORDIAN INDIVIDUALS //
+
+  // branding statement //
   .accordion_brand h3{
     margin:0;
     font-size: 1em;
@@ -43,11 +132,31 @@
       background-color:grey;
     }
   }
-  .close_brand{
+
+  .accordion_brand {
     display:none;
   }
 
-  // accordion resume //
+  .reviews_brand {
+    margin: 0 20px 0 0;
+    display:block;
+    text-align: right;
+  }
+  .close_brand{
+    display:none;
+    text-align:right;
+  }
+
+  // resume //
+  .reviews_resume {
+    margin: 0 20px 0 0;
+    display:block;
+    text-align: right;
+  }
+  .accordion_resume {
+    display:none;
+  }
+
   .accordion_resume h3{
     margin:0;
     font-size: 1em;
@@ -56,11 +165,23 @@
       background-color:grey;
     }
   }
+
   .close_resume{
     display:none;
+    text-align: right;
   }
 
-// accordion portfolio //
+
+  // portfolio //
+  .accordion_portfolio {
+    display:none;
+  }
+  .reviews_portfolio {
+    margin: 0 20px 0 0;
+    display:block;
+    text-align: right;
+  }
+
   .accordion_portfolio h3{
     margin:0;
     font-size: 1em;
@@ -71,8 +192,11 @@
   }
   .close_portfolio{
     display:none;
+    text-align: right;
   }
-// accordion jobtracker //
+
+  // jobtracker //
+
   .accordion_jobtracker h3{
     margin:0;
     font-size: 1em;
@@ -81,11 +205,25 @@
       background-color:grey;
     }
   }
-  .close_jobtracker{
+  .accordion_jobtracker {
     display:none;
   }
 
-// accordion linkedin //
+  .close_jobtracker{
+    display:none;
+    text-align:right;
+  }
+
+  .reviews_jobtracker {
+    margin: 0 20px 0 0;
+    display:block;
+    text-align: right;
+  }
+
+  // linkedin //
+  .accordion_linkedin {
+    display:none;
+  }
   .accordion_linkedin h3{
     margin:0;
     font-size: 1em;
@@ -96,12 +234,22 @@
   }
   .close_linkedin{
     display:none;
+    text-align:right;
   }
 
-// student profile edit form///////////////////////////////////////////
+  .reviews_linkedin {
+    margin: 0 20px 0 0;
+    display:block;
+    text-align: right;
+  }
+
+  // END ACCORDIAN STUFF //
+
+
+  // STUDENT PROFILE EDIT FORM //
   form {
     width: 80%;
-    margin: 0;
+    margin: 0 auto 40px auto;
     display:flex;
     flex-direction: column;
     align-items: center;
@@ -129,15 +277,11 @@
       margin: 10px 20px 10px 10px;
     }
   }
+  // END STUDENT PROFILE EDIT FORM //
 
-.row {
-  width: 100%;
-  margin: 20px 0;
-  border-bottom: 1px solid silver;
 
-}
 
-// comments //////////////////////////////////////////////////////////
+  // COMMENT FORMS //
   div.comment_form_brand{
     display:none;
     width: 100%;
@@ -145,14 +289,6 @@
     align-item: center;
   }
 
-  form.new_review {
-    width: 92%;
-    margin: 0 auto;
-
-  }
-  p{
-    margin: 0 0 0 20px;
-  }
   a.comment_brand {
     display:block;
     text-align: right;
@@ -235,96 +371,8 @@
   }
 }
 
-// 
-h1{
-  margin: 20px 0 20px 20px;
-  font-size: 60px;
-}
+// END .STUDENT-PROFILE //
 
-.profile{
-  display: flex;
-  flex-direction: column;
-  justify-content:center;
-  align-items: center;
-  margin: 100px auto;
-  background-color:white;
-}
-
-.profile-header {
-  width: 100%;
-  margin:0 auto;
-  display:flex;
-  flex-direction: row;
-  background-color: white;
-  padding: 10px 10px;
-  color: black;
-  border-bottom: 1px solid gray;
-}
-
-.prof-head-col {
-  padding: 0 20px 0 0;
-
-  h2{
-    margin:10px 0 6px 0;
-    font-size: 3em;
-  }
-  span {
-    display:block;
-    margin:0;
-    padding:0 0 0 0px;
-  }
-
-  a{
-    &:hover{
-      text-decoration:none;
-    }
-  }
-
-  div.password{
-    margin: 4px 0;
-  }
-}
-
-.prof-head-col:last-child {
-  margin: 0 0 0 auto;
-  align-self: flex-end;
-
-  button {
-    margin: 0 -10px 0 auto;
-    border-radius: 4px;
-    }  
-  }
-
-.branding {
-  width: 92%;
-  height: 100px;
-  margin: 10px auto 0 auto;
-  border-radius: 4px;
-  padding: 0;
-  background-color:white;
-
-  textarea{
-    margin: 0;
-    height: 100%;
-    width: 100%;
-    border:none;
-    resize:none;
-  }
-}
-
-.url-link {
-  width: 92%;
-  height: 20px;
-  margin: 10px auto;
-  display:block;
-  padding: 2px 10px;
-  border-radius: 4px;
-  border: 1px solid grey;
-  background-color:white;
-    &:hover{
-      color:red;
-    }
-}
 
 // Admin Management Styles
 // Deliverable Tab
