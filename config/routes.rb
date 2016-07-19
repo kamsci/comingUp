@@ -10,6 +10,8 @@ Rails.application.routes.draw do
 
   resources :cohorts
 
+  # get 'staffpicks/index', to: 'staffpicks#index'
+
   get 'login', to: 'sessions#new'
 
   post 'login', to: 'sessions#create'

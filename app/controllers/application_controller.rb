@@ -9,7 +9,7 @@
   def is_authenticated
     unless current_user
       flash[:danger] = "Credentials Invalid"
-      direct_to login_path
+      redirect_to login_path
     end
   end
 

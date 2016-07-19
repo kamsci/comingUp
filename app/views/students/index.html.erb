@@ -11,10 +11,6 @@
     <li role="presentation"><a href="#new-user" aria-controls="new-user" role="tab" data-toggle="tab" class="nav-tabs-left">New User</a></li>
   </ul>
 
-<!-- Tab panes -->
-<div class="tab-content">
-
-  <!-- Students tab -->
   <div role="tabpanel" class="tab-pane fade in active" id="home">
     <!-- Cohort -->
     <h3>By Cohort</h3>
@@ -37,8 +33,15 @@
 
   <!-- Admin tab -->
   <div role="tabpanel" class="tab-pane fade" id="admins">
-    <h3>Administrators</h3>
+  <h2>Enter a Staff Favorite Meet Up</h2>
+  <%= bootstrap_form_for(:picks) do |p| %>
 
+    <%= p.text_field :name %>
+    <%= p.text_field :url %>
+
+    <%= p.submit %>
+  <% end %>
+  
     <table class="table">
       <tbody>
         <% @users.order('name ASC').each do |user| %>
