@@ -15,7 +15,7 @@ $(document).ready(function() {
   });
 
   $('.link-right').on('click', function(e) {
-    $('link-right').css('display', 'none');
+    $('.link-right').css('display', 'none');
     $('.submit-button').css('display', 'none');
     $('.hide_on_edit').css('display', 'block');
     $('.show_on_edit').css('display', 'none');
