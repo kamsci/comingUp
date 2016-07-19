@@ -12,9 +12,9 @@
   <br>
   <%= f.password_field :password_confirmation %>
   <br>
-  <%= f.radio_button :admin, 'false', :checked => true %>
+  <%= f.radio_button :admin, 'false', :checked => true, class: 'student'%>
   <%= f.label :admin_false, 'student' %>
-  <%= f.radio_button :admin, 'true', :checked => false %>
+  <%= f.radio_button :admin, 'true', :checked => false, class: 'admin'%>
   <%= f.label :admin_true, 'admin' %>
   <br>
   <div class="hide_admin">

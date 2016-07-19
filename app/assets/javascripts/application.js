@@ -16,6 +16,7 @@
 //= require_tree .
 //= require students.js
 
+
 $(document).on('page:change', function() {
   console.log('document is ready');
 });
