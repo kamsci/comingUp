@@ -8,11 +8,18 @@ $(document).ready(function() {
   $('.edit').on('click', function(e) {
     $(this).blur();
     $('.focus').focus();
+    $('.link-right').css('display', 'block');
     $('.submit-button').css('display', 'block');
     $('.hide_on_edit').css('display', 'none');
-    $('.show_on_edit').css('display', 'block');
+    $('.show_on_edit').toggle('fade', 1000);
   });
 
+  $('.link-right').on('click', function(e) {
+    $('link-right').css('display', 'none');
+    $('.submit-button').css('display', 'none');
+    $('.hide_on_edit').css('display', 'block');
+    $('.show_on_edit').css('display', 'none');
+  });
 // to open comment boxes
   $('.comment_brand').on('click', function(e) {
     e.preventDefault();

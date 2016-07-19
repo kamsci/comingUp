@@ -21,6 +21,7 @@
     <!-- This is the student's deliverables -->
     <%= form_for @user.student do |f| %>
       <!-- Branding Statement -->
+      <a href="#" class="link-right">Cancel</a>
       <div class="row brand">
         <h2>Branding Statement</h2>
         <div class="branding">
@@ -110,7 +111,7 @@
 <!-- ACCORDIANS FOR SEEING COMMENTS -->
   <div class="accordion_brand">
     <% @brand.each do |brand|%>
-      <h3>From <%=brand.reviewer_name%></h3>
+      <h3>From: <%=brand.reviewer_name%></h3>
       <div>
         <p><%=brand.review_content%></p>
       </div>
@@ -119,7 +120,7 @@
       
   <div class="accordion_resume">
     <% @resume.each do |resume|%>
-      <h3>From <%=resume.reviewer_name%></h3>
+      <h3>From: <%=resume.reviewer_name%></h3>
       <div>
         <p><%=resume.review_content%></p>
       </div>
@@ -128,7 +129,7 @@
 
   <div class="accordion_linkedin">
     <% @linkedin.each do |linkedin|%>
-      <h3>From <%=linkedin.reviewer_name%></h3>
+      <h3>From: <%=linkedin.reviewer_name%></h3>
       <div>
         <p><%=linkedin.review_content%></p>
       </div>
@@ -137,7 +138,7 @@
 
   <div class="accordion_portfolio">
     <% @portfolio.each do |portfolio|%>
-      <h3>From <%=portfolio.reviewer_name%></h3>
+      <h3>From: <%=portfolio.reviewer_name%></h3>
       <div>
         <p><%=portfolio.review_content%></p>
       </div>
@@ -146,7 +147,7 @@
 
   <div class="accordion_jobtracker">
     <% @jobtracker.each do |jobtracker|%>
-      <h3>From <%=jobtracker.reviewer_name%></h3>
+      <h3>From: <%=jobtracker.reviewer_name%></h3>
       <div>
         <p><%=jobtracker.review_content%></p>
       </div>

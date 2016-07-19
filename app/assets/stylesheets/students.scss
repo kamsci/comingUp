@@ -110,20 +110,21 @@
   // ALL ACCORDIANS //
 
   .ui-state-active {
-    color: blue;
+    color: white;
     border: none;
     background-color:gray;
   }
   .ui-state-default {
     background-image: none;
-    background-color: silver;
+    background-color: rgba(0, 0, 0, 0.8);
+    color: white;
     &:hover {
     }
   }
 
   .ui-state-hover{
-    color:blue;
-    border:1px solid blue; 
+    color:white;
+     
   }
   // END ALL ACCORDIANS STYLES //
   // ACCORDIAN INDIVIDUALS //
@@ -133,11 +134,15 @@
     display:none;
     div p {
       margin-bottom: 20px;
+      min-height: 48px;
+      padding: 4px 8px;
+
     }
     h3{
       margin:0;
-      font-size: 1em;
+      font-size: 1.2em;
       font-weight: 200;
+      padding: 4px 8px 20px 8px;
       &:hover{
         background-color: grey;
       }
@@ -156,6 +161,7 @@
   .close_brand{
     display:none;
     text-align:right;
+    margin: 0 20px 0 0;
   }
 
   // resume //
@@ -168,18 +174,28 @@
     display:none;
   }
 
-  .accordion_resume h3{
-    margin:0;
-    font-size: 1em;
-    font-weight: 200;
-    &:hover{
-      background-color:grey;
+  div.accordion_resume {
+    display:none;
+    div p {
+      margin-bottom: 20px;
+      min-height: 48px;
+      padding: 4px 8px;
+    }
+    h3{
+      margin:0;
+      font-size: 1.2em;
+      font-weight: 200;
+      padding: 4px 8px 20px 8px;
+      &:hover{
+        background-color: grey;
+      }
     }
   }
 
   .close_resume{
     display:none;
     text-align: right;
+     margin: 0 20px 0 0;
   }
 
 
@@ -193,27 +209,48 @@
     text-align: right;
   }
 
-  .accordion_portfolio h3{
-    margin:0;
-    font-size: 1em;
-    font-weight: 200;
-    &:hover{
-      background-color:grey;
+  div.accordion_portfolio {
+    display:none;
+    div p {
+      margin-bottom: 20px;
+      min-height: 48px;
+      padding: 4px 8px;
+
+    }
+    h3{
+      margin:0;
+      font-size: 1.2em;
+      font-weight: 200;
+      padding: 4px 8px 20px 8px;
+      &:hover{
+        background-color: grey;
+      }
     }
   }
   .close_portfolio{
     display:none;
     text-align: right;
+     margin: 0 20px 0 0;
   }
 
   // jobtracker //
 
-  .accordion_jobtracker h3{
-    margin:0;
-    font-size: 1em;
-    font-weight: 200;
-    &:hover{
-      background-color:grey;
+  div.accordion_jobtracker {
+    display:none;
+    div p {
+      margin-bottom: 20px;
+      min-height: 48px;
+      padding: 4px 8px;
+
+    }
+    h3{
+      margin:0;
+      font-size: 1.2em;
+      font-weight: 200;
+      padding: 4px 8px 20px 8px;
+      &:hover{
+        background-color: grey;
+      }
     }
   }
   .accordion_jobtracker {
@@ -223,6 +260,7 @@
   .close_jobtracker{
     display:none;
     text-align:right;
+     margin: 0 20px 0 0;
   }
 
   .reviews_jobtracker {
@@ -235,17 +273,28 @@
   .accordion_linkedin {
     display:none;
   }
-  .accordion_linkedin h3{
-    margin:0;
-    font-size: 1em;
-    font-weight: 200;
-    &:hover{
-      background-color:grey;
+  div.accordion_linkedin {
+    display:none;
+    div p {
+      margin-bottom: 20px;
+      min-height: 48px;
+      padding: 4px 8px;
+
+    }
+    h3{
+      margin:0;
+      font-size: 1.2em;
+      font-weight: 200;
+      padding: 4px 8px 20px 8px;
+      &:hover{
+        background-color: grey;
+      }
     }
   }
   .close_linkedin{
     display:none;
     text-align:right;
+     margin: 0 20px 0 0;
   }
 
   .reviews_linkedin {
@@ -272,6 +321,8 @@
 
     .show_on_edit {
       display: none;
+      border: 1px solid grey;
+      border-radius: 4px;
     }
 
     a.hide_on_edit {
@@ -279,6 +330,12 @@
         text-decoration:none;
       }
 
+    }
+    a.link-right {
+      display:none;
+      text-align:right;
+      width: 98%;
+      margin: 0;
     }
 
     .submit-button{
