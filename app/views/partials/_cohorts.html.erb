@@ -1,4 +1,12 @@
-<h1>Cohorts</h1>
+<h1>Fellow Cohorts and Students</h1>
 
-<p><%= @provider_user %></p>
-<%= @current_user.inspect %>
+<table class="table">
+  <tbody>
+    <% @students.each do |student| %>
+      <tr>
+        <td><%= student.name %></td>
+        <td><%= student.cohort %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>

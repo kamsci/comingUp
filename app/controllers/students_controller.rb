@@ -2,28 +2,21 @@ class StudentsController < ApplicationController
 
   before_action :is_authenticated
   before_action :is_admin, only: [:index]
-  # do we need this next line?  I think we deleted it from the student model
+  
   before_action :is_student, only: [:edit, :update]
 
 
   def index
     @users = User.all
     @cohorts = Cohort.all
-   # @picks = Staffpick.all
-
-    # render json: params[:cohort]
 
     if (params[:cohort] && params[:cohort][:cohort] && params[:cohort][:cohort] != '')
       @students = User.joins(:student, :cohorts).select('*').where(cohorts:{cohort: params[:cohort][:cohort]})
       @deliverables = Deliverable.select('*').joins(:cohort).where(cohorts:{cohort: params[:cohort][:cohort]})
-      # @cohort = Cohort.select('*').where(cohorts:{cohort: params[:cohort][:cohort]})
     else
       @students = User.joins(:student, :cohorts).select('*')
       @deliverables = Deliverable.joins(:cohort).select('*')
     end
-    # render json: @deliverables
-    # render json: @students
-    # render json: @cohort
   end
 
   def show

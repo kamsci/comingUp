@@ -23,7 +23,6 @@
       <!-- Select filter -->
       <div class="filter_options_container">
         <form class="filter_form">
-
             <%= select("cohort", "cohort", Cohort.all.collect(&:cohort), :include_blank => true) %>     
           <input type="submit" value="Filter" />
         </form>
@@ -55,6 +54,7 @@
       </table>    
     </div>
 
+
   <!-- Staff-Picks Tab -->
     <div role="tabpanel" class="tab-pane fade" id="staff-picks">
       <h3>Enter a Staff Favorite Meet Up</h3>
@@ -66,6 +66,32 @@
         <%= p.submit %>
       <% end %>
     </div>
+
+  <!-- Admin tab -->
+  <div role="tabpanel" class="tab-pane fade" id="admins">
+    <h2>Enter a Staff Favorite Meet Up</h2>
+    <%= bootstrap_form_for(:picks) do |p| %>
+
+      <%= p.text_field :name %>
+      <%= p.text_field :url %>
+
+    <%= p.submit %>
+  <% end %>
+  
+    <table class="table">
+      <tbody>
+        <% @users.order('name ASC').each do |user| %>
+          <% if user.admin %>
+            <tr>
+              <td><%= user.name %></td>
+              <td><%= user.email %></td>
+              <td><%= link_to('Edit User', edit_user_path(user.id), class: 'btn btn-default') %></td>
+            </tr>
+            <% end %>
+          <% end %>
+        </tbody>
+      </table>    
+  </div>
 
     <!-- New User tab -->
     <div role="tabpanel" class="tab-pane fade" id="new-user">
