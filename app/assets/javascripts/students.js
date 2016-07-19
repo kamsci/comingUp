@@ -177,4 +177,11 @@ $(document).ready(function() {
     });
   });
 
+  $('.student').on('click', function(e) {
+    $('.hide_admin').css('display', 'block');
+  });
+
+  $('.admin').on('click', function(e) {
+    $('.hide_admin').css('display', 'none');
+  });
 });
