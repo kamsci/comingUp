@@ -45,7 +45,6 @@ class StudentsController < ApplicationController
         @portfolio.push(review)
       end
     end
-    
   end
 
   def edit
