@@ -1,6 +1,7 @@
 class Student < ActiveRecord::Base
   belongs_to :user
   has_many :reviews
+  has_many :deliverables, through: :cohort
   has_and_belongs_to_many :cohorts, through: :cohorts_students, inverse_of: :student
 
   accepts_nested_attributes_for :reviews

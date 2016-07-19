@@ -8,9 +8,12 @@ class CohortsController < ApplicationController
     # @students = User.joins(:students).group(:student_id)
     # @cohorts = Cohort.select('*').joins(:students)
     # @students = Cohort.select([:id, :cohort]).jgroup(:id, :cohort)
+    # @user = Student.find(@current_user.id == user_id)
+    # @u = user.student.id
     @cohorts = Cohort.all.order('cohort ASC')
     @students = User.joins(:student, :cohorts).select('*')
-    # render json: @students
+    @deliverables = Deliverable.all
+    # render json: @user.student
     # render json: @cohorts
   end
 
