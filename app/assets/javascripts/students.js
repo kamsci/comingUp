@@ -4,6 +4,7 @@
 
 $(document).ready(function() {
 
+// for the user to edit their profile
   $('.edit').on('click', function(e) {
     $(this).blur();
     $('.focus').focus();
@@ -14,6 +15,7 @@ $(document).ready(function() {
     $('.show_on_edit').css('display', 'block');
   });
 
+// to open comment boxes
   $('.comment_brand').on('click', function(e) {
     e.preventDefault();
     $(this).after($('.comment_form_brand'));
@@ -44,6 +46,7 @@ $(document).ready(function() {
     $('.comment_form_jobtracker').css('display', 'block');
   });
 
+// to cancel comments
   $('.cancel_brand').on('click', function(e) {
     e.preventDefault();
     $(this).parent().css('display', 'none');
@@ -67,6 +70,18 @@ $(document).ready(function() {
   $('.cancel_linkedin').on('click', function(e) {
     e.preventDefault();
     $(this).parent().css('display', 'none');
+  });
+
+// to show comments
+  $('.reviews_brand').on('click', function(e) {
+    e.preventDefault();
+    $('.accordion_brand').css('display', 'block');
+  });
+
+  $( function() {
+    $('.accordion_brand').accordion({
+      heightStyle: 'content'
+    });
   });
 
 });

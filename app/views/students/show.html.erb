@@ -2,10 +2,6 @@
   <div class="profile">
     <div class="row">
       <div class="profile-header">
-        <div class="prof-head-col">
-          <div class="profile-pic">
-          </div>
-        </div>
         <!-- This is the Profile Info -->
         <div class="prof-head-col">
           <h2><%=@user.name%></h2>
@@ -38,6 +34,16 @@
           <a href="#" class="reviews_brand">See Reviews</a>
         <% end %>
       </div>
+      <div class="accordion_brand">
+        <% @brand.each do |brand|%>
+          <h3>From <%=brand.reviewer_name%></h3>
+          <div>
+            <p><%=brand.review_content%></p>
+          </div>
+        <% end %>
+      </div>
+
+
       <!-- Resume Link -->
       <div class="row">
         <p>
@@ -160,7 +166,4 @@
     <% end %>
     <a href="#" class="cancel_jobtracker">Cancel</a>
   </div>
-
-
-
 </div>
