@@ -168,7 +168,7 @@ Deliverable.create([
   },
   {
     deliverable_type: 'resume',
-    deliverable_name: 'Individual - Add the link to your resume',
+    deliverable_name: 'Individual - Resumes round 2',
     notes: 'Create a formatted version of your resume and save the link in your profile by 9am on the due date. If you need help, get resume writting tips from the Outcomes ppt.',
     due_date: Date.current+1,
     cohort_id: cohort.id
@@ -184,14 +184,14 @@ Deliverable.create([
     deliverable_type: 'brand',
     deliverable_name: 'Pods - Review Brand Statements!',
     notes: 'Review the brand statements of all your pod members by 9am on the due date.',
-    due_date: Date.Date.current+5,
+    due_date: Date.current+5,
     cohort_id: cohort2.id
   },
   {
     deliverable_type: 'resume',
     deliverable_name: 'Individual - Add the link to your resume',
     notes: 'Create a formatted version of your resume and save the link in your profile by 9am on the due date. If you need help, get resume writting tips from the Outcomes ppt.',
-    due_date: Date.Date.current+7,
+    due_date: Date.current+7,
     cohort_id: cohort2.id
   }
 ])
