@@ -23,7 +23,7 @@ $(document).ready(function() {
 // to open comment boxes
   $('.comment_brand').on('click', function(e) {
     e.preventDefault();
-    $(this).after($('.comment_form_brand'));
+    $('.comment_brand').after($('.comment_form_brand'));
     $('.comment_form_brand').toggle('blind', 1000);
   });
 

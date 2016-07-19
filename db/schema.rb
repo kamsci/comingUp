@@ -44,25 +44,13 @@ ActiveRecord::Schema.define(version: 20160719175118) do
 
   add_index "deliverables", ["cohort_id"], name: "index_deliverables_on_cohort_id", using: :btree
 
-  create_table "githubstudents", force: :cascade do |t|
-    t.integer  "user_id"
-    t.string   "provider_id"
-    t.string   "provider_token"
-    t.string   "provider_name"
-    t.text     "picture"
-    t.datetime "created_at",     null: false
-    t.datetime "updated_at",     null: false
-  end
-
-  add_index "githubstudents", ["user_id"], name: "index_githubstudents_on_user_id", using: :btree
-
   create_table "reviews", force: :cascade do |t|
     t.integer  "student_id"
     t.string   "review_type"
-    t.datetime "created_at",     null: false
-    t.datetime "updated_at",     null: false
     t.string   "reviewer_name"
     t.text     "review_content"
+    t.datetime "created_at",     null: false
+    t.datetime "updated_at",     null: false
   end
 
   add_index "reviews", ["student_id"], name: "index_reviews_on_student_id", using: :btree
@@ -98,14 +86,11 @@ ActiveRecord::Schema.define(version: 20160719175118) do
     t.boolean  "admin"
     t.datetime "created_at",      null: false
     t.datetime "updated_at",      null: false
-    t.string   "reset_code"
-    t.datetime "expires_at"
   end
 
   add_foreign_key "cohorts_students", "cohorts"
   add_foreign_key "cohorts_students", "students"
   add_foreign_key "deliverables", "cohorts"
-  add_foreign_key "githubstudents", "users"
   add_foreign_key "reviews", "students"
   add_foreign_key "students", "users"
 end

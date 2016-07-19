@@ -31,6 +31,7 @@ gem 'validate_url'
 # Email Validator
 gem 'email_validator'
 
+gem 'figaro'
 
 gem 'omniauth'
 gem 'omniauth-github'
@@ -63,3 +64,6 @@ gem 'rest-client'
 gem 'bootstrap'
 gem 'bootstrap_form'
 
+group :production do
+  gem 'rails_12factor'
+end
