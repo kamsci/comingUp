@@ -1,0 +1,13 @@
+<div class="page-header">
+<h1>Add a new Deliverable</h1>
+</div>
+
+<%= bootstrap_form_for @deliverable do |f| %>
+  <%= f.text_field :deliverable_type, placeholder: 'ie. \'brand\' or \'resume\'' %>
+  <%= f.text_field :deliverable_name, placeholder: 'ie. Submit your resumes ya\'ll!' %>
+  <%= f.text_area :notes, placeholder: 'Notes for students' %>
+  <%= f.date_field :due_date %>
+  <%= collection_select(:deliverable, :cohort_id, Cohort.all, :id, :cohort) %>
+  <%= f.submit %>
+  <%= link_to('Cancel', students_path) %>
+<% end %>

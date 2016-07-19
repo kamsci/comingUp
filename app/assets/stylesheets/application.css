@@ -5,6 +5,11 @@
 @import "bootstrap";
 
 
+/*NOTE! Throwing 404 errors in console, added link to application layout instead of using @imports*/
+  /*@import "font-awesome-sprockets";
+  @import "font-awesome";*/
+
+
 
  .page-header, h1, h2 {
   text-align: center;
