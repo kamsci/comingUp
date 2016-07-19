@@ -3,9 +3,6 @@
 *= require_self
 */
 @import "bootstrap";
-@import "font-awesome-sprockets";
-@import "font-awesome";
-
 
  .page-header, h1, h2 {
   text-align: center;
