@@ -11,13 +11,10 @@
     <li role="presentation"><a href="#new-user" aria-controls="new-user" role="tab" data-toggle="tab" class="nav-tabs-left">New User</a></li>
   </ul>
 
-<<<<<<< HEAD
-  <div role="tab-content" class="tab-pane fade in active" id="home">
-=======
 <!-- Tab panes -->
 <div class="tab-content">
   <div role="tabpanel" class="tab-pane fade in active" id="home">
->>>>>>> master
+
     <!-- Cohort -->
     <h3>By Cohort</h3>
     <div class="pull-right">
@@ -61,6 +58,7 @@
               <td><%= user.email %></td>
               <td><%= link_to('Edit User', edit_user_path(user.id), class: 'btn btn-default') %></td>
             </tr>
+            <% end %>
           <% end %>
         </tbody>
       </table>    

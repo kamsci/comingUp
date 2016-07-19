@@ -8,5 +8,8 @@ $('#myTabs a').click(function (e) {
   $(this).tab('show')
 });
 
+$(function () {
+  $('[data-toggle="tooltip"]').tooltip()
+})
 
 console.log('the main.js page');
