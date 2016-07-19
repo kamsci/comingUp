@@ -13,13 +13,16 @@ class StudentsController < ApplicationController
     # render json: params[:cohort]
 
     if (params[:cohort] && params[:cohort][:cohort] && params[:cohort][:cohort] != '')
-      @students = User.joins(:student, :cohorts, :deliverables).select('*').where(cohorts:{cohort: params[:cohort][:cohort]})
-      @deliverables = Deliverable.joins(:cohort).select('*').where(cohorts:{cohort: params[:cohort][:cohort]})
+      @students = User.joins(:student, :cohorts).select('*').where(cohorts:{cohort: params[:cohort][:cohort]})
+      @deliverables = Deliverable.select('*').joins(:cohort).where(cohorts:{cohort: params[:cohort][:cohort]})
+      # @cohort = Cohort.select('*').where(cohorts:{cohort: params[:cohort][:cohort]})
     else
-      @students = User.joins(:student, :cohorts, :deliverables).select('*')
+      @students = User.joins(:student, :cohorts).select('*')
       @deliverables = Deliverable.joins(:cohort).select('*')
     end
     # render json: @deliverables
+    # render json: @students
+    # render json: @cohort
   end
 
   def show

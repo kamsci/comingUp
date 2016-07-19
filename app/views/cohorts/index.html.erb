@@ -3,17 +3,37 @@
 </div>
 
 
-<div class="row">
-  <% @cohorts.each do |e| %>
-    <div class="col-sm-4 cohort">
-      <h4><%= e.cohort %></h4>
+<% @cohorts.each do |c| %>
+  <div class="row">
+    <div class="cohort">
+      <h4><%= c.cohort %></h4>
       <% @students.each do |s| %>
-        <% if s.cohort_id == e.id %>
-          <div class="col-sm-4">
+        <% if s.cohort_id == c.id %>
+          <div class="cell">
             <p><span><%= icon('github-alt') %>   </span><a href="/students/<%= s.user_id %>"><%= s.name %></a></p>
           </div>
         <% end %> 
       <% end %>
     </div>
-  <% end %>
-</div>
+    <div class="deliverable">
+      <h4>Schedule of Deliverables</h4>
+      <table class="table">
+        <thead><tr>
+          <th>Assignment</th>
+          <th>Notes</th>
+          <th class="due">Due_Date</th>
+        </tr></thead>
+        <% @deliverables.each do |d| %>
+          <% if d.cohort_id == c.id %>
+            <tr>
+              <td><%= d.deliverable_name %></td>
+              <td><%= d.notes %></td>
+              <td class="due"><%= d.due_date.to_formatted_s(:short) %></td>
+            </tr>
+          <% end %>
+        <% end %>
+      </table> 
+    </div>
+  </div>
+  <hr class="hr">
+<% end %>

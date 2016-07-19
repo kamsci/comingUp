@@ -9,14 +9,16 @@ class DeliverablesController < ApplicationController
   end
 
   def create
-    
+    deliverable = Deliverable.create(deliverable_params)
+    redirect_to students_path
   end
 
   def edit
+    # @deliverable = Deliverable.find_by_id(params[:id])
   end
 
   def update
-    
+    Deliverable.find_by_id(params[:id]).update(deliverable_params)
   end
 
   private

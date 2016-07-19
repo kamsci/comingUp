@@ -31,16 +31,20 @@
 
   <!-- Deliverables Tab -->
   <div role="tabpanel" class="tab-pane fade" id="deliverables">
-   
-    <h3 class="deliverable-header">Deliverables</h3>
+    <div>
+      <h3 class="deliverable-header">Deliverables</h3>
+      <h4 class="deliverable-header" "></h4>
+      <div class="pull-right">
+        <%= link_to('Add deliverable to cohort', new_deliverable_path, class: 'btn btn-default new-d') %>
+      </div>
+    </div>
 
-    <h4 class="deliverable-header" "><%= @deliverables[0].cohort.cohort %></h4>
     <table class="table">
       <thead><tr>
         <th>Type</th>
         <th>Name</th>
         <th>Notes</th>
-        <th>Due Date</th>
+        <th>Due_Date</th>
       </tr></thead>
       <tbody>
         <% @deliverables.each do |s| %>
@@ -49,6 +53,7 @@
           <td><%= s.deliverable_name %></td>
           <td><%= s.notes %></td>
           <td><%= s.due_date %></td>
+          <td><%= link_to('Edit', edit_deliverable_path(s.id), class: 'btn btn-default') %></td>
         </tr>
       <% end %>
       </tbody>

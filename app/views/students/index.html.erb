@@ -32,12 +32,12 @@
         <h3 id="cohort-display"></h3>
       </div>
     </div>
+    <hr>
 
-    <br>
-
-  <!-- Secondary Students Nav -->
-  <%= render :partial => 'students_cohorts', :student => @students %>
-  </div>
+    <!-- Secondary Students Nav -->
+    <%= render :partial => 'students_cohorts', :student => @students %>
+    </div>
+    <!-- -->
 
   <!-- Admin tab -->
   <div role="tabpanel" class="tab-pane fade" id="admins">
@@ -48,7 +48,8 @@
         <% @users.order('name ASC').each do |user| %>
           <% if user.admin %>
             <tr>
-              <td><%=user.name%></td>
+              <td><%= user.name %></td>
+              <td><%= user.email %></td>
               <td><%= link_to('Edit User', edit_user_path(user.id), class: 'btn btn-default') %></td>
             </tr>
           <% end %>
