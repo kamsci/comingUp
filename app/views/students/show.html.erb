@@ -34,6 +34,7 @@
           <a href="#" class="reviews_brand">See Reviews</a>
         <% end %>
       </div>
+      <a href="#" class="close_brand">Close</a>
       <div class="accordion_brand">
         <% @brand.each do |brand|%>
           <h3>From <%=brand.reviewer_name%></h3>
@@ -54,8 +55,17 @@
         <%= f.url_field :resume, class: 'url-link update show_on_edit'%>
         <% if @user != @current_user %>
           <a href="#" class="comment_resume">Leave a Comment</a>
-        <% elsif @user == @current_user && @resume.length > 1 %>
+        <% elsif @user == @current_user && @resume.length > 0 %>
           <a href="#" class="reviews_resume">See Reviews</a>
+        <% end %>
+      </div>
+      <a href="#" class="close_resume">Close</a>
+      <div class="accordion_resume">
+        <% @resume.each do |resume|%>
+          <h3>From <%=resume.reviewer_name%></h3>
+          <div>
+            <p><%=resume.review_content%></p>
+          </div>
         <% end %>
       </div>
       <!-- LinkedIn Link -->
@@ -68,8 +78,17 @@
         <%= f.url_field :linkedin, class: 'url-link update show_on_edit' %>
         <% if @user != @current_user %>
           <a href="#" class="comment_linkedin">Leave a Comment</a>
-        <% elsif @user == @current_user && @linkedin.length > 1 %>
+        <% elsif @user == @current_user && @linkedin.length > 0 %>
           <a href="#" class="reviews_linkedin">See Reviews</a>
+        <% end %>
+      </div>
+       <a href="#" class="close_linkedin">Close</a>
+      <div class="accordion_linkedin">
+        <% @linkedin.each do |linkedin|%>
+          <h3>From <%=linkedin.reviewer_name%></h3>
+          <div>
+            <p><%=linkedin.review_content%></p>
+          </div>
         <% end %>
       </div>
   
@@ -82,11 +101,19 @@
         <%= f.url_field :portfolio, class: 'url-link update show_on_edit'%>
         <% if @user != @current_user %>
           <a href="#" class="comment_portfolio">Leave a Comment</a>
-        <% elsif @user == @current_user && @portfolio.length > 1 %>
+        <% elsif @user == @current_user && @portfolio.length > 0 %>
           <a href="#" class="reviews_portfolio">See Reviews</a>
         <% end %>
       </div>
-      
+       <a href="#" class="close_portfolio">Close</a>
+      <div class="accordion_portfolio">
+        <% @portfolio.each do |portfolio|%>
+          <h3>From <%=portfolio.reviewer_name%></h3>
+          <div>
+            <p><%=portfolio.review_content%></p>
+          </div>
+        <% end %>
+      </div>
       <!-- Job Tracker Link -->
       <div class="row">
         <p>
@@ -97,11 +124,19 @@
         <%= f.url_field :jobtracker, class: 'url-link update show_on_edit'%>
         <% if @user != @current_user %>
           <a href="#" class="comment_jobtracker">Leave a Comment</a>
-        <% elsif @user == @current_user && @jobtracker.length > 1 %>
+        <% elsif @user == @current_user && @jobtracker.length > 0 %>
           <a href="#" class="reviews_jobtracker">See Reviews</a>
         <% end %>
       </div>
-
+       <a href="#" class="close_jobtracker">Close</a>
+      <div class="accordion_jobtracker">
+        <% @jobtracker.each do |jobtracker|%>
+          <h3>From <%=jobtracker.reviewer_name%></h3>
+          <div>
+            <p><%=jobtracker.review_content%></p>
+          </div>
+        <% end %>
+      </div>
       <%= f.submit class: 'submit-button'%>
     <% end %>
   </div>

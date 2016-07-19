@@ -3,30 +3,98 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 .students-profile {
 
-
-  div.ui-widget {
+// accordian stuff
+  .ui-widget {
     display:none;
     width: 100%;
     margin: 0 0 10px 0;
   }
+  .ui-widget-header{
+    background-color:grey;
 
+    &:hover{
+      background-color:grey;
+    }
+  }
   .ui-state-active {
     color: red;
     border: none;
   }
+  .ui-state-default{
 
+  }
+ .ui-accordion-icons{
+  background-color:white;
+  &:hover{
+    background-color:white; 
+  }
+ }
   .ui-state-hover{
     color:blue;
-    border:1px solid blue;
+    border:1px solid blue; 
+  }
+// accordion brand
+  .accordion_brand h3{
+    margin:0;
+    font-size: 1em;
+    font-weight: 200;
+    &:hover{
+      background-color:grey;
+    }
+  }
+  .close_brand{
+    display:none;
+  }
+  // accordion resume
+  .accordion_resume h3{
+    margin:0;
+    font-size: 1em;
+    font-weight: 200;
+    &:hover{
+      background-color:grey;
+    }
+  }
+  .close_resume{
+    display:none;
   }
 
-  .ui-state-default{
-    color:salmon;
+// accordion portfolio
+  .accordion_portfolio h3{
+    margin:0;
+    font-size: 1em;
+    font-weight: 200;
+    &:hover{
+      background-color:grey;
+    }
   }
-  .reviews_brand {
-
+  .close_portfolio{
+    display:none;
   }
-
+// accordion jobtracker
+  .accordion_jobtracker h3{
+    margin:0;
+    font-size: 1em;
+    font-weight: 200;
+    &:hover{
+      background-color:grey;
+    }
+  }
+  .close_jobtracker{
+    display:none;
+  }
+// accordion linkedin
+  .accordion_linkedin h3{
+    margin:0;
+    font-size: 1em;
+    font-weight: 200;
+    &:hover{
+      background-color:grey;
+    }
+  }
+  .close_linkedin{
+    display:none;
+  }
+// 
   div.comment_form_brand{
     display:none;
     width: 100%;

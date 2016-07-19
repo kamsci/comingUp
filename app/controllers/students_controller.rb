@@ -25,7 +25,8 @@ class StudentsController < ApplicationController
 
   def show
     @user = User.find(params[:id])
-    @review = Review.where(student_id: params[:id])
+    person = @user.student.id
+    @review = Review.where(student_id: person)
     @brand = []
     @linkedin = []
     @resume = []
@@ -44,6 +45,7 @@ class StudentsController < ApplicationController
         @portfolio.push(review)
       end
     end
+    
   end
 
   def edit
