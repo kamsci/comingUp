@@ -68,9 +68,10 @@ comingUp is a platform specifically made for General Assembly's outcomes team.  
   Jamie:
   * set up students model and controller with correct permissions
   * worked on student profile page implementing forms for editing information depending on what user is logged in as well as styled it
+  * git master
   * worked with Krista on setting up database schema
 
-==Things We Would Love to Implement:
+==Things We Would Like to Implement:
   * github oauth
   * set up sending an email from the platform to the new user that has been set up with a temporary password to log in
   * send reminder e-mails to students when deliverable due dates are approaching
