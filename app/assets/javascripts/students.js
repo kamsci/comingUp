@@ -197,16 +197,15 @@ $(document).ready(function() {
     $('.hide_admin').css('display', 'none');
   });
   
-});
-
-
-
 // Students Index - Admin page
 
-// $('#form-submit').on ('click',function(e) {
-//   $('#cohort-form').reset();
-// });
+  $('#cohort-submit').on('click',function(e) {
+    $('#cohort-form').val('');
 
+    console.log("here");
+  });
+
+});
 // $("#form-submit").bind("ajax:beforeSend", function(event,xhr,status){
 //   $('#cohort-form').val('');
 // });
