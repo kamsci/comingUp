@@ -4,6 +4,10 @@
 
 // EVERYTHING ENCOMPASSED BY .STUDENT-PROFILE TO NOT MESS WITH OTHERS' SCSS //
 .students-profile {
+
+  .test{
+    height: 20px;
+  }
   // GENERAL STYLING //
   .row {
     width: 100%;
@@ -97,7 +101,7 @@
   .url-link {
     width: 92%;
     height: 20px;
-    margin: 10px auto;
+    margin: 10px 30px;
     display:block;
     padding: 2px 10px;
     border-radius: 4px;
@@ -360,7 +364,8 @@
   a.comment_brand {
     display:block;
     text-align: right;
-    margin: 0 20px 0 0;
+    margin: 0 80px 0 0;
+
       &:hover{
         text-decoration:none;
       }
@@ -369,7 +374,7 @@
   a.comment_resume {
     display:block;
     text-align: right;
-    margin: 0 20px 0 0;
+    margin: 0 80px 0 0;
       &:hover{
         text-decoration:none;
       }
@@ -378,7 +383,7 @@
   a.comment_portfolio {
     display:block;
     text-align: right;
-    margin: 0 20px 0 0;
+    margin: 0 80px 0 0;
       &:hover{
         text-decoration:none;
       }
@@ -387,7 +392,7 @@
   a.comment_linkedin {
     display:block;
     text-align: right;
-    margin: 0 20px 0 0;
+    margin: 0 80px 0 0;
       &:hover{
         text-decoration:none;
       }
@@ -395,7 +400,7 @@
   a.comment_jobtracker {
     display:block;
     text-align: right;
-    margin: 0 20px 0 0;
+    margin: 0 80px 0 0;
       &:hover{
         text-decoration:none;
       }
@@ -420,6 +425,40 @@
       margin: 0px 0 auto 20px;
       position: relative;
       top: -20px;
+  }
+  .cancel_linkedin {
+    display: block;
+    width: 100%;
+    text-align: right;
+    padding: 0 80px 0 0;
+  }
+
+  .cancel_brand {
+    display: block;
+    width: 100%;
+    text-align: right;
+    padding: 0 80px 0 0;
+  }
+
+  .cancel_porfolio {
+    display: block;
+    width: 100%;
+    text-align: right;
+    padding: 0 80px 0 0;
+  }
+
+  .cancel_resume {
+    display: block;
+    width: 100%;
+    text-align: right;
+    padding: 0 80px 0 0;
+  }
+
+  .cancel_jobtracker {
+    display: block;
+    width: 100%;
+    text-align: right;
+    padding: 0 80px 0 0;
   }
   
    .comment_form_resume{

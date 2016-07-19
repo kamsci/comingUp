@@ -1,35 +1,11 @@
-== README
+=comingUP
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
-
-Things you may want to cover:
-
-* Ruby version 4
-
-* System dependencies: jquery, bootstrap, jbuilder, bcrypt, validate_url, email_validator, sass, omniauth, font-awesome-sass
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-
-
-==comingUP
-
-=Developed By: Krista Calderon, Joe Marzullo, and Jamie Karlovich
+==Developed By: Krista Calderon, Joe Marzullo, and Jamie Karlovich
 
 comingUp is a platform specifically made for General Assembly's outcomes team.  As students, we were underwhelmed with the current system for posting our deliverables to Larry and Beth.  There were multiple forms to review on multiple applications which made it difficult to know if we had completed everything asked for.  We thought we could make it more intuitive for the students to find what they need as well as make it easier for Larry and Beth to get each students' information in one place.
 
-=Features
+
+==Features
   * Login and Logout feature for General Assembly administrators and students
   * An up-to-date list of technology meetups for networking
   * Staffs' picks for upcoming networking events
@@ -43,14 +19,33 @@ comingUp is a platform specifically made for General Assembly's outcomes team.  
     * Can set due dates for deliverables 
 
   For Students:
-    * Can see all of thier fellow students within their cohort
-    * Can add their branding statement and links to their linkedin, jobtraker, resume, and portfolio on their profile page
+    * Can add their branding statement and links to their linkedin, jobtracker, resume, and portfolio on their profile page
     * Can see comments left by administrators and other students
     * Can link to any student's profile page and leave them comments
     * Can reset their password
     * Can look up up-and-coming network events
     * Can see assigned deliverables and their due dates
     * Have one easy place to post their deliverables
+
+==Technologies Used
+  * Ruby on Rails
+  * JQuery
+  * JavaScript
+  * HTML
+  * SCSS
+  * Meetup API
+
+==Installation Instructions
+  * run bundle install to install all gems needed to use the app
+  ** font-awesome-sass
+  ** validate_url
+  ** email_validator
+  ** web-console
+  ** letter_opener
+  ** rest-client
+  ** bootstrap
+  ** bootstrap_form
+
 
 ==Responsibilities:
 
@@ -63,21 +58,22 @@ comingUp is a platform specifically made for General Assembly's outcomes team.  
   * set up the landing page with the MeetUp API
   * made model and page for administrators to add their staff picks for upcoming networking events
   * in charge of the nav bar and main page layout and tabs
+  * set up password reset mailers
   
 
   Jamie:
   * set up students model and controller with correct permissions
-  * worked on student profile page implementing forms for editing information depending on what user is logged in as well as styled it
+  * worked on student profile page implementing forms for editing information 
   * git master
   * worked with Krista on setting up database schema
 
 ==Things We Would Like to Implement:
   * github oauth
-  * set up sending an email from the platform to the new user that has been set up with a temporary password to log in
   * send reminder e-mails to students when deliverable due dates are approaching
   * allow a user to be in multiple cohorts if they return to GA for a new course (as of now they can only be assigned one at a time)
   * add a picture to the student profile page from their github account
   * set up reset password in case a user forgets their password
   * add pod assignments for reviewing other students' deliverables
   * add a calendar to display staff picks networking events
+  * be able to delete users, staff picks, and deliverables
   * write more tests
