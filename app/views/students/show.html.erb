@@ -22,16 +22,16 @@
     <%= form_for @user.student do |f| %>
       <!-- Branding Statement -->
       <div class="row brand">
-        <p>Branding Statement</p>
+        <h3>Branding Statement</h3>
         <div class="branding">
           <p class="hide_on_edit"><%= @user.student.brand %>
           </p>
           <%= f.text_area :brand, class: 'update focus show_on_edit', :autofocus => true %>
         </div>
         <% if @user != @current_user %>
-          <a href="#" class="comment_brand">Leave a Comment</a>
+          <h4><a href="#" class="comment_brand">Leave a Comment</a></h4>
         <% elsif @user == @current_user && @brand.length > 0 %>
-          <a href="#" class="reviews_brand">See Reviews</a>
+          <h4><a href="#" class="reviews_brand">See Reviews</a></h4>
         <% end %>
       </div>
       <a href="#" class="close_brand">Close</a>
