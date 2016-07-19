@@ -13,7 +13,6 @@
 
 ActiveRecord::Schema.define(version: 20160719175118) do
 
-
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -60,10 +59,10 @@ ActiveRecord::Schema.define(version: 20160719175118) do
   create_table "reviews", force: :cascade do |t|
     t.integer  "student_id"
     t.string   "review_type"
-    t.datetime "created_at",     null: false
-    t.datetime "updated_at",     null: false
     t.string   "reviewer_name"
     t.text     "review_content"
+    t.datetime "created_at",     null: false
+    t.datetime "updated_at",     null: false
   end
 
   add_index "reviews", ["student_id"], name: "index_reviews_on_student_id", using: :btree
@@ -99,15 +98,8 @@ ActiveRecord::Schema.define(version: 20160719175118) do
     t.boolean  "admin"
     t.datetime "created_at",      null: false
     t.datetime "updated_at",      null: false
-<<<<<<< HEAD
-    t.string   "provider_id"
-    t.string   "provider_token"
-    t.string   "provider_name"
-    t.text     "picture"
     t.string   "reset_code"
     t.datetime "expires_at"
-=======
->>>>>>> 0833d3f339bca44e617a102e6023beeec988514f
   end
 
   add_foreign_key "cohorts_students", "cohorts"
