@@ -1,4 +1,3 @@
-$('select').append("<%= j render partial: 'cohort', locals: {cohort: @cohort} %>")
-
-// $('#cohort-form').attr('value','');
 $('#cohort-form').val('');
+
+$('select').append('<%= raw escape_javascript(render :partial => "cohorts/cohort", :collection => @cohort, :as => :cohort) %>');

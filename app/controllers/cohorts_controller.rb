@@ -23,6 +23,7 @@ class CohortsController < ApplicationController
 
   def create
     @cohort = Cohort.create(cohort_params)
+    # render josn: @cohort
 
     respond_to do |format|
       format.html { redirect_to students_path }

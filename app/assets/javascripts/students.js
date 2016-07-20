@@ -199,14 +199,16 @@ $(document).ready(function() {
   
 // Students Index - Admin page
 
-  $('#cohort-submit').on('click',function(e) {
-    $('#cohort-form').val('');
+  // $('#cohort-submit').on('click',function(e) {
+  //   $('#cohort-form').val('');
+  // });
 
-    console.log("here");
-  });
-
+    // $("#cohort-submit").bind("ajax:complete", function(event,xhr,status){
+    //   $('#cohort-form').val('');
+    // });
 });
-// $("#form-submit").bind("ajax:beforeSend", function(event,xhr,status){
+
+// $("#cohort-submit").bind("ajax:beforeSend", function(event,xhr,status){
 //   $('#cohort-form').val('');
 // });
 

@@ -23,17 +23,17 @@
       <%= f.password_field :password_confirmation %>
     <% end %>
     <br>
-    <%= f.submit %>
+    <%= f.primary %>
 
   <% end %>
 
 <% end %>
+<hr class="hr">
 
 <h2>Reset Password</h2>
-
 <%= bootstrap_form_tag url: reset_path do |f| %>
   <%= f.email_field :email, placeholder: 'Enter your email', value: @user.email, method: :post%>
-  <%= f.primary 'Send Reset Email' %>
+  <%= f.submit 'Send Reset Email' %>
 <% end %>
 
 

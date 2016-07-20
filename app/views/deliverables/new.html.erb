@@ -8,6 +8,7 @@
   <%= f.text_area :notes, placeholder: 'Notes for students' %>
   <%= f.date_field :due_date %>
   <%= collection_select(:deliverable, :cohort_id, Cohort.all, :id, :cohort) %>
+  <br><br>
   <%= f.submit %>
   <%= link_to('Cancel', students_path) %>
 <% end %>

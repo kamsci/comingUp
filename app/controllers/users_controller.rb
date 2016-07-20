@@ -13,7 +13,7 @@ class UsersController < ApplicationController
     user = User.new(user_params)
     if user.save && !user.admin
       user.create_student
-      CohortsStudents.create(cohort_id: params[:cohorts_students][:cohort_id][0], student_id: user.student.id)
+      CohortsStudents.create(cohort_id: params[:cohorts_students][:cohort_id], student_id: user.student.id)
       redirect_to students_path
     elsif user.save && user.admin
       redirect_to students_path
@@ -31,15 +31,19 @@ class UsersController < ApplicationController
   # update already existing user
   def update
     User.find(params[:id]).update(user_params)
+
     person = User.find(params[:id])
-    person.student.id
-    check = CohortsStudents.where(student_id: person.student.id).update_all(cohort_id: params[:cohorts_students][:cohort_id][0])
+
+    if person.student && @current_user.admin
+      check = CohortsStudents.where(student_id: person.student.id).update_all(cohort_id: params[:cohorts_students][:cohort_id])
+    end
+
     redirect_to students_path
   end
 
   private
   def user_params
-    params.require(:user).permit(:name, :email, :password, :admin, :cohort_ids => [])
+    params.require(:user).permit(:name, :email, :password, :password_confirmation, :admin, :cohort_ids => [])
   end
 
 end
