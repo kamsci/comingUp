@@ -5,12 +5,20 @@
     <%= f.text_field :email %>
     <%= f.password_field :password %>
     <%= f.password_field :password_confirmation %>
-    <%= f.radio_button :admin, 'false', :checked => true, class: 'student'%>
-    <%= f.label :admin_false, 'student' %>
-    <%= f.radio_button :admin, 'true', :checked => false, class: 'admin'%>
-    <%= f.label :admin_true, 'admin' %>
-    <div class="hide_admin">
-      <%= collection_select(:cohorts_students, :cohort_id, Cohort.all, :id, :cohort) %>
+    <div class="format-admin">
+      <div class="admin-container">
+        <div class="student-box">
+          <%= f.radio_button :admin, 'false', :checked => true, class: 'student'%>
+          <%= f.label :admin_false, 'student' %>
+        </div>
+        <div class="admin-box">
+          <%= f.radio_button :admin, 'true', :checked => false, class: 'admin'%>
+          <%= f.label :admin_true, 'admin' %>
+        </div>
+        <div class="hide_admin">
+          <%= collection_select(:cohorts_students, :cohort_id, Cohort.all, :id, :cohort) %>
+        </div>
+      </div>
     </div>
     <%= f.submit %>
 

@@ -76,4 +76,6 @@ comingUp is a platform specifically made for General Assembly's outcomes team.  
   * add pod assignments for reviewing other students' deliverables
   * add a calendar to display staff picks networking events
   * be able to delete users, staff picks, and deliverables
+  * more organization and dry up more code
+  * more styling
   * write more tests
