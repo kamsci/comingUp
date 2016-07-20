@@ -51,7 +51,7 @@
           <td><%= s.deliverable_type %></td>
           <td><%= s.deliverable_name %></td>
           <td><%= s.notes %></td>
-          <td><%= s.due_date %></td>
+          <td><%= s.due_date.to_formatted_s(:short) %></td>
           <td><%= link_to('Edit', edit_deliverable_path(s.deliverable_id), class: 'btn btn-default') %></td>
         </tr>
       <% end %>

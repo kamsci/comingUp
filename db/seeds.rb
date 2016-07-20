@@ -19,7 +19,8 @@ Staffpick.delete_all
 # Admin Users
 User.create(name: 'Beth Miller', email: 'beth.miller@ga.com', password: 'password', admin: true)
 User.create(name: 'Larry Palazzolo', email: 'larry.palazzolo@ga.com', password: 'password', admin: true)
-
+User.create(name: 'Brian Hague', email: 'brian@ga.com', password: 'password', admin: true)
+User.create(name: 'Paul Gatterdam', email: 'paul@ga.com', password: 'password', admin: true)
 
 # Create Cohorts
 cohort = Cohort.create(cohort: 'WDI08')
@@ -34,14 +35,15 @@ user3 = User.create(name: 'Joe Marzullo', email: 'jmarzu13@gmail.com', password:
 user4 = User.create(name: 'Ivar Lee', email: 'ivarr5@gmail.com', password: 'password', admin: false)
 user5 = User.create(name: 'Ryan Rotz', email: 'ryanrotz@gmail.com', password: 'password', admin: false)
 user6 = User.create(name: 'Derek Robertson', email: 'derekrobertson@gmail.com', password: 'password', admin: false)
+user14 = User.create(name: 'Brian Hague', email: 'bhague1281@gmail.com', password: 'password', admin: false)
 # WDI09
 user7 = User.create(name: 'Reno Mc911', email: 'darkenvy6@gmail.com', password: 'password', admin: false)
 user8 = User.create(name: 'Chris Kyle Madison', email: '  ckmadison4@gmail.com', password: 'password', admin: false)
 user9 = User.create(name: 'Thomas Evans', email: 'evans_760@yahoo.com', password: 'password', admin: false)
-
 user10 = User.create(name: 'Dan Rasmussen', email: 'dan.r.rasmussen@gmail.com', password: 'password', admin: false)
 user11 = User.create(name: 'Josh McBroom', email: ' mcbroomjc@gmail.com', password: 'password', admin: false)
 user12 = User.create(name: 'Travis Smith', email: 'smithtm90@gmail.com', password: 'password', admin: false)
+user13 = User.create(name: 'Paul Gatterdam', email: 'paul.gatterdam@generalassemb.ly', password: 'password', admin: false)
 # Create students
 
 # WDI08
@@ -132,6 +134,9 @@ student12 = Student.create(
   resume: 'https://resume.creddle.io/resume/81972tepsvv'
 )
 
+student13 = Student.create(user_id: user13.id)
+student14 = Student.create(user_id: user14.id)
+
 # Student add cohort
 CohortsStudents.create([
   {
@@ -181,6 +186,14 @@ CohortsStudents.create([
   {
     student_id: student12.id,
     cohort_id: cohort2.id
+  },
+  {
+    student_id: student13.id,
+    cohort_id: cohort2.id
+  },
+  {
+    student_id: student14.id,
+    cohort_id: cohort.id
   }
 ])
 
