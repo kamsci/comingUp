@@ -11,12 +11,15 @@ class MainController < ApplicationController
       @topic = params[':topic'].gsub(/\s+/, "")
     end
 
+    begin
       data = RestClient.get 'https://api.meetup.com/2/open_events?sign=true&photo-host=public&zip=' + zip + '&country=' + country + '&topic=' + @topic + '&city=' + city + '&state=WA&page=20&key=23145310778c71694fbb51774f'
-      # render :json => data.code
+    rescue
+      flash[:danger] = 'No Search Results, please try again'
+      puts 'I am rescued'
+    end
+     #  @data = JSON.parse(data)
 
-    puts '123456789', data.code                                                           
-
-    if data['results'] == [] || data.code == 400  
+    if data == nil
       flash[:danger] = 'No Search Results, please try again'
     else
       @data = JSON.parse(data)
@@ -38,3 +41,4 @@ class MainController < ApplicationController
   end
 
 end
+
