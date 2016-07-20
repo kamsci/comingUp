@@ -9,7 +9,7 @@
     <br>
     <%= f.text_field :email %>
     <br>
-    <div class="format-admin">
+
       <div class="admin-container">
         <% if @current_user.admin %>
           <div class="student-box">
@@ -20,28 +20,31 @@
             <%= f.radio_button :admin, 'true', :checked => false, class: 'admin'%>
             <%= f.label :admin_true, 'admin' %>
           </div>
-      </div>
+      
       <div class="hide_admin">
         <%= collection_select(:cohorts_students, :cohort_id, Cohort.all, :id, :cohort) %>
       </div>
-    </div>
+      </div>
+    <div class="password">
     <% elsif @current_user.id == @user.id %>
       <%= f.password_field :password %>
       <br>
       <%= f.password_field :password_confirmation %>
     <% end %>
+    </div>
     <br>
+
     <%= f.primary %>
 
   <% end %>
-
 <% end %>
 <hr class="hr">
-
-<h2>Reset Password</h2>
-<%= bootstrap_form_tag url: reset_path do |f| %>
-  <%= f.email_field :email, placeholder: 'Enter your email', value: @user.email, method: :post%>
-  <%= f.submit 'Send Reset Email' %>
-<% end %>
+<div class="reset-password">
+  <h2>Reset Password</h2>
+  <%= bootstrap_form_tag url: reset_path do |f| %>
+    <%= f.email_field :email, placeholder: 'Enter your email', value: @user.email, method: :post%>
+    <%= f.submit 'Send Reset Email' %>
+  <% end %>
+</div>
 
 
