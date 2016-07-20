@@ -38,10 +38,10 @@ user6 = User.create(name: 'Derek Robertson', email: 'derekrobertson@gmail.com', 
 user14 = User.create(name: 'Brian Hague', email: 'bhague1281@gmail.com', password: 'password', admin: false)
 # WDI09
 user7 = User.create(name: 'Reno Mc911', email: 'darkenvy6@gmail.com', password: 'password', admin: false)
-user8 = User.create(name: 'Chris Kyle Madison', email: '  ckmadison4@gmail.com', password: 'password', admin: false)
+user8 = User.create(name: 'Chris Kyle Madison', email: 'ckmadison4@gmail.com', password: 'password', admin: false)
 user9 = User.create(name: 'Thomas Evans', email: 'evans_760@yahoo.com', password: 'password', admin: false)
 user10 = User.create(name: 'Dan Rasmussen', email: 'dan.r.rasmussen@gmail.com', password: 'password', admin: false)
-user11 = User.create(name: 'Josh McBroom', email: ' mcbroomjc@gmail.com', password: 'password', admin: false)
+user11 = User.create(name: 'Josh McBroom', email: 'mcbroomjc@gmail.com', password: 'password', admin: false)
 user12 = User.create(name: 'Travis Smith', email: 'smithtm90@gmail.com', password: 'password', admin: false)
 user13 = User.create(name: 'Paul Gatterdam', email: 'paul.gatterdam@generalassemb.ly', password: 'password', admin: false)
 # Create students
