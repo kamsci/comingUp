@@ -9,14 +9,22 @@
     <br>
     <%= f.text_field :email %>
     <br>
-    <% if @current_user.admin %>
-      <%= f.radio_button :admin, 'false', :checked => true, class:'student'%>
-      <%= f.label :admin_false, 'student' %>
-      <%= f.radio_button :admin, 'true', :checked => false, class: 'admin'%>
-      <%= f.label :admin_true, 'admin' %>
+    <div class="format-admin">
+      <div class="admin-container">
+        <% if @current_user.admin %>
+          <div class="student-box">
+            <%= f.radio_button :admin, 'false', :checked => true, class:'student'%>
+            <%= f.label :admin_false, 'student' %>
+          </div>
+          <div class="admin-box">
+            <%= f.radio_button :admin, 'true', :checked => false, class: 'admin'%>
+            <%= f.label :admin_true, 'admin' %>
+          </div>
+      </div>
       <div class="hide_admin">
         <%= collection_select(:cohorts_students, :cohort_id, Cohort.all, :id, :cohort) %>
       </div>
+    </div>
     <% elsif @current_user.id == @user.id %>
       <%= f.password_field :password %>
       <br>

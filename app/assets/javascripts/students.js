@@ -23,58 +23,58 @@ $(document).ready(function() {
 // to open comment boxes
   $('.comment_brand').on('click', function(e) {
     e.preventDefault();
-    $('.comment_brand').after($('.comment_form_brand'));
-    $('.comment_form_brand').toggle('blind', 1000);
+    $(this).after($('.comment_form_brand'));
+    $('.comment_form_brand').toggle('blind', 400);
   });
 
   $('.comment_resume').on('click', function(e) {
     e.preventDefault();
     $(this).after($('.comment_form_resume'));
-    $('.comment_form_resume').toggle('blind', 1000);
+    $('.comment_form_resume').toggle('blind', 400);
   });
 
   $('.comment_portfolio').on('click', function(e) {
     e.preventDefault();
     $(this).after($('.comment_form_portfolio'));
-    $('.comment_form_portfolio').toggle('blind', 1000);
+    $('.comment_form_portfolio').toggle('blind', 400);
   });
 
   $('.comment_linkedin').on('click', function(e) {
     e.preventDefault();
     $(this).after($('.comment_form_linkedin'));
-    $('.comment_form_linkedin').toggle('blind', 1000);
+    $('.comment_form_linkedin').toggle('blind', 400);
   });
 
   $('.comment_jobtracker').on('click', function(e) {
     e.preventDefault();
     $(this).after($('.comment_form_jobtracker'));
-    $('.comment_form_jobtracker').toggle('blind', 1000);
+    $('.comment_form_jobtracker').toggle('blind', 400);
   });
 
 // to cancel comments
   $('.cancel_brand').on('click', function(e) {
     e.preventDefault();
-    $(this).parent().toggle('blind', 1000);
+    $(this).parent().toggle('blind', 400);
   });
   
   $('.cancel_portfolio').on('click', function(e) {
     e.preventDefault();
-    $(this).parent().toggle('blind', 1000);
+    $(this).parent().toggle('blind', 400);
   });
 
   $('.cancel_jobtracker').on('click', function(e) {
     e.preventDefault();
-    $(this).parent().toggle('blind', 1000);
+    $(this).parent().toggle('blind', 400);
   });
 
   $('.cancel_resume').on('click', function(e) {
     e.preventDefault();
-    $(this).parent().toggle('blind', 1000);
+    $(this).parent().toggle('blind', 400);
   });
 
   $('.cancel_linkedin').on('click', function(e) {
     e.preventDefault();
-    $(this).parent().toggle('blind', 1000);
+    $(this).parent().toggle('blind', 400);
   });
 
 // to show accordian comments to user
@@ -82,14 +82,14 @@ $(document).ready(function() {
   $('.reviews_brand').on('click', function(e) {
     e.preventDefault();
     $('.close_brand').after($('.accordion_brand'));
-    $('.accordion_brand').toggle('blind', 1000);
+    $('.accordion_brand').toggle('blind', 400);
     $('.close_brand').css('display', 'block');
     $(this).css('display', 'none');
   });
 
   $('.close_brand').on('click', function(e) {
     e.preventDefault();
-    $('.accordion_brand').toggle('blind', 1000);
+    $('.accordion_brand').toggle('blind', 400);
     $('.reviews_brand').css('display', 'block');
     $(this).css('display', 'none')
   });
@@ -104,14 +104,14 @@ $(document).ready(function() {
   $('.reviews_resume').on('click', function(e) {
     e.preventDefault();
     $('.close_resume').after($('.accordion_resume'));
-    $('.accordion_resume').toggle('blind', 1000);
+    $('.accordion_resume').toggle('blind', 400);
     $('.close_resume').css('display', 'block');
     $(this).css('display', 'none');
   });
 
   $('.close_resume').on('click', function(e) {
     e.preventDefault();
-    $('.accordion_resume').toggle('blind', 1000);
+    $('.accordion_resume').toggle('blind', 400);
     $('.reviews_resume').css('display', 'block');
     $(this).css('display', 'none')
   });
@@ -126,14 +126,14 @@ $(document).ready(function() {
   $('.reviews_portfolio').on('click', function(e) {
     e.preventDefault();
     $('.close_portfolio').after($('.accordion_portfolio'));
-    $('.accordion_portfolio').toggle('blind', 1000);
+    $('.accordion_portfolio').toggle('blind', 400);
     $('.close_portfolio').css('display', 'block');
     $(this).css('display', 'none');
   });
 
   $('.close_portfolio').on('click', function(e) {
     e.preventDefault();
-    $('.accordion_portfolio').toggle('blind', 1000);
+    $('.accordion_portfolio').toggle('blind', 400);
     $('.reviews_portfolio').css('display', 'block');
     $(this).css('display', 'none')
   });
@@ -148,14 +148,14 @@ $(document).ready(function() {
   $('.reviews_linkedin').on('click', function(e) {
     e.preventDefault();
     $('.close_linkedin').after($('.accordion_linkedin'));
-    $('.accordion_linkedin').toggle('blind', 1000);
+    $('.accordion_linkedin').toggle('blind', 400);
     $('.close_linkedin').css('display', 'block');
     $(this).css('display', 'none');
   });
 
   $('.close_linkedin').on('click', function(e) {
     e.preventDefault();
-    $('.accordion_linkedin').toggle('blind', 1000);
+    $('.accordion_linkedin').toggle('blind', 400);
     $('.reviews_linkedin').css('display', 'block');
     $(this).css('display', 'none')
   });
@@ -170,14 +170,14 @@ $(document).ready(function() {
   $('.reviews_jobtracker').on('click', function(e) {
     e.preventDefault();
     $('.close_jobtracker').after($('.accordion_jobtracker'));
-    $('.accordion_jobtracker').toggle('blind', 1000);
+    $('.accordion_jobtracker').toggle('blind', 400);
     $('.close_jobtracker').css('display', 'block');
     $(this).css('display', 'none');
   });
 
   $('.close_jobtracker').on('click', function(e) {
     e.preventDefault();
-    $('.accordion_jobtracker').toggle('blind', 1000);
+    $('.accordion_jobtracker').toggle('blind', 400);
     $('.reviews_jobtracker').css('display', 'block');
     $(this).css('display', 'none')
   });

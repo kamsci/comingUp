@@ -162,18 +162,19 @@
       <%= r.hidden_field :student_id, :value => @user.student.id %>
       <%= r.hidden_field :review_type, :value => 'brand' %>
       <%= r.hidden_field :reviewer_name, :value => @current_user.name %>
-      <%= r.text_area :review_content, class: 'feild', :autofocus => true %>      
+      <%= r.text_area :review_content, class: 'feild'%>      
       <%= r.submit class:'send' %>
     <% end %>
     <a href="#" class="cancel_brand">Cancel</a>
   </div>
+
 
   <div class="comment_form_resume">
     <%= form_for @review = Review.new do |r| %>
       <%= r.hidden_field :student_id, :value => @user.student.id %>
       <%= r.hidden_field :review_type, :value => 'resume' %>
       <%= r.hidden_field :reviewer_name, :value => @current_user.name %>
-      <%= r.text_area :review_content, class: 'feild', :autofocus => true %>
+      <%= r.text_area :review_content, class: 'feild' %>
       <%= r.submit class:'send' %>
     <% end %>
     <a href="#" class="cancel_resume">Cancel</a>
@@ -184,7 +185,7 @@
       <%= r.hidden_field :student_id, :value => @user.student.id %>
       <%= r.hidden_field :review_type, :value => 'linkedin' %>
       <%= r.hidden_field :reviewer_name, :value => @current_user.name %>
-      <%= r.text_area :review_content, class: 'feild', :autofocus => true %>
+      <%= r.text_area :review_content, class: 'feild' %>
       <%= r.submit class:'send' %>
     <% end %>
     <a href="#" class="cancel_linkedin">Cancel</a>
@@ -195,7 +196,7 @@
       <%= r.hidden_field :student_id, :value => @user.student.id %>
       <%= r.hidden_field :review_type, :value => 'portfolio' %>
       <%= r.hidden_field :reviewer_name, :value => @current_user.name %>
-      <%= r.text_area :review_content, class: 'feild', :autofocus => true %>      
+      <%= r.text_area :review_content, class: 'feild' %>      
       <%= r.submit class:'send' %>
     <% end %>
     <a href="#" class="cancel_portfolio">Cancel</a>
@@ -206,7 +207,7 @@
       <%= r.hidden_field :student_id, :value => @user.student.id %>
       <%= r.hidden_field :review_type, :value => 'jobtracker' %>
       <%= r.hidden_field :reviewer_name, :value => @current_user.name %>
-      <%= r.text_area :review_content, class: 'feild', :autofocus => true %>
+      <%= r.text_area :review_content, class: 'feild'%>
       <%= r.submit class:'send' %>
     <% end %>
     <a href="#" class="cancel_jobtracker">Cancel</a>
