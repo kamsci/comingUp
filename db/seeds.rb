@@ -29,16 +29,19 @@ cohort2 = Cohort.create(cohort: 'WDI09')
 # Student Users
 # WDI08
 user1 = User.create(name: 'Krista Caleron', email: 'kamsci@gmail.com', password: 'password', admin: false)
-user2 = User.create(name: 'Jamie Karlovich', email: 'j@mie.com', password: 'password', admin: false)
+user2 = User.create(name: 'Jamie Karlovich', email: 'jamierkarlovich@gmail.com', password: 'password', admin: false)
 user3 = User.create(name: 'Joe Marzullo', email: 'jmarzu13@gmail.com', password: 'password', admin: false)
 user4 = User.create(name: 'Ivar Lee', email: 'ivarr5@gmail.com', password: 'password', admin: false)
 user5 = User.create(name: 'Ryan Rotz', email: 'ryanrotz@gmail.com', password: 'password', admin: false)
-# WDI09
 user6 = User.create(name: 'Derek Robertson', email: 'derekrobertson@gmail.com', password: 'password', admin: false)
-user7 = User.create(name: 'Reno Mc911', email: 'reno911@gmail.com', password: 'password', admin: false)
-user8 = User.create(name: 'Chris Kyle Madison', email: 'cmadison@io.com', password: 'password', admin: false)
-user9 = User.create(name: 'Tom Sawyer', email: 'tom@gmail.com', password: 'password', admin: false)
+# WDI09
+user7 = User.create(name: 'Reno Mc911', email: 'darkenvy6@gmail.com', password: 'password', admin: false)
+user8 = User.create(name: 'Chris Kyle Madison', email: '  ckmadison4@gmail.com', password: 'password', admin: false)
+user9 = User.create(name: 'Thomas Evans', email: 'evans_760@yahoo.com', password: 'password', admin: false)
 
+user10 = User.create(name: 'Dan Rasmussen', email: 'dan.r.rasmussen@gmail.com', password: 'password', admin: false)
+user11 = User.create(name: 'Josh McBroom', email: ' mcbroomjc@gmail.com', password: 'password', admin: false)
+user12 = User.create(name: 'Travis Smith', email: 'smithtm90@gmail.com', password: 'password', admin: false)
 # Create students
 
 # WDI08
@@ -76,7 +79,7 @@ student5 = Student.create(
   brand: "I'm a former marketer who discovered code and couldn't stop building things. I have 5 years of experience at a software company, leading marketing campaigns and starting new brands. For that reason, I'm excellent at communicating with both designers, developers, and executives. I'm passionate about making ideas come to life and uniting people into strong and happy teams. I also make excellent Bahn Mi.",
   linkedin: 'https://www.linkedin.com/in/ryanrotz000',
   resume: 'https://resume.creddle.io/resume/8d9he0s8sig',
-  portfolio: 'www.ryanrotz.com'
+  portfolio: 'http://www.ryanrotz.com'
 )
 
 # Cohort WDI09
@@ -92,7 +95,7 @@ student7 = Student.create(
   brand: "As a web developer with a background in Graphic Design, my mission is to provide a seamless and engaging experience for the user. I am a leader who sets deadlines & objectives for others in order to optimize the creative problem solving process and timely solutions. My personal interests in computer science and UI Design are the fuel for refining myself, my process and my work.",
   linkedin: 'https://www.linkedin.com/in/renomckenzie',
   resume: 'https://dl.dropboxusercontent.com/u/41544972/NewResume2016Jan-5.pdf',
-  portfolio: 'RenoMcKenzie.com'
+  portfolio: 'http://RenoMcKenzie.com'
 )
 
 student8 = Student.create(
@@ -110,6 +113,24 @@ student9 = Student.create(
   resume: 'https://dl.dropboxusercontent.com/u/41544972/NewResume2016Jan-5.pdf'
 )
 
+student10 = Student.create(
+  user_id: user10.id,
+  brand: "I’m a web developer with a business background who's committed to creating useful technologies to help make people's lives a little easier. I can still throw a curveball for a strike.",
+  linkedin: 'https://www.linkedin.com/in/daniel-rasmussen-410520117?trk=hp-identity-name'
+)
+
+student11 = Student.create(
+  user_id: user11.id,
+  brand: "I'm a user-focused full-stack developer who loves solving problems for people and creating awesome experiences.  I'm particularly passionate about helping build the emerging cannabis industry through technology.",
+  linkedin: 'https://www.linkedin.com/in/joshmcbroom'
+)
+
+student12 = Student.create(
+  user_id: user12.id,
+  brand: "I am an emerging Web Developer, working with Front End technologies to create sustainable and professional products. I am a firm believer that actions speak louder than words.",
+  linkedin: 'https://www.linkedin.com/in/travis-smith-889699104',
+  resume: 'https://resume.creddle.io/resume/81972tepsvv'
+)
 
 # Student add cohort
 CohortsStudents.create([
@@ -135,7 +156,7 @@ CohortsStudents.create([
   },
   {
     student_id: student6.id,
-    cohort_id: cohort2.id
+    cohort_id: cohort.id
   },
   {
     student_id: student7.id,
@@ -147,6 +168,18 @@ CohortsStudents.create([
   },
   {
     student_id: student9.id,
+    cohort_id: cohort2.id
+  },
+  {
+    student_id: student10.id,
+    cohort_id: cohort2.id
+  },
+  {
+    student_id: student11.id,
+    cohort_id: cohort2.id
+  },
+  {
+    student_id: student12.id,
     cohort_id: cohort2.id
   }
 ])

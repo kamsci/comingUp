@@ -5,7 +5,6 @@ class DeliverablesController < ApplicationController
 
   def new
     @deliverable = Deliverable.new
-    render json: @deliverable
   end
 
   def create
