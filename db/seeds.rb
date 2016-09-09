@@ -17,8 +17,8 @@ Staffpick.delete_all
 
 
 # Admin Users
-User.create(name: 'Beth Miller', email: 'beth.miller@ga.com', password: 'password', admin: true)
-User.create(name: 'Larry Palazzolo', email: 'larry.palazzolo@ga.com', password: 'password', admin: true)
+User.create(name: 'Beth Miller', email: 'beth.miller@ga.co', password: 'password', admin: true)
+User.create(name: 'Larry Palazzolo', email: 'larry.palazzolo@ga.co', password: 'password', admin: true)
 User.create(name: 'Brian Hague', email: 'brian@ga.com', password: 'password', admin: true)
 User.create(name: 'Paul Gatterdam', email: 'paul@ga.com', password: 'password', admin: true)
 
@@ -44,8 +44,8 @@ user10 = User.create(name: 'Dan Rasmussen', email: 'dan.r.rasmussen@gmail.com', 
 user11 = User.create(name: 'Josh McBroom', email: 'mcbroomjc@gmail.com', password: 'password', admin: false)
 user12 = User.create(name: 'Travis Smith', email: 'smithtm90@gmail.com', password: 'password', admin: false)
 user13 = User.create(name: 'Paul Gatterdam', email: 'paul.gatterdam@generalassemb.ly', password: 'password', admin: false)
-# Create students
 
+# Create students
 # WDI08
 student1 = Student.create(
   user_id: user1.id,
@@ -137,7 +137,7 @@ student12 = Student.create(
 student13 = Student.create(user_id: user13.id)
 student14 = Student.create(user_id: user14.id)
 
-# Student add cohort
+# Student added to cohort
 CohortsStudents.create([
   {
     student_id: student1.id,
