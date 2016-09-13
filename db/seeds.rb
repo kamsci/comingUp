@@ -29,7 +29,7 @@ cohort2 = Cohort.create(cohort: 'WDI09')
 
 # Student Users
 # WDI08
-user1 = User.create(name: 'Krista Caleron', email: 'kamsci@gmail.com', password: 'password', admin: false)
+user1 = User.create(name: 'Krista Calderon', email: 'kamsci@gmail.com', password: 'password', admin: false)
 user2 = User.create(name: 'Jamie Karlovich', email: 'jamierkarlovich@gmail.com', password: 'password', admin: false)
 user3 = User.create(name: 'Joe Marzullo', email: 'jmarzu13@gmail.com', password: 'password', admin: false)
 user4 = User.create(name: 'Ivar Lee', email: 'ivarr5@gmail.com', password: 'password', admin: false)
